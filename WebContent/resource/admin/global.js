@@ -1,6 +1,7 @@
 var msg_ex = "系统出现异常，请联系管理员！";
 
 $(function() {
+
 	/*
 	 * $("body").ajaxStart(function(){ mask(); });
 	 * 
@@ -173,3 +174,9 @@ function obj2str(o) {
 	}
 	return o.toString();
 }
+function reloadTab(){
+    var currentTab = $('#tabs').tabs('getSelected');
+    currentTab.panel('refresh');
+    
+}
+

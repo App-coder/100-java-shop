@@ -50,6 +50,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write('\r');
       out.write('\n');
       if (true) {
         _jspx_page_context.forward("portal/welcome/index");

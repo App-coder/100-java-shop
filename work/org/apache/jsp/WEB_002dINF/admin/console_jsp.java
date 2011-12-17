@@ -123,8 +123,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<div region=\"center\" style=\"overflow:hidden;\"  >\r\n");
-      out.write("\t\t\t<div id=\"tabs\"  fit=\"true\" border=\"false\"   >\r\n");
+      out.write("\t\t\t<div id=\"tabs\" tools=\"#tab-tools\" fit=\"true\" border=\"false\" >\r\n");
       out.write("\t\t\t</div>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t<div id=\"tab-tools\">\r\n");
+      out.write("\t\t\t<a class=\"easyui-linkbutton\" plain=\"true\" title=\"页面重载\" iconCls=\"icon-reload\" onclick=\"javascript:reloadTab()\"></a>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");

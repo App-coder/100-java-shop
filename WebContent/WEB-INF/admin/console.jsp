@@ -32,8 +32,12 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:hidden;"  >
-			<div id="tabs"  fit="true" border="false"   >
+			<div id="tabs" tools="#tab-tools" fit="true" border="false" >
 			</div>
+		</div>
+		
+		<div id="tab-tools">
+			<a class="easyui-linkbutton" plain="true" title="页面重载" iconCls="icon-reload" onclick="javascript:reloadTab()"></a>
 		</div>
 </body>
 </html>

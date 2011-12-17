@@ -66,7 +66,6 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/search.js\"></script>\r\n");
       out.write("<div class=\"container\">\r\n");
-      out.write("<div class=\"hidden\" ></div>\r\n");
       out.write("<table id=\"search_list\"></table>\r\n");
       out.write("</div>");
     } catch (Throwable t) {
