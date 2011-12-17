@@ -57,8 +57,6 @@ public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
       out.write("\t\t\t\thref=\"javascript:tab('商品列表','admin/goods/index');\">商品列表</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('商品添加','admin/goods/add');\">商品添加</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t\t\r\n");
       out.write("\t<li><span>商品分类</span>\r\n");

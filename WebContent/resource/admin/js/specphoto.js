@@ -5,7 +5,7 @@ $(function() {
 		    {
 			url : 'admin/specphoto/list',
 			fit : 'true',
-			nowrap : false,
+			nowrap : true,
 			method : 'get',
 			striped : true,
 			singleSelect : true,
@@ -21,12 +21,12 @@ $(function() {
 				{
 				    field : 'name',
 				    title : '图片名称',
-				    width : 200
+				    width :150
 				},
 				{
 				    field : 'src',
 				    title : '图片',
-				    width : 100
+				    width : 200
 				},
 				{
 				    field : 'address',
@@ -35,7 +35,7 @@ $(function() {
 				},{
 				    field : 'createTime',
 				    title : '创建时间',
-				    width : 200
+				    width : 150
 				},
 				{
 				    field : 'catalog',
@@ -51,7 +51,7 @@ $(function() {
 			    text : '添加规格',
 			    iconCls : 'icon-add',
 			    handler : function() {
-
+				$("#specphoto_add").window("open");
 			    }
 			}, {
 			    text : '删除',

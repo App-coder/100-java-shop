@@ -16,12 +16,7 @@ $(function() {
 	    iconCls : 'icon-add',
 	    handler : function() {
 
-		var selected = $('#brand_list').datagrid('getSelected');
-		if (selected) {
-
-		} else {
-		    message("请选择一行记录！");
-		}
+		$("#brand_add").window("open");
 
 	    }
 	} ],

@@ -5,7 +5,7 @@ $(function() {
 		    {
 			url : 'admin/spec/list',
 			fit : 'true',
-			nowrap : false,
+			nowrap : true,
 			method : 'get',
 			striped : true,
 			singleSelect : true,
@@ -23,17 +23,17 @@ $(function() {
 				{
 				    field : 'name',
 				    title : '规格名称',
-				    width : 200
+				    width : 150
 				},
 				{
 				    field : 'type',
 				    title : '显示方式',
-				    width : 200
+				    width : 100
 				},
 				{
 				    field : 'value',
 				    title : '规格数据',
-				    width : 200
+				    width : 350
 				},
 				{
 				    field : 'catalog',
@@ -46,10 +46,10 @@ $(function() {
 				} ] ],
 			toolbar : [ {
 			    id : 'add',
-			    text : '添加模型',
+			    text : '添加规格',
 			    iconCls : 'icon-add',
 			    handler : function() {
-
+				$("#spec_add").window("open");
 			    }
 			}, {
 			    text : '删除',

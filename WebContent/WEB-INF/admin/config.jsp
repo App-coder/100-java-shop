@@ -3,7 +3,7 @@
 <%@ include file="common/config.jsp" %>
 <script type="text/javascript" src="resource/admin/js/config.js"></script>
 	<div class="easyui-tabs" fit="true">
-		<div title="基本设置" class="p10" >
+		<div title="基本设置" class="p10" style="overflow-x:hidden;" >
 		<form method="post" id="form_config_basic" url="admin/config/config_basic_do" enctype="multipart/form-data" >	
 <table class="tab_form">
 	<tr>
@@ -18,8 +18,7 @@
 		<td class="edittd">商店LOGO：</td>
 		<td>
 		<img id="logo" src="${system_config['url']}/resource/front/${system_config['theme']}/images/logo.gif" onload="if(this.height>50)this.height=50" height="50"/>
-		<br>
-		<input type="file" value="上传" class="text" size="30" name="logo" />
+		<input type="file" value="上传" size="25" name="logo" />
 			直接从本地上传图片覆盖原有的网站logo</td>
 	</tr>
 	<tr>
@@ -138,8 +137,8 @@
 			</div>
 			<table id="config_indexSlide" title="首页幻灯列表" fit="true"></table>		
 		</div>
-		<div title="站点底部信息" class="p10">
-			<iframe src="admin/config/config_footer" frameborder="0"  width="100%" height="600"  ></iframe>
+		<div title="站点底部信息" class="p10"  style="overflow-x:hidden;" >
+			<iframe src="admin/config/config_footer" frameborder="0"  width="99%" height="600"  ></iframe>
 		</div>
 		<div title="购物设置" class="p10">
 			<form  method="post" id="form_config_shopcfg" >

@@ -48,10 +48,10 @@ $(function() {
 	}]],
 	toolbar : [{
 		id : 'add',
-		text : '添加主题',
+		text : '添加关键字',
 		iconCls : 'icon-add',
 		handler : function() {
-
+		    $("#keyword_add").window("open");
 		}
 	}, {
 		text : '删除',

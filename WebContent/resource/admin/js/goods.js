@@ -70,7 +70,7 @@ $(function(){
 	    text : '添加商品',
 	    iconCls : 'icon-add',
 	    handler : function() {
-		
+		$("#goods_add").window("open");
 	    }
 	}, {
 	    text : '删除',

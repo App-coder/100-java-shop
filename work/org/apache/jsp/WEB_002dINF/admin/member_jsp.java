@@ -11,6 +11,11 @@ public final class member_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList(1);
+    _jspx_dependants.add("/WEB-INF/admin/common/config.jsp");
+  }
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -50,9 +55,101 @@ public final class member_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write('\r');
+      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
+
+String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  draggable=\"false\" minimizable=\"false\" maximizable=\"false\" inline=\"false\" resizable=\"false\"";
+
+      out.write("    ");
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/member.js\"></script>\r\n");
-      out.write("<table id=\"member_list\" title=\"配送方式列表\" fit=\"true\"></table>\t\t");
+      out.write("<div class=\"container\">\r\n");
+      out.write("<div class=\"hidden\">\r\n");
+      out.write("<div id=\"member_add\" class=\"easyui-window\" ");
+      out.print(win_topbar );
+      out.write(" style=\"width:600px;\" title=\"添加商品\">  \r\n");
+      out.write("\t\t<div region=\"center\"  border=\"false\" class=\"p10\">\r\n");
+      out.write("\t\t<form id=\"form_member_add\" method=\"post\" >\r\n");
+      out.write("\t\t<table class=\"tab_form\">\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">用户名：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">Email：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">密码：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">确认密码：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">会员组：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">姓名：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">性别：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"radio\" />男&nbsp;&nbsp;<input type=\"radio\"/>女</td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">电话：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">手机：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">地区：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\t\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">地址：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">邮编：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">QQ：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">MSN：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">经验值：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t<td class=\"edittd\">积分：</td>\r\n");
+      out.write("\t\t\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t\t\t</tr>\t\t\t\t\t\t\t\t\r\n");
+      out.write("\t\t</table>\r\n");
+      out.write("\t\t</form>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div region=\"south\" class=\"btnbar\" border=\"false\">\r\n");
+      out.write("\t\t\t\t<a class=\"easyui-linkbutton\" iconCls=\"icon-ok\"\r\n");
+      out.write("\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"formsubmit('form_member_add')\">保存商品</a> <a\r\n");
+      out.write("\t\t\t\t\tclass=\"easyui-linkbutton\" iconCls=\"icon-cancel\"\r\n");
+      out.write("\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"closeWin('member_add')\">取消</a>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("</div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<table id=\"member_list\" title=\"配送方式列表\" fit=\"true\"></table>\r\n");
+      out.write("</div>\t\t");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

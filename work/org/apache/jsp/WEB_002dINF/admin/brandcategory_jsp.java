@@ -65,7 +65,33 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("    ");
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/brandcategory.js\"></script>\r\n");
-      out.write("<table id=\"brandcategory_list\"></table>");
+      out.write("<div id=\"container\">\r\n");
+      out.write("<div class=\"hidden\" >\r\n");
+      out.write("\t<div id=\"brandcategory_add\" class=\"easyui-window\" ");
+      out.print(win_topbar );
+      out.write(" style=\"width:500px;\" title=\"添加商品\">  \r\n");
+      out.write("\t\t<div region=\"center\"  border=\"false\" class=\"p10\" >\r\n");
+      out.write("\t\t<form id=\"form_brandcategory_add\" method=\"post\">\r\n");
+      out.write("\t\t<table class=\"tab_form\">\r\n");
+      out.write("\t\t<tr>\r\n");
+      out.write("\t\t\t<td class=\"edittd\">分类名称：</td>\r\n");
+      out.write("\t\t\t<td><input type=\"text\" class=\"text easyui-validatebox\" name=\"name\" required=\"true\" validType=\"length[1,50]\" /></td>\r\n");
+      out.write("\t\t</tr>\r\n");
+      out.write("\t\t</table>\r\n");
+      out.write("\t\t</form>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div region=\"south\" class=\"btnbar\" border=\"false\">\r\n");
+      out.write("\t\t<a class=\"easyui-linkbutton\" iconCls=\"icon-ok\"\r\n");
+      out.write("\t\t\thref=\"javascript:void(0)\" onclick=\"formsubmit('form_brandcategory_add')\">保存分类</a> <a\r\n");
+      out.write("\t\t\tclass=\"easyui-linkbutton\" iconCls=\"icon-cancel\"\r\n");
+      out.write("\t\t\thref=\"javascript:void(0)\" onclick=\"closeWin('goods_add')\">取消</a>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t</div>\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<table id=\"brandcategory_list\"></table>\r\n");
+      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

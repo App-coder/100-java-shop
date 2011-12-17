@@ -72,9 +72,9 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/theme.js\"></script>\r\n");
       out.write("<table id=\"theme_list\"></table>\r\n");
       out.write("<div class=\"hidden\">\r\n");
-      out.write("<div id=\"wind_theme_edit\"  ");
+      out.write("<div id=\"wind_theme_edit\" ");
       out.print(win_topbar );
-      out.write("   >  \r\n");
+      out.write(" style=\"width:500px;\"  >  \r\n");
       out.write("<div region=\"center\"  border=\"false\" class=\"bdcenter\">\r\n");
       out.write("<form method=\"post\" id=\"form_theme_edit\" >\r\n");
       out.write("<input type=\"hidden\" name=\"id\" />\r\n");

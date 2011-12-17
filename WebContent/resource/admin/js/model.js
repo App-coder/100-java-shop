@@ -3,13 +3,14 @@ $(function() {
 	$('#model_list').datagrid({
 		url : 'admin/model/list',
 		fit : 'true',
-		nowrap : false,
+		nowrap : true,
 		method : 'get',
 		striped : true,
 		singleSelect : true,
 		rownumbers : true,
 		idField : 'id',
 		pagination:true,
+		frozenColumns:true,
 		frozenColumns : [[{
 			field : 'ck',
 			checkbox : true
@@ -31,7 +32,7 @@ $(function() {
 			text : '添加模型',
 			iconCls : 'icon-add',
 			handler : function() {
-
+			    $("#model_add").window("open");
 			}
 		}, {
 			text : '删除',

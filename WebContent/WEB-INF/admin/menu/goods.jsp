@@ -6,8 +6,6 @@
 	<ul>
 			<li><a
 				href="javascript:tab('商品列表','admin/goods/index');">商品列表</a></li>
-			<li><a
-				href="javascript:tab('商品添加','admin/goods/add');">商品添加</a></li>
 		</ul></li>
 		
 	<li><span>商品分类</span>

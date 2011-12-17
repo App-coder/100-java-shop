@@ -153,4 +153,10 @@ public class GoodsController extends BaseController {
 		return objToJson(msg);
 	}
 
+	@RequestMapping(value = "/content", method = RequestMethod.GET)
+	public String content(){
+		return "admin/goods/content";
+	}
+	
+	
 }

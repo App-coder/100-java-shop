@@ -20,7 +20,7 @@ $(function() {
 			    text : '添加会员',
 			    iconCls : 'icon-add',
 			    handler : function() {
-
+				$("#member_add").window("open");
 			    }
 			}, {
 			    id : 'delete',

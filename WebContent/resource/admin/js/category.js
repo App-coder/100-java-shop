@@ -39,7 +39,7 @@ $(function(){
 			text:'添加分类',
 			iconCls:'icon-add',
 			handler:function(){
-				
+			    $("#category_add").window("open");
 
 			}
 		}],

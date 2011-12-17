@@ -14,13 +14,8 @@ $(function() {
 	    iconCls : 'icon-add',
 	    handler : function() {
 
-		var selected = $('#brandcategory_list').datagrid('getSelected');
-		if (selected) {
-
-		} else {
-		    message("请选择一行记录！");
-		}
-
+		$("#brandcategory_add").window("open");
+		
 	    }
 	} ],
 	columns : [ [ {

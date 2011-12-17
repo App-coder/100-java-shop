@@ -6,7 +6,7 @@ var current_theme = "${system_config['theme']}";
 <script type="text/javascript" src="resource/admin/js/theme.js"></script>
 <table id="theme_list"></table>
 <div class="hidden">
-<div id="wind_theme_edit"  <%=win_topbar %>   >  
+<div id="wind_theme_edit" <%=win_topbar %> style="width:500px;"  >  
 <div region="center"  border="false" class="bdcenter">
 <form method="post" id="form_theme_edit" >
 <input type="hidden" name="id" />

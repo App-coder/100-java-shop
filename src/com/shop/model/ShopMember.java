@@ -40,6 +40,10 @@ public class ShopMember {
     private Date lastLogin;
 
     private String custom;
+    
+    private String messageIds;
+    
+    private String prop;
 
     public Integer getUserId() {
         return userId;
@@ -192,4 +196,23 @@ public class ShopMember {
     public void setCustom(String custom) {
         this.custom = custom == null ? null : custom.trim();
     }
+
+	public String getMessageIds() {
+		return messageIds;
+	}
+
+	public void setMessageIds(String messageIds) {
+		this.messageIds = messageIds;
+	}
+
+	public String getProp() {
+		return prop;
+	}
+
+	public void setProp(String prop) {
+		this.prop = prop;
+	}
+    
+    
+	
 }
