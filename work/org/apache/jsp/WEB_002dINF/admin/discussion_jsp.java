@@ -11,6 +11,11 @@ public final class discussion_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List _jspx_dependants;
 
+  static {
+    _jspx_dependants = new java.util.ArrayList(1);
+    _jspx_dependants.add("/WEB-INF/admin/common/config.jsp");
+  }
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -40,7 +45,7 @@ public final class discussion_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html; charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -50,6 +55,19 @@ public final class discussion_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write('\r');
+      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
+
+String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  draggable=\"false\" minimizable=\"false\" maximizable=\"false\" inline=\"false\" resizable=\"false\"";
+
+      out.write("    ");
+      out.write("\r\n");
+      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/discussion.js\"></script>\r\n");
+      out.write("<div class=\"container\">\r\n");
+      out.write("<table id=\"discussion_list\" title=\"配送方式列表\" fit=\"true\"></table>\r\n");
+      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -71,7 +71,7 @@ public class DiscussionController extends BaseController {
 			discussions = this.discussionService.loadByUsername(page,rows,keywords);
 		}else if(searchType.equals("goodsname")){
 			total = this.discussionService.getTotalByGoodsname(keywords);
-			discussions = this.discussionService.loadByGoodsname(keywords);
+			discussions = this.discussionService.loadByGoodsname(page,rows,keywords);
 		}
 		
 		ListBean list = new ListBean();
