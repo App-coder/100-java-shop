@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.DiscussionMapper">
+  <resultMap id="ShopDiscussionResult" type="com.shop.model.ShopDiscussion">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="is_check" jdbcType="BIT" property="isCheck" />
+    <result column="contents" jdbcType="LONGVARCHAR" property="contents" />
+  </resultMap>
+  <select id="getTotalFilterDiscussion" resultType="INTEGER" >
+  	SELECT
+		count(d.id) 
+	FROM
+		shop_discussion AS d
+	LEFT JOIN shop_goods AS goods ON d.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON d.user_id = u.id
+	WHERE
+		1
+	<if test="username!=null">
+	AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+	</if>
+	<if test="goodsname!=null">
+	AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+	</if>
+	<if test="starttime!=null">
+	AND d.time <![CDATA[>]]> "#{starttime}"
+	</if>
+	<if test="endtime!=null">
+	AND d.time <![CDATA[<]]> "#{endtime}"
+	</if>
+  </select>
+  <select id="loadDiscussionInFilter" resultMap="ShopDiscussionResult" >
+  	SELECT
+		d.id,
+		d.time,
+		u.id AS userid,
+		u.username,
+		goods.id AS goods_id,
+		goods. NAME AS goods_name
+	FROM
+		shop_discussion AS d
+	LEFT JOIN shop_goods AS goods ON d.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON d.user_id = u.id
+	WHERE
+		1
+	<if test="username!=null">
+	AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+	</if>
+	<if test="goodsname!=null">
+	AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+	</if>
+	<if test="starttime!=null">
+	AND d.time <![CDATA[>]]> "#{starttime}"
+	</if>
+	<if test="endtime!=null">
+	AND d.time <![CDATA[<]]> "#{endtime}"
+	</if>
+	limit #{start},#{rows}
+  </select>
+</mapper>

@@ -130,6 +130,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t<div region=\"west\" split=\"true\" style=\"width: 150px; overflow: hidden;\">\r\n");
       out.write("\t\t<div id=\"lefttree\" fit=\"true\" class=\"easyui-panel\" border=\"false\">\r\n");
       out.write("\t\t</div>\r\n");
+<<<<<<< HEAD
+      out.write("\t\t\r\n");
+      out.write("\t\t<div id=\"mm\" class=\"easyui-menu\" style=\"width:150px;\">\r\n");
+      out.write("\t\t\t<div id=\"mm-tabclose\">关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseall\">全部关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseother\">除此之外全部关闭</div>\r\n");
+      out.write("\t\t\t<div class=\"menu-sep\"></div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseright\">当前页右侧全部关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseleft\">当前页左侧全部关闭</div>\r\n");
+      out.write("\t\t\t<div class=\"menu-sep\"></div>\r\n");
+      out.write("\t\t\t<div id=\"mm-exit\">退出</div>\r\n");
+      out.write("\t\t</div>\r\n");
+=======
       out.write("\t</div>\r\n");
       out.write("\t<div region=\"center\" style=\"overflow: hidden;\">\r\n");
       out.write("\t\t<div id=\"tabs\" tools=\"#tab-tools\" fit=\"true\" border=\"false\"></div>\r\n");
@@ -150,6 +163,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<div class=\"menu-sep\"></div>\r\n");
       out.write("\t\t<div id=\"mm-exit\">退出</div>\r\n");
       out.write("\t</div>\r\n");
+>>>>>>> zhujun
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

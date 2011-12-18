@@ -18,6 +18,6 @@ public interface DiscussionService {
 
 	int getTotalByGoodsname(String keywords);
 
-	List<ShopDiscussion> loadByGoodsname(String keywords);
+	List<ShopDiscussion> loadByGoodsname(int page, int rows, String keywords);
 
 }

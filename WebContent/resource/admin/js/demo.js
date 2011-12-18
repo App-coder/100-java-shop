@@ -1,8 +1,7 @@
 $(function() {
-    $('#discussion_list').datagrid({
-	url : 'admin/discussion/filter',
+    $('#demo_list').datagrid({
+	url : '',
 	fit : 'true',
-	method:'post',
 	nowrap : true,
 	striped : true,
 	collapsible : false,
