@@ -12,8 +12,8 @@ $(function() {
                }); 
 	 * 
 	 */
-    tabClose();
-    tabCloseEven();
+	tabClose();
+	tabCloseEven();
 
 });
 function menuList(url) {
@@ -182,6 +182,7 @@ function reloadTab(){
     var currentTab = $('#tabs').tabs('getSelected');
     currentTab.panel('refresh');
 }
+
 function tabClose()
 {
 	/*双击关闭TAB选项卡*/
@@ -259,4 +260,3 @@ function tabCloseEven()
 		$('#mm').menu('hide');
 	})
 }
-
