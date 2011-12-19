@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.NotifyregistryMapper">
+  <resultMap id="ShopNotifyRegistryResult" type="com.shop.model.ShopNotifyRegistry">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="notify_time" jdbcType="TIMESTAMP" property="notifyTime" />
+    <result column="notify_status" jdbcType="BIT" property="notifyStatus" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsname" />
+    <result column="store_nums" jdbcType="INTEGER" property="storenums" />
+  </resultMap>
+  <select id="loadList" resultMap="ShopNotifyRegistryResult" >
+  	SELECT
+		notify.*, u.username,
+		goods. NAME AS goods_name,
+		goods.store_nums
+	FROM
+		shop_notify_registry AS notify
+	LEFT JOIN shop_goods AS goods ON notify.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON notify.user_id = u.id
+	WHERE
+		1
+	limit #{start},#{rows}		
+  </select>
+  <select id="getTotal" resultType="INTEGER" >
+  	SELECT
+		count(notify.id) 
+	FROM
+		shop_notify_registry AS notify
+	LEFT JOIN shop_goods AS goods ON notify.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON notify.user_id = u.id
+  </select>
+</mapper>

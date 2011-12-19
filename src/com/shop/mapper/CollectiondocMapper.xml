@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CollectionDocMapper">
+  <resultMap id="ShopCollectionDocResult" type="com.shop.model.ShopCollectionDoc">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="amount" jdbcType="REAL" property="amount" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="payment_id" jdbcType="INTEGER" property="paymentId" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="collection_account" jdbcType="VARCHAR" property="collectionAccount" />
+    <result column="recharge_id" jdbcType="INTEGER" property="rechargeId" />
+    <result column="pay_status" jdbcType="BIT" property="payStatus" />
+    <result column="if_del" jdbcType="TINYINT" property="ifDel" />
+    <result column="note" jdbcType="LONGVARCHAR" property="note" />
+    <result column="true_name" jdbcType="VARCHAR" property="truename" />
+    <result column="pname" jdbcType="VARCHAR" property="pname" />
+  </resultMap>
+  <select id="loadList" resultMap="ShopCollectionDocResult">
+  	  SELECT
+		o.order_no,
+		c.amount,
+		m.true_name,
+		p. NAME,
+		c.id,
+		c.collection_account,
+		c.pay_status,
+		c.time
+	FROM
+		shop_collection_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
+	LEFT JOIN shop_payment AS p ON c.payment_id = p.id
+	WHERE
+		c.if_del = #{if_del}
+	ORDER BY
+		o.id DESC 
+		limit #{start},#{rows}
+  </select>
+  <select id="getTotal" resultType="INTEGER">
+	  SELECT
+		count(o.id) 
+	FROM
+		shop_collection_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
+	LEFT JOIN shop_payment AS p ON c.payment_id = p.id
+	WHERE
+		c.if_del = #{if_del} 
+  </select>
+</mapper>

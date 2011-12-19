@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.MsgTemplateMapper">
+  <resultMap id="ShopMsgTemplateResult" type="com.shop.model.ShopMsgTemplate">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="variable" jdbcType="VARCHAR" property="variable" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <select id="loadAll" resultMap="ShopMsgTemplateResult" >
+  	select * from shop_msg_template
+  </select>
+</mapper>

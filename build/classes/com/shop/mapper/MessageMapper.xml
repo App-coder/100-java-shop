@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.MessageMapper">
+  <resultMap id="ShopMessageResult" type="com.shop.model.ShopMessage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER" >
+  	select count(id) from shop_message
+  </select>
+  <select id="loadList" resultMap="ShopMessageResult" >
+  	select * from shop_message order by id desc limit #{start},#{rows}
+  </select>
+</mapper>

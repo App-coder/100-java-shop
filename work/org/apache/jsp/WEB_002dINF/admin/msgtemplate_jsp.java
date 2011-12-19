@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class refer_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class msgtemplate_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -64,9 +64,9 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
 
       out.write("    ");
       out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/refer.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/msgtemplate.js\"></script>\r\n");
       out.write("<div class=\"container\">\r\n");
-      out.write("<table id=\"refer_list\"></table>\r\n");
+      out.write("<table id=\"msgtemplate_list\" fit=\"true\"></table>\r\n");
       out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
