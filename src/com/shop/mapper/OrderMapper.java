@@ -40,4 +40,10 @@ public interface OrderMapper extends BaseMapper<ShopOrder>{
     int getCountByDistr(@Param("distr") int distr);
 
     int getCountByPayStatus(@Param("paystatus") int paystatus);
+    
+	int getTotalFilter(@Param("pay_status") int pay_status,@Param("distribution_status") int distribution_status,@Param("status") int status,
+			@Param("if_del") int if_del);
+	
+	List<ShopOrder> loadFilter(@Param("start") int start,@Param("rows") int rows,@Param("pay_status") int pay_status,@Param("distribution_status") int distribution_status,@Param("status") int status,
+			@Param("if_del") int if_del);
 }

@@ -3,6 +3,10 @@
 <mapper namespace="com.shop.mapper.OrderMapper">
 	<resultMap id="ShopOrderResult" type="com.shop.model.ShopOrder">
 		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="oid" jdbcType="INTEGER" property="oid" />
+		<result column="dname" jdbcType="VARCHAR" property="dname" />
+		<result column="pname" jdbcType="VARCHAR" property="pname" />
+		<result column="username" jdbcType="VARCHAR" property="username" />
 		<result column="order_no" jdbcType="VARCHAR" property="orderNo" />
 		<result column="user_id" jdbcType="INTEGER" property="userId" />
 		<result column="accept_name" jdbcType="VARCHAR" property="acceptName" />
@@ -96,5 +100,59 @@
     </select>
     <select id="getCountByPayStatus" resultType="INTEGER">
       select count(id) as coun from shop_order where pay_status = #{paystatus}
+    </select>
+    <select id="getTotalFilter" resultType="INTEGER">
+    SELECT
+		count(o.id) 
+	FROM
+		shop_order AS o
+	LEFT JOIN shop_delivery AS d ON o.distribution = d.id
+	LEFT JOIN shop_payment AS p ON o.pay_type = p.id
+	LEFT JOIN shop_user AS u ON u.id = o.user_id
+	WHERE 1 
+	and	if_del = #{if_del} 
+	<if test="pay_status!=0">	
+	AND o.pay_status = #{pay_status}
+	</if>
+	<if test="distribution_status!=0">	
+	AND o.distribution_status = #{distribution_status}
+	</if>
+	<if test="status!=0">	
+	AND o. STATUS = #{status}
+	</if>
+    </select>
+    <select id="loadFilter" resultMap="ShopOrderResult">
+	SELECT
+		o.id AS oid,
+		d. NAME AS dname,
+		o.pay_type,
+		p. NAME AS pname,
+		o.order_no,
+		o.accept_name,
+		o.pay_status,
+		o.distribution_status,
+		u.username,
+		o.create_time,
+		o. STATUS,
+		o.if_print
+	FROM
+		shop_order AS o
+	LEFT JOIN shop_delivery AS d ON o.distribution = d.id
+	LEFT JOIN shop_payment AS p ON o.pay_type = p.id
+	LEFT JOIN shop_user AS u ON u.id = o.user_id
+	WHERE 1 
+	and	if_del = #{if_del}
+	<if test="pay_status!=0">	
+	AND o.pay_status = #{pay_status}
+	</if>
+	<if test="distribution_status!=0">	
+	AND o.distribution_status = #{distribution_status}
+	</if>
+	<if test="status!=0">	
+	AND o. STATUS = #{status}
+	</if>
+	ORDER BY
+		o.id DESC    
+	limit #{start},#{rows}		
     </select>
 </mapper>

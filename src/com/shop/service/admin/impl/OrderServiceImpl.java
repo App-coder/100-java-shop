@@ -34,15 +34,14 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	public int getTotalFilter(int pay_status, int distribution_status,
-			int status) {
-		// TODO Auto-generated method stub
-		return 0;
+			int status,int if_del) {
+		return this.orderMapper.getTotalFilter(pay_status,distribution_status,status,if_del);
 	}
 
 	public List<ShopOrder> loadFilter(int page, int rows, int pay_status,
-			int distribution_status, int status) {
-		// TODO Auto-generated method stub
-		return null;
+			int distribution_status, int status,int if_del) {
+		int start = (page-1)*rows;
+		return this.orderMapper.loadFilter(start,rows,pay_status,distribution_status,status,if_del);
 	}
 
 	public Double getGrossSales() {

@@ -14,6 +14,10 @@ public class ShopDiscussion {
     private Boolean isCheck;
 
     private String contents;
+    
+    private String username;
+    
+    private String goodsname;
 
     public Integer getId() {
         return id;
@@ -62,4 +66,23 @@ public class ShopDiscussion {
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
     }
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getGoodsname() {
+		return goodsname;
+	}
+
+	public void setGoodsname(String goodsname) {
+		this.goodsname = goodsname;
+	}
+    
+    
+    
 }

@@ -18,6 +18,12 @@ public class ShopNotifyRegistry {
     private Date notifyTime;
 
     private Boolean notifyStatus;
+    
+    private String username;
+    
+    private String goodsname;
+    
+    private Integer storenums;
 
     public Integer getId() {
         return id;
@@ -82,4 +88,31 @@ public class ShopNotifyRegistry {
     public void setNotifyStatus(Boolean notifyStatus) {
         this.notifyStatus = notifyStatus;
     }
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getGoodsname() {
+		return goodsname;
+	}
+
+	public void setGoodsname(String goodsname) {
+		this.goodsname = goodsname;
+	}
+
+	public Integer getStorenums() {
+		return storenums;
+	}
+
+	public void setStorenums(Integer storenums) {
+		this.storenums = storenums;
+	}
+    
+    
+    
 }

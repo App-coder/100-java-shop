@@ -1,5 +1,7 @@
 package com.shop.action.admin;
 
+import net.sf.json.JsonConfig;
+
 import org.springframework.stereotype.Controller;
 import java.util.*;
 
@@ -13,6 +15,7 @@ import com.shop.bean.common.Message;
 import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopComment;
 import com.shop.service.admin.CommentService;
+import com.shop.util.JsonDateValueProcessor;
 
 @Controller
 @RequestMapping(value = "admin/comment")
@@ -50,7 +53,10 @@ public class CommentController extends BaseController {
 		list.setRows(comments);
 		list.setTotal(total);
 		
-		return objToJson(list);
+		JsonConfig jsonConfig = new JsonConfig();
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd"));
+		
+		return objToJson(list,jsonConfig);
 	}
 	
 	/**

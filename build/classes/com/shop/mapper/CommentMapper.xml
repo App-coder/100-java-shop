@@ -11,12 +11,66 @@
         <result column="point" jdbcType="BIT" property="point" />
         <result column="status" jdbcType="BIT" property="status" />
         <result column="contents" jdbcType="LONGVARCHAR" property="contents" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+    	<result column="goods_name" jdbcType="VARCHAR" property="goodsname" />
     </resultMap>
     <select id="getCount" resultType="INTEGER" >
         select count(id) as coun from shop_comment
         <if test="status != -1">
           where status = #{status}
         </if>
+    </select>
+    <select id="loadFilter" resultMap="ShopCommentResult" >
+    	SELECT
+			c.id,
+			c.time,
+			u.id AS userid,
+			u.username,
+			goods.id AS goods_id,
+			goods. NAME AS goods_name
+		FROM
+			shop_comment AS c
+		LEFT JOIN shop_goods AS goods ON c.goods_id = goods.id
+		LEFT JOIN shop_user AS u ON c.user_id = u.id
+		WHERE
+			1
+		<if test="username!=null">
+		AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+		</if>
+		<if test="goodsname!=null">
+		AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+		</if>
+		<if test="starttime!=null">
+		AND d.time <![CDATA[>]]> "#{starttime}"
+		</if>
+		<if test="endtime!=null">
+		AND d.time <![CDATA[<]]> "#{endtime}"
+		</if>
+		ORDER BY
+			c.id DESC 
+		limit #{start},#{rows}	
+    </select>
+    <select id="getTotalFilter" resultType="INTEGER" >
+    	SELECT
+			count(c.id) 
+		FROM
+			shop_comment AS c
+		LEFT JOIN shop_goods AS goods ON c.goods_id = goods.id
+		LEFT JOIN shop_user AS u ON c.user_id = u.id
+		WHERE
+			1
+		<if test="username!=null">
+		AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+		</if>
+		<if test="goodsname!=null">
+		AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+		</if>
+		<if test="starttime!=null">
+		AND d.time <![CDATA[>]]> "#{starttime}"
+		</if>
+		<if test="endtime!=null">
+		AND d.time <![CDATA[<]]> "#{endtime}"
+		</if>
     </select>
 
 </mapper>

@@ -18,14 +18,13 @@ public class CommentServiceImpl implements CommentService {
 
     public int getTotalFilter(String username, String goodsname,
 			String starttime, String endtime) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.commentMapper.getTotalFilter(username,goodsname,starttime,endtime);
 	}
 
 	public List<ShopComment> loadFilter(int page, int rows, String username,
 			String goodsname, String starttime, String endtime) {
-		// TODO Auto-generated method stub
-		return null;
+		int start = (page-1)*rows;
+		return this.commentMapper.loadFilter(start,rows,username,goodsname,starttime,endtime);
 	}
 
 	public List<ShopComment> loadByUsername(int page, int rows, String keywords) {

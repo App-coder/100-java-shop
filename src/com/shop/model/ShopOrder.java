@@ -2,6 +2,11 @@ package com.shop.model;
 
 import java.util.Date;
 
+/**
+ * User: zhujun
+ * Date: 2012-7-18
+ * Time: 下午9:42:47
+ */
 public class ShopOrder {
     private Integer id;
 
@@ -90,6 +95,20 @@ public class ShopOrder {
     private Integer type;
 
     private String note;
+    
+    private Integer oid;
+    
+    /**
+     * 快递名称
+     */
+    private String dname;
+    
+    /**
+     * 付款方式
+     */
+    private String pname;
+    
+    private String username;
 
     public Integer getId() {
         return id;
@@ -442,4 +461,39 @@ public class ShopOrder {
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
     }
+
+	public Integer getOid() {
+		return oid;
+	}
+
+	public void setOid(Integer oid) {
+		this.oid = oid;
+	}
+
+	public String getDname() {
+		return dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+    
+    
+    
 }

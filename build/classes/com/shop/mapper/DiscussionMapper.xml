@@ -8,6 +8,8 @@
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="is_check" jdbcType="BIT" property="isCheck" />
     <result column="contents" jdbcType="LONGVARCHAR" property="contents" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsname" />
   </resultMap>
   <select id="getTotalFilterDiscussion" resultType="INTEGER" >
   	SELECT

@@ -84,15 +84,18 @@ public class OrderController extends BaseController {
 	 */
 	@RequestMapping(value = "/filter", method = RequestMethod.POST)
 	@ResponseBody
-	public String filter(int page,int rows,int pay_status,int distribution_status,int status){
-		int total = this.orderService.getTotalFilter(pay_status,distribution_status,status);
-		List<ShopOrder> orders = this.orderService.loadFilter(page,rows,pay_status,distribution_status,status);
+	public String filter(int page,int rows,int pay_status,int distribution_status,int status,int if_del){
+		int total = this.orderService.getTotalFilter(pay_status,distribution_status,status,if_del);
+		List<ShopOrder> orders = this.orderService.loadFilter(page,rows,pay_status,distribution_status,status,if_del);
 		
 		ListBean list = new ListBean();
 		list.setRows(orders);
 		list.setTotal(total);
 		
-		return objToJson(list);
+		JsonConfig jsonConfig = new JsonConfig();
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd"));
+		
+		return objToJson(list,jsonConfig);
 	}
 
     /**

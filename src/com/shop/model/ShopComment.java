@@ -2,6 +2,11 @@ package com.shop.model;
 
 import java.util.Date;
 
+/**
+ * User: zhujun
+ * Date: 2011-12-18
+ * Time: 下午2:36:22
+ */
 public class ShopComment {
     private Integer id;
 
@@ -20,6 +25,10 @@ public class ShopComment {
     private Boolean status;
 
     private String contents;
+    
+    private String username;
+    
+    private String goodsname;
 
     public Integer getId() {
         return id;
@@ -92,4 +101,23 @@ public class ShopComment {
     public void setContents(String contents) {
         this.contents = contents == null ? null : contents.trim();
     }
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getGoodsname() {
+		return goodsname;
+	}
+
+	public void setGoodsname(String goodsname) {
+		this.goodsname = goodsname;
+	}
+    
+    
+    
 }

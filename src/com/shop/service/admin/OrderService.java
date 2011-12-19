@@ -19,10 +19,10 @@ public interface OrderService {
 
 	List<ShopOrder> loadByOrderno(int page, int rows, String keywords);
 
-	int getTotalFilter(int pay_status, int distribution_status, int status);
+	int getTotalFilter(int pay_status, int distribution_status, int status,int if_del);
 
 	List<ShopOrder> loadFilter(int page, int rows, int pay_status,
-			int distribution_status, int status);
+			int distribution_status, int status,int if_del);
 	
 	Double getGrossSales();
 	

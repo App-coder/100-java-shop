@@ -3,6 +3,8 @@ package com.shop.action.admin;
 import javax.annotation.Resource;
 import java.util.*;
 
+import net.sf.json.JsonConfig;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopDiscussion;
 import com.shop.service.admin.DiscussionService;
+import com.shop.util.JsonDateValueProcessor;
 
 @Controller
 @RequestMapping(value = "admin/discussion")
@@ -48,8 +51,9 @@ public class DiscussionController extends BaseController {
 		ListBean list = new ListBean();
 		list.setRows(discussions);
 		list.setTotal(total);
-		
-		return objToJson(list);
+		JsonConfig jsonConfig = new JsonConfig();
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+		return objToJson(list,jsonConfig);
 	}
 	
 	/**
