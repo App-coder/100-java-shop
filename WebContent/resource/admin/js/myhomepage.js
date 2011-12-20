@@ -30,10 +30,11 @@ $(function(){
         rownumbers:true,
         toolbar:[{
             text:'查看',
+            iconCls:'icon-view',
             handler:function(){
                 var selected = $('#orderlist').datagrid('getSelected');
                 if(selected){
-                    tab('订单信息：'+selected.orderNo,'admin/order/info?id='+selected.id)
+                    tab('订单：'+selected.orderNo,'admin/order/info?id='+selected.id)
                 }else{
                     message("请选择一行记录！");
                 }

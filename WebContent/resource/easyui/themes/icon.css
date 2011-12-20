@@ -52,7 +52,9 @@
 .icon-tip{
 	background:url('icons/tip.png') no-repeat;
 }
-
+.icon-view{
+	background:url('icons/view.png') no-repeat;
+}
 .icon-mini-add{
 	background:url('icons/mini_add.png') no-repeat 2px 2px;
 }
