@@ -60,6 +60,24 @@ public class ThemeController extends BaseController {
 		return JSONArray.fromObject(message).toString();
 	}
 	
+	@RequestMapping(value="/config_theme_do", method=RequestMethod.POST)
+	@ResponseBody
+	public String config_theme_do(ShopTheme theme){
+		int affectrow = 0;
+		Message message = null;
+		if(theme.getId()==0){
+			affectrow = this.themeService.insert(theme);
+		}else{
+			affectrow = this.themeService.update(theme);
+		}
+		if(affectrow == 1){
+			message = new Message("true","主题编辑成功");
+		}else{
+			message = new Message("false","主题编辑异常");
+		}
+		return JSONObject.fromObject(message).toString();
+	}
+	
 	@RequestMapping(value="/update", method=RequestMethod.GET)
 	@ResponseBody
 	public String update(ShopTheme theme){
@@ -83,7 +101,7 @@ public class ThemeController extends BaseController {
 		}else{
 			message = new Message("false","主题删除异常");
 		}
-		return JSONArray.fromObject(message).toString();
+		return JSONObject.fromObject(message).toString();
 	}
 	
 	@RequestMapping(value="/cfg_theme", method=RequestMethod.GET)

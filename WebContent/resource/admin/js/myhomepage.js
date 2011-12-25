@@ -24,7 +24,6 @@ $(function(){
 		fit:'true',
 		nowrap: false,
 		striped: true,
-		collapsible:true,
 		idField:'id',
         singleSelect:true,
         rownumbers:true,

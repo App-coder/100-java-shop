@@ -58,6 +58,7 @@ table .tb_list td.righttd{padding-left:10px;}
 .tab_form{width:100%;font:12px/1.5 Tahoma,'Microsoft Yahei','Simsun';}
 .tab_form .edittd{width:110px;text-align: right;padding-right:10px;}
 .tab_form input.text,.tab_form select.text{width:250px;margin-right: 10px;border:1px solid #D2D2D2;height: 20px;}
+.textborder{border:1px solid #D2D2D2;}
 
 .red{color: red;}
 .green{color:green;}

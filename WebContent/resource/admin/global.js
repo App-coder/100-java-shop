@@ -51,26 +51,16 @@ function tab(title, url,closable) {
 	var exists = $('#tabs').tabs('exists', title);
 
 	if (!exists) {
-		/*
-		$.get(url, function(content){
-			$('#tabs').tabs('add',{
-				title : title,
-				closable : closable,
-				content : content
-			})
-		});*/
-		
+
 		$('#tabs').tabs('add',{
 			title : title,
+			id:new Date().getTime(),
 			closable : closable,
 			href:url,
-			bodyCls:'p10',
-			cache:false
-			/*
-			content : '<iframe src="'
-					+ url
-					+ '" frameborder="0"  width="100%" height="100%" ></iframe>'*/
+//			content:"<iframe src="+url+" frameborder='0' width='100%' height='100%' />",
+			bodyCls:'p10'
 		});
+		
 	} else {
 		$('#tabs').tabs("select",title)
 	}
