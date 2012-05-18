@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ include file="common/config.jsp" %>
-
+<div class="bd">
 <script type="text/javascript" src="resource/admin/js/config.js"></script>
 	<div class="easyui-tabs">
 		<div title="基本设置" class="p10" >
@@ -315,8 +315,9 @@
 			<table class="tab_form">
 						<tr>
 							<td class="edittd">清理缓存：</td>
-							<td><a href="" class="easyui-linkbutton" >开始清理</a>&nbsp;&nbsp;清理系统编译生成的缓存文件</td>
+							<td><a href="javascript:clearCache()" class="easyui-linkbutton" >开始清理</a>&nbsp;&nbsp;清理系统编译生成的缓存文件</td>
 						</tr>
 			</table>
 		</div>
 	</div>
+</div>

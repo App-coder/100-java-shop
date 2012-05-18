@@ -3,6 +3,15 @@ package com.shop.bean;
 public class Message {
 	private String type;
 	private String message;
+	
+	public Message(){
+		
+	}
+	public Message(String type, String message) {
+		super();
+		this.type = type;
+		this.message = message;
+	}
 	public String getType() {
 		return type;
 	}

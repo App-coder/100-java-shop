@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <script type="text/javascript" src="resource/admin/js/myhomepage.js"></script>
+<div class="bd">
 <table style="width:100%;">
 	<tr>
 		<td width="50%" valign="top">
@@ -68,3 +69,4 @@
 		</td>
 	</tr>
 </table>
+</div>

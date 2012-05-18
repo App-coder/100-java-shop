@@ -117,10 +117,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t中国百分百商城系统\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div region=\"west\" split=\"true\" style=\"width:150px;overflow:hidden;\">\n");
-      out.write("\t\t\t<div id=\"accordion\" fit=\"true\" border=\"false\">\n");
+      out.write("\t\t\t<div id=\"lefttree\" fit=\"true\" class=\"easyui-panel\" border=\"false\">\n");
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
-      out.write("\t\t<div region=\"center\" style=\"overflow:hidden;\">\n");
+      out.write("\t\t<div region=\"center\" style=\"overflow:hidden;\"  >\n");
       out.write("\t\t\t<div id=\"tabs\" fit=\"true\" border=\"false\" >\n");
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");

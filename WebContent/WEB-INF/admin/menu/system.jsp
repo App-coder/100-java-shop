@@ -8,7 +8,7 @@
 	<li><span>网站管理</span>
 		<ul>
 			<li><a href="javascript:tab('网站设置','admin/config/index')">网站设置</a></li>
-			<li>主题设置</li>
+			<li><a href="javascript:tab('主题设置','admin/theme/index')">主题设置</a></li>
 		</ul></li>
 	<li><span>支付管理</span>
 		<ul>
@@ -16,7 +16,7 @@
 		</ul></li>
 	<li><span>多平台登入</span>
 		<ul>
-			<li><a href="javascript:tab('主题设置','admin/oauth/list')">平台列表</a></li>
+			<li><a href="javascript:tab('主题设置','admin/theme/index')">平台列表</a></li>
 		</ul></li>
 	<li><span>配送管理</span>
 		<ul>

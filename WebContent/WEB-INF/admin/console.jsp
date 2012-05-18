@@ -28,10 +28,10 @@
 		中国百分百商城系统
 		</div>
 		<div region="west" split="true" style="width:150px;overflow:hidden;">
-			<div id="accordion" fit="true" border="false">
+			<div id="lefttree" fit="true" class="easyui-panel" border="false">
 			</div>
 		</div>
-		<div region="center" style="overflow:hidden;">
+		<div region="center" style="overflow:hidden;"  >
 			<div id="tabs" fit="true" border="false" >
 			</div>
 		</div>

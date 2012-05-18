@@ -1,5 +1,5 @@
 $(function(){
-    $('#accordion').accordion({collapsible:false});
+    //$('#accordion').accordion({collapsible:false});
     $('#tabs').tabs({
     	onSelect:function(title){
     		currenttab = $('#tabs').tabs("getSelected");

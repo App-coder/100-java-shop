@@ -69,7 +69,7 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
 
       out.write("    ");
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("<div class=\"bd\">\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/config.js\"></script>\r\n");
       out.write("\t<div class=\"easyui-tabs\">\r\n");
       out.write("\t\t<div title=\"基本设置\" class=\"p10\" >\r\n");
@@ -455,11 +455,12 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("\t\t\t<table class=\"tab_form\">\r\n");
       out.write("\t\t\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t\t\t<td class=\"edittd\">清理缓存：</td>\r\n");
-      out.write("\t\t\t\t\t\t\t<td><a href=\"\" class=\"easyui-linkbutton\" >开始清理</a>&nbsp;&nbsp;清理系统编译生成的缓存文件</td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><a href=\"javascript:clearCache()\" class=\"easyui-linkbutton\" >开始清理</a>&nbsp;&nbsp;清理系统编译生成的缓存文件</td>\r\n");
       out.write("\t\t\t\t\t\t</tr>\r\n");
       out.write("\t\t\t</table>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t</div>\r\n");
+      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

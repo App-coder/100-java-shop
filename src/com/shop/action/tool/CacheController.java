@@ -18,6 +18,7 @@ import com.shop.service.ConfigService;
 import com.shop.util.CacheManager;
 import com.shop.util.Configuration;
 import com.shop.util.Constant;
+import com.shop.util.FileUtil;
 import com.shop.util.cache.CacheStore;
 
 @Controller
@@ -50,6 +51,8 @@ public class CacheController implements ServletContextAware {
 		
 		Configuration os_cfg = new Configuration(this.servletContext.getRealPath("/WEB-INF/classes/oscache.properties"));
 		File f = new File(os_cfg.getValue("cache.path"));
+		FileUtil.deleteDirectory(os_cfg.getValue("cache.path"));
+		f.mkdir();
 		
 		Message message = new Message();
 		message.setMessage("缓存文件删除成功！");

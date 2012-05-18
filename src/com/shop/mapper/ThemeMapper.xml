@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.ThemeMapper">
+  <resultMap id="ShopAdminResult" type="com.shop.model.ShopTheme" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="catalog" property="catalog" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="loadAll" resultMap="ShopAdminResult">
+  	select * from shop_theme order by createtime 
+  </select>
+  <insert id="insert" parameterType="com.shop.model.ShopTheme">
+    insert into shop_theme ( name, catalog,description,createtime
+      )
+    values ( #{name,jdbcType=VARCHAR}, #{catalog,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},now()
+      )
+  </insert>
+  <update id="update"  parameterType="com.shop.model.ShopTheme">
+  	update shop_theme set 
+      name = #{name,jdbcType=VARCHAR},
+      catalog = #{catalog,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR}  
+     where id =  #{id,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteById"  >
+  	delete from shop_theme where id = #{id}
+  </delete>
+</mapper>  

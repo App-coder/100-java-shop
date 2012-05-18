@@ -84,7 +84,7 @@ public class WebmasterController extends BaseController{
 		if(item == null){
 			item = "myhomepage";
 		}
-		return "admin/"+item;
+		return "admin/menu/"+item;
 	}
 	
 }

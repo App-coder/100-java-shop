@@ -343,3 +343,12 @@ function indexslide_down(rowindex){
 		},'json');
 	}
 }
+//缓存删除
+function clearCache(){
+	mask("正在删除缓存……");
+	$.get('admin/cache/clearCacheFile',null,function(msg){
+		if(msg.type == "true"){
+			unmask();
+		}
+	},'json');
+}

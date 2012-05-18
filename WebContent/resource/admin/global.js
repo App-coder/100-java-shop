@@ -14,14 +14,6 @@ function menuList(menuid) {
 	$("#nav_" + menuid).parent().parent("ul").find("li")
 			.removeClass("selected");
 
-	var panels = $('#accordion').accordion('panels');
-	if (panels.length >= 1) {
-		for ( var i = 0; i < panels.length; i++) {
-			var title = panels[i].panel('options').title
-			$('#accordion').accordion('remove', title);
-		}
-	}
-
 	$("#nav_" + menuid).parent("li").addClass("selected");
 	var title;
 	var url;
@@ -46,9 +38,9 @@ function menuList(menuid) {
 	$.post(url, {
 		item : menuid
 	}, function(data) {
-		$('#accordion').accordion('add', {
-			title : title,
-			content : data
+		$("#lefttree").panel({
+			title:title,
+			content:data
 		});
 	}, 'html');
 
