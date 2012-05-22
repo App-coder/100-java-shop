@@ -83,11 +83,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("<script type=\"text/javascript\" src=\"resource/easyui/locale/easyui-lang-zh_CN.js\"></script>\n");
       out.write("<link href=\"resource/plugin/loadmask/jquery.loadmask.css\" rel=\"stylesheet\" type=\"text/css\" />\n");
       out.write("<script type=\"text/javascript\" src=\"resource/plugin/loadmask/jquery.loadmask.min.js\"></script>\n");
-      out.write("\n");
-      out.write("<link rel=\"stylesheet\" href=\"resource/plugin/fancybox/jquery.fancybox-1.3.4.css\">\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/plugin/fancybox/jquery.mousewheel-3.0.4.pack.js\"></script>\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/plugin/fancybox/jquery.fancybox-1.3.4.pack.js\"></script>\n");
-      out.write("\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/global.js\"></script>\n");
       out.write("\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/top.js\"></script>\n");
@@ -104,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("            <div id=\"navMenu\">\n");
       out.write("\t\t\t\t<ul>\n");
       out.write("\t\t\t\t\t<li><a id=\"nav_goods\" href=\"javascript:menuList('goods')\"><span>商品</span></a></li>\n");
-      out.write("\t\t\t\t\t<li><a id=\"nav_memeber\" href=\"javascript:menuList('member')\"><span>会员</span></a></li>\n");
+      out.write("\t\t\t\t\t<li><a id=\"nav_member\" href=\"javascript:menuList('member')\"><span>会员</span></a></li>\n");
       out.write("\t\t\t\t\t<li><a id=\"nav_order\" href=\"javascript:menuList('order')\"><span>订单</span></a></li>\n");
       out.write("\t\t\t\t\t<li><a id=\"nav_market\" href=\"javascript:menuList('market')\"><span>营销</span></a></li>\n");
       out.write("\t\t\t\t\t<li><a id=\"nav_stat\" href=\"javascript:menuList('stat')\"><span>统计</span></a></li>\n");
@@ -121,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div region=\"center\" style=\"overflow:hidden;\"  >\n");
-      out.write("\t\t\t<div id=\"tabs\" fit=\"true\" border=\"false\" >\n");
+      out.write("\t\t\t<div id=\"tabs\"  fit=\"true\" border=\"false\" >\n");
       out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("</body>\n");

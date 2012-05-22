@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.DeliveryMapper">
+<resultMap id="ShopDeliveryResult" type="com.shop.model.ShopDelivery">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="first_weight" jdbcType="INTEGER" property="firstWeight" />
+    <result column="second_weight" jdbcType="INTEGER" property="secondWeight" />
+    <result column="first_price" jdbcType="REAL" property="firstPrice" />
+    <result column="second_price" jdbcType="REAL" property="secondPrice" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="is_save_price" jdbcType="BIT" property="isSavePrice" />
+    <result column="save_rate" jdbcType="INTEGER" property="saveRate" />
+    <result column="low_price" jdbcType="REAL" property="lowPrice" />
+    <result column="price_type" jdbcType="BIT" property="priceType" />
+    <result column="open_default" jdbcType="BIT" property="openDefault" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="freight_id" jdbcType="INTEGER" property="freightId" />
+    <result column="area" jdbcType="LONGVARCHAR" property="area" />
+    <result column="area_groupid" jdbcType="LONGVARCHAR" property="areaGroupid" />
+    <result column="firstprice" jdbcType="LONGVARCHAR" property="firstprice" />
+    <result column="secondprice" jdbcType="LONGVARCHAR" property="secondprice" />
+  </resultMap>
+  <select id="loadAll" resultMap="ShopDeliveryResult">
+  	select * from shop_delivery 
+  </select>
+  <update id="update" parameterType="com.shop.model.ShopDelivery">
+   update shop_delivery
+    set name = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      type = #{type,jdbcType=BIT},
+      first_weight = #{firstWeight,jdbcType=INTEGER},
+      second_weight = #{secondWeight,jdbcType=INTEGER},
+      first_price = #{firstPrice,jdbcType=REAL},
+      second_price = #{secondPrice,jdbcType=REAL},
+      status = #{status,jdbcType=BIT},
+      sort = #{sort,jdbcType=INTEGER},
+      is_save_price = #{isSavePrice,jdbcType=BIT},
+      save_rate = #{saveRate,jdbcType=INTEGER},
+      low_price = #{lowPrice,jdbcType=REAL},
+      price_type = #{priceType,jdbcType=BIT},
+      open_default = #{openDefault,jdbcType=BIT},
+      is_delete = #{isDelete,jdbcType=BIT},
+      freight_id = #{freightId,jdbcType=INTEGER},
+      area = #{area,jdbcType=LONGVARCHAR},
+      area_groupid = #{areaGroupid,jdbcType=LONGVARCHAR},
+      firstprice = #{firstprice,jdbcType=LONGVARCHAR},
+      secondprice = #{secondprice,jdbcType=LONGVARCHAR}
+	where id = #{id,jdbcType=INTEGER}      
+  </update>
+  <delete id="deleteById"  >
+  	delete from shop_delivery where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.shop.model.ShopDelivery">
+  insert into shop_delivery (name, description, 
+      type, first_weight, second_weight, 
+      first_price, second_price, status, 
+      sort, is_save_price, save_rate, 
+      low_price, price_type, open_default, 
+      is_delete, freight_id, area, 
+      area_groupid, firstprice, secondprice
+      )
+    values (#{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{type,jdbcType=BIT}, #{firstWeight,jdbcType=INTEGER}, #{secondWeight,jdbcType=INTEGER}, 
+      #{firstPrice,jdbcType=REAL}, #{secondPrice,jdbcType=REAL}, #{status,jdbcType=BIT}, 
+      #{sort,jdbcType=INTEGER}, #{isSavePrice,jdbcType=BIT}, #{saveRate,jdbcType=INTEGER}, 
+      #{lowPrice,jdbcType=REAL}, #{priceType,jdbcType=BIT}, #{openDefault,jdbcType=BIT}, 
+      #{isDelete,jdbcType=BIT}, #{freightId,jdbcType=INTEGER}, #{area,jdbcType=LONGVARCHAR}, 
+      #{areaGroupid,jdbcType=LONGVARCHAR}, #{firstprice,jdbcType=LONGVARCHAR}, #{secondprice,jdbcType=LONGVARCHAR}
+  </insert>
+</mapper>

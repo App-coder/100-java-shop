@@ -69,9 +69,9 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
 
       out.write("    ");
       out.write("\r\n");
-      out.write("<div class=\"bd\">\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/config.js\"></script>\r\n");
-      out.write("\t<div class=\"easyui-tabs\">\r\n");
+      out.write("<div class=\"bd\" >\r\n");
+      out.write("\t<div class=\"easyui-tabs\" fit=\"true\">\r\n");
       out.write("\t\t<div title=\"基本设置\" class=\"p10\" >\r\n");
       out.write("\t\t<form method=\"post\" id=\"form_config_basic\" url=\"admin/config/config_basic_do\" enctype=\"multipart/form-data\" >\t\r\n");
       out.write("<table class=\"tab_form\">\r\n");

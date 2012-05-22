@@ -53,7 +53,7 @@ public final class theme_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/theme.js\"></script>\r\n");
       out.write("<div class=\"bd\">\r\n");
-      out.write("sdfsdf\r\n");
+      out.write("<table id=\"theme_list\"></table>\r\n");
       out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

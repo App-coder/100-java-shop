@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.FreightCompanyMapper">
+  <resultMap id="ShopFreightCompanyResult" type="com.shop.model.ShopFreightCompany">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="freight_type" jdbcType="VARCHAR" property="freightType" />
+    <result column="freight_name" jdbcType="VARCHAR" property="freightName" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+  </resultMap>
+  <select id="loadByIsdel" resultMap="ShopFreightCompanyResult" >
+  	select * from shop_freight_company where isdel = #{isDel}
+  </select>
+  <update id="updateState" >
+  	update shop_freight_company set  is_del = #{isDel,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}
+  </update>
+  <delete id="deleteById" >
+  	delete from shop_freight_company where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+</mapper>

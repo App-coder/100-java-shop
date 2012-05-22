@@ -52,10 +52,19 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/myhomepage.js\"></script>\n");
+      out.write("<div class=\"bd\" >\n");
       out.write("<table style=\"width:100%;\">\n");
       out.write("\t<tr>\n");
       out.write("\t\t<td width=\"50%\" valign=\"top\">\n");
-      out.write("\t\t<table class=\"easyui-panel tb_list\" title=\"概况\"  fit=\"true\">\n");
+      out.write("\t\t<table class=\" tb_list\" fit=\"true\" style=\"border:1px solid #AED0EA;border-collapse: collapse;\" >\n");
+      out.write("\t\t\t<thead>\n");
+      out.write("\t\t\t\t<tr >\n");
+      out.write("\t\t\t\t\t<td colspan=\"2\" >\n");
+      out.write("\t\t\t\t\t<div class=\"panel-header\" style=\"border:none;\" ><div class=\"panel-title\">概况</div></div>\n");
+      out.write("\t\t\t\t\t</td>\n");
+      out.write("\t\t\t\t</tr>\n");
+      out.write("\t\t\t</thead>\n");
+      out.write("\t\t\t\t\t<tbody>\n");
       out.write("\t\t\t\t\t<tr>\n");
       out.write("\t\t\t\t\t\t<td class=\"lefttd\">销售总额</td>\n");
       out.write("\t\t\t\t\t\t<td class=\"righttd\" >sfs</td>\n");
@@ -80,13 +89,20 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t<td class=\"lefttd\">评论</td>\n");
       out.write("\t\t\t\t\t\t<td class=\"righttd\" ></td>\n");
       out.write("\t\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t\t</tbody>\n");
       out.write("\t\t\t\t</table>\n");
       out.write("\t\t</td>\n");
       out.write("\t\t<td width=\"50%\" valign=\"top\">\n");
-      out.write("\t\t<table class=\"easyui-panel tb_list\" title=\"订单信息\"  fit=\"true\" >\n");
+      out.write("\t\t<table class=\" tb_list\" style=\"border:1px solid #AED0EA;border-collapse: collapse;\">\n");
+      out.write("\t\t\t<thead>\n");
+      out.write("\t\t\t\t<tr >\n");
+      out.write("\t\t\t\t\t<td colspan=\"2\" >\n");
+      out.write("\t\t\t\t\t<div class=\"panel-header\" style=\"border:none;\" ><div class=\"panel-title\">订单信息</div></div>\n");
+      out.write("\t\t\t\t\t</td>\n");
+      out.write("\t\t\t\t</tr>\n");
+      out.write("\t\t\t</thead>\n");
       out.write("\t\t\t<tbody>\n");
-      out.write("\t\t\t<tr>\n");
-      out.write("\t\t\t\t\t\t\t<td class=\"lefttd\">总订单</td>\n");
+      out.write("\t\t\t<tr><td class=\"lefttd\">总订单</td>\n");
       out.write("\t\t\t\t\t\t\t<td class=\"righttd\" >sf</td>\n");
       out.write("\t\t\t\t\t\t</tr>\n");
       out.write("\t\t\t\t\t\t<tr>\n");
@@ -103,7 +119,7 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t</tr>\n");
       out.write("\t\t\t\t\t\t<tr>\n");
       out.write("\t\t\t\t\t\t\t<td class=\"lefttd\">七天未确认订单</td>\n");
-      out.write("\t\t\t\t\t\t\t<td class=\"righttd\" ></td>\n");
+      out.write("\t\t\t\t\t\t\t<td class=\"righttd\" >sdfsdf</td>\n");
       out.write("\t\t\t\t\t\t</tr>\n");
       out.write("\t\t\t\t\t\t<tr>\n");
       out.write("\t\t\t\t\t\t\t<td class=\"lefttd\">完成订单</td>\n");
@@ -115,10 +131,11 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</tr>\n");
       out.write("\t<tr>\n");
       out.write("\t\t<td colspan=\"2\">\n");
-      out.write("\t\t<table id=\"orderlist\" title=\"最新10条订单\" fit=\"true\"></table>\n");
+      out.write("\t\t\t<table id=\"orderlist\" title=\"最新10条订单\" fit=\"true\"></table>\n");
       out.write("\t\t</td>\n");
       out.write("\t</tr>\n");
       out.write("</table>\n");
+      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

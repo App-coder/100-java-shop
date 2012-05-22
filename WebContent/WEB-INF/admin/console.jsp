@@ -15,7 +15,7 @@
             <div id="navMenu">
 				<ul>
 					<li><a id="nav_goods" href="javascript:menuList('goods')"><span>商品</span></a></li>
-					<li><a id="nav_memeber" href="javascript:menuList('member')"><span>会员</span></a></li>
+					<li><a id="nav_member" href="javascript:menuList('member')"><span>会员</span></a></li>
 					<li><a id="nav_order" href="javascript:menuList('order')"><span>订单</span></a></li>
 					<li><a id="nav_market" href="javascript:menuList('market')"><span>营销</span></a></li>
 					<li><a id="nav_stat" href="javascript:menuList('stat')"><span>统计</span></a></li>
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:hidden;"  >
-			<div id="tabs" fit="true" border="false" >
+			<div id="tabs"  fit="true" border="false" >
 			</div>
 		</div>
 </body>

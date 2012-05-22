@@ -52,20 +52,24 @@ function tab(title, url,closable) {
 	var exists = $('#tabs').tabs('exists', title);
 
 	if (!exists) {
-		$('#tabs')
-				.tabs(
-						'add',
-						{
-							title : title,
-							closable : closable,
-							href:url
-							/*
-							content : '<iframe id="'+rd+'" src="'
-									+ url
-									+ '" frameborder="0"  width="100%" height="100%" ></iframe>'
-									*/
-									
-						});
+		/*
+		$.get(url, function(content){
+			$('#tabs').tabs('add',{
+				title : title,
+				closable : closable,
+				content : content
+			})
+		});*/
+		
+		$('#tabs').tabs('add',{
+			title : title,
+			closable : closable,
+			href:url
+			/*
+			content : '<iframe src="'
+					+ url
+					+ '" frameborder="0"  width="100%" height="100%" ></iframe>'*/
+		});
 	} else {
 		$('#tabs').tabs("select",title)
 	}

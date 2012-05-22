@@ -86,7 +86,7 @@ $(function() {
 			{field:'operation',title:'操作',width:200,formatter:function(val,rowdata,rowindex){
 				 return "<a class=\"green\" onclick=\"up("+rowindex+")\" >上移</a>&nbsp;&nbsp;<a class=\"green\" onclick=\"down("+rowindex+")\">下移</a>&nbsp;&nbsp;<a class=\"red\" onclick=\"deleteGuide("+rowdata.order+",'"+rowdata.name+"')\">删除</a>";
 			}}
-		]],
+		]]
 	});
 	
 	$('#form_config_guide').form({

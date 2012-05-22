@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = "admin/goods")
 public class GoodsController extends BaseController {
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(){
-		
-		return "admin/goodslist";
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(){
+		return "admin/goods";
 	}
 }

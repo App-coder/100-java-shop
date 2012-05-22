@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <script type="text/javascript" src="resource/admin/js/myhomepage.js"></script>
-<div class="bd">
+<div class="bd" >
 <table style="width:100%;">
 	<tr>
 		<td width="50%" valign="top">
-		<table class="easyui-panel tb_list" title="概况"  fit="true">
+		<table class=" tb_list" fit="true" style="border:1px solid #AED0EA;border-collapse: collapse;" >
+			<thead>
+				<tr >
+					<td colspan="2" >
+					<div class="panel-header" style="border:none;" ><div class="panel-title">概况</div></div>
+					</td>
+				</tr>
+			</thead>
+					<tbody>
 					<tr>
 						<td class="lefttd">销售总额</td>
 						<td class="righttd" >sfs</td>
@@ -30,13 +38,20 @@
 						<td class="lefttd">评论</td>
 						<td class="righttd" ></td>
 					</tr>
+					</tbody>
 				</table>
 		</td>
 		<td width="50%" valign="top">
-		<table class="easyui-panel tb_list" title="订单信息"  fit="true" >
+		<table class=" tb_list" style="border:1px solid #AED0EA;border-collapse: collapse;">
+			<thead>
+				<tr >
+					<td colspan="2" >
+					<div class="panel-header" style="border:none;" ><div class="panel-title">订单信息</div></div>
+					</td>
+				</tr>
+			</thead>
 			<tbody>
-			<tr>
-							<td class="lefttd">总订单</td>
+			<tr><td class="lefttd">总订单</td>
 							<td class="righttd" >sf</td>
 						</tr>
 						<tr>
@@ -53,7 +68,7 @@
 						</tr>
 						<tr>
 							<td class="lefttd">七天未确认订单</td>
-							<td class="righttd" ></td>
+							<td class="righttd" >sdfsdf</td>
 						</tr>
 						<tr>
 							<td class="lefttd">完成订单</td>
@@ -65,7 +80,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-		<table id="orderlist" title="最新10条订单" fit="true"></table>
+			<table id="orderlist" title="最新10条订单" fit="true"></table>
 		</td>
 	</tr>
 </table>

@@ -87,4 +87,9 @@ public class WebmasterController extends BaseController{
 		return "admin/menu/"+item;
 	}
 	
+	@RequestMapping(value="/myhomepage")
+	public String myhomepage(){
+		return "admin/myhomepage";
+	}
+	
 }

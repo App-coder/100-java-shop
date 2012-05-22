@@ -14,6 +14,6 @@ $(function(){
 			{field:'payStatus',title:'支付状态',width:150},
 			{field:'orderAmount',title:'金额',width:100},
 			{field:'createTime',title:'下单时间',width:200}
-		]],
+		]]
 	});
 });
