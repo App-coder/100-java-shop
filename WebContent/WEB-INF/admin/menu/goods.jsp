@@ -29,7 +29,7 @@
 			<li><a
 				href="admin/spec/index">规格列表</a></li>
 			<li><a
-				href="admin/specPhoto/index">规格图库</a></li>
+				href="admin/specphoto/index">规格图库</a></li>
 		</ul></li>
 	<li><span>热门搜索</span>
 	<ul>
