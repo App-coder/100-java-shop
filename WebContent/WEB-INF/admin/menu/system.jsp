@@ -13,7 +13,7 @@
 		</ul></li>
 	<li><span>支付管理</span>
 		<ul>
-			<li>支付方式</li>
+			<li><a href="admin/payment/index">支付方式</a></li>
 		</ul></li>
 	<li><span>多平台登入</span>
 		<ul>

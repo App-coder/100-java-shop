@@ -15,7 +15,6 @@ import com.shop.model.ShopFreightCompany;
 import com.shop.service.FreightCompanyService;
 import java.util.*;
 
-
 @Controller
 @RequestMapping(value = "admin/freightcompany")
 public class FreightCompanyController extends BaseController {
