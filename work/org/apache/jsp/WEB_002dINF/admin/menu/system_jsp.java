@@ -64,7 +64,7 @@ public final class system_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>支付管理</span>\r\n");
       out.write("\t\t<ul>\r\n");
-      out.write("\t\t\t<li>支付方式</li>\r\n");
+      out.write("\t\t\t<li><a href=\"admin/payment/index\">支付方式</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>多平台登入</span>\r\n");
       out.write("\t\t<ul>\r\n");
