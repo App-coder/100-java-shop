@@ -2,7 +2,6 @@
 	pageEncoding="utf-8"%>
 <%@ include file="common/config.jsp" %>
 <script type="text/javascript" src="resource/admin/js/config.js"></script>
-<div class="bd" >
 	<div class="easyui-tabs" fit="true">
 		<div title="基本设置" class="p10" >
 		<form method="post" id="form_config_basic" url="admin/config/config_basic_do" enctype="multipart/form-data" >	
@@ -320,4 +319,3 @@
 			</table>
 		</div>
 	</div>
-</div>

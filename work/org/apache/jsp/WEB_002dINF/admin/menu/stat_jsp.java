@@ -51,8 +51,24 @@ public final class stat_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\" >\r\n");
-      out.write("\t\t<li><span>基础数据统计</span><ul ><li class=\"selected\"><a href=\"/iwebshop/index.php?controller=market&amp;action=user_reg\">用户注册统计</a></li><li><a href=\"/iwebshop/index.php?controller=market&amp;action=spanding_avg\">人均消费统计</a></li><li><a href=\"/iwebshop/index.php?controller=market&amp;action=amount\">销售金额统计</a></li></ul></li><li><span>日志操作记录</span><ul ><li><a href=\"/iwebshop/index.php?controller=market&amp;action=account_list\">资金操作记录</a></li><li><a href=\"/iwebshop/index.php?controller=market&amp;action=operation_list\">后台操作记录</a></li></ul></li></ul>");
+      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\">\r\n");
+      out.write("\t<li><span>基础数据统计</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/stat/userreg\">用户注册统计</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/stat/spandingavg\">人均消费统计</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/stat/amount\">销售金额统计</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>日志操作记录</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/accountlog/index\">资金操作记录</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/logoperation/index\">后台操作记录</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("</ul>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

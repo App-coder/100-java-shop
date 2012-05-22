@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<ul class="easyui-tree" animate="true" lines="true" >
+<ul class="easyui-tree" animate="true" lines="true">
 	<li><span>后台首页</span>
 		<ul>
-			<li><a href="javascript:tab('我的主页','admin/webmaster/menu?item=myhomepage');">后台首页</a></li>
+			<li><a
+				href="javascript:tab('我的主页','admin/webmaster/myhomepage');">后台首页</a></li>
 		</ul></li>
 	<li><span>网站管理</span>
 		<ul>
@@ -20,15 +21,21 @@
 		</ul></li>
 	<li><span>配送管理</span>
 		<ul>
-			<li><a
-				href="/iwebshop/index.php?controller=system&amp;action=delivery">配送方式</a></li>
-			<li><a
-				href="/iwebshop/index.php?controller=system&amp;action=area">地区管理</a></li>
-			<li><a
-				href="/iwebshop/index.php?controller=system&amp;action=freight_list">物流公司</a></li>
-			<li><a
-				href="/iwebshop/index.php?controller=system&amp;action=express">快递跟踪</a></li>
+			<li><a href="admin/delivery/index">配送方式</a></li>
+			<li><a href="admin/areas/index">地区管理</a></li>
+			<li><a href="admin/freightcompany/index">物流公司</a></li>
+			<li><a href="admin/config/express">快递跟踪</a></li>
 		</ul></li>
-		<li><span>权限管理</span><ul><li><a href="/iwebshop/index.php?controller=system&amp;action=admin_list">管理员</a></li><li><a href="/iwebshop/index.php?controller=system&amp;action=role_list">角色</a></li><li><a href="/iwebshop/index.php?controller=system&amp;action=right_list">权限资源</a></li></ul></li>
-		<li><span>系统升级</span><ul><li><a href="/iwebshop/index.php?controller=system&amp;action=upgrade_1">系统升级</a></li></ul></li>
+	<li><span>权限管理</span>
+	<ul>
+			<li><a href="admin/admin/index">管理员</a></li>
+			<li><a
+				href="admin/adminrole/index">角色</a></li>
+			<li><a
+				href="admin/right/index">权限资源</a></li>
+		</ul></li>
+	<li><span>系统升级</span>
+	<ul>
+			<li><a href="http://www.100-china.com/index.php/javashop/upgrade">系统升级</a></li>
+		</ul></li>
 </ul>

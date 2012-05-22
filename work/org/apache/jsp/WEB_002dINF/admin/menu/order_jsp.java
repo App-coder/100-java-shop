@@ -51,8 +51,33 @@ public final class order_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("<ul class=\"easyui-tree\"  lines=\"true\">\r\n");
-      out.write("\t\t<li><span>订单管理</span><ul ><li class=\"selected\"><a href=\"/iwebshop/index.php?controller=order&amp;action=order_list\">订单列表</a></li><li><a href=\"/iwebshop/index.php?controller=order&amp;action=order_add\">添加订单</a></li></ul></li><li><span>单据管理</span><ul ><li><a href=\"/iwebshop/index.php?controller=order&amp;action=order_collection_list\">收款单</a></li><li><a href=\"/iwebshop/index.php?controller=order&amp;action=order_refundment_list\">退款单</a></li><li><a href=\"/iwebshop/index.php?controller=order&amp;action=order_delivery_list\">配货单</a></li><li><a href=\"/iwebshop/index.php?controller=order&amp;action=order_returns_list\">退货单</a></li><li><a href=\"/iwebshop/index.php?controller=order&amp;action=refundment_list\">退款申请列表</a></li></ul></li><li><span>快递单管理</span><ul ><li><a href=\"/iwebshop/index.php?controller=order&amp;action=ship_info_list\">发货信息管理</a></li></ul></li></ul>");
+      out.write("<ul class=\"easyui-tree\" lines=\"true\">\r\n");
+      out.write("\t<li><span>订单管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a \r\n");
+      out.write("\t\t\t\thref=\"admin/order/index\">订单列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/order/add\">添加订单</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>单据管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/collectiondoc/index\">收款单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/refundmentdoc/index\">退款单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/deliverydoc/index\">配货单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/returnsdoc/index\">退货单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/refundmentdoc/list\">退款申请列表</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>快递单管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/merchshipinfo/index\">发货信息管理</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("</ul>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

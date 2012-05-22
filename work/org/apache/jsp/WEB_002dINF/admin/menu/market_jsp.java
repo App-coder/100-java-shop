@@ -51,8 +51,26 @@ public final class market_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\" >\r\n");
-      out.write("\t\t<li><span>促销活动</span><ul ><li class=\"selected\"><a href=\"/iwebshop/index.php?controller=market&amp;action=pro_rule_list\">促销活动列表</a></li></ul></li><li><span>营销活动</span><ul ><li><a href=\"/iwebshop/index.php?controller=market&amp;action=pro_speed_list\">限时抢购</a></li><li><a href=\"/iwebshop/index.php?controller=market&amp;action=regiment_list\">团购</a></li></ul></li><li><span>代金券管理</span><ul ><li><a href=\"/iwebshop/index.php?controller=market&amp;action=ticket_list\">代金券列表</a></li><li><a href=\"/iwebshop/index.php?controller=market&amp;action=ticket_excel_list\">代金券文件列表</a></li></ul></li></ul>");
+      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\">\r\n");
+      out.write("\t<li><span>促销活动</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/promotion/index\">促销活动列表</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>营销活动</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/promotion/speed\">限时抢购</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/regiment/index\">团购</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>代金券管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a href=\"admin/ticket/index\">代金券列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/ticketexcel/index\">代金券文件列表</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("</ul>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

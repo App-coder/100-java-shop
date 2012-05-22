@@ -52,7 +52,6 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/myhomepage.js\"></script>\n");
-      out.write("<div class=\"bd\" >\n");
       out.write("<table style=\"width:100%;\">\n");
       out.write("\t<tr>\n");
       out.write("\t\t<td width=\"50%\" valign=\"top\">\n");
@@ -135,7 +134,6 @@ public final class myhomepage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</td>\n");
       out.write("\t</tr>\n");
       out.write("</table>\n");
-      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

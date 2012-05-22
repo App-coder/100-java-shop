@@ -64,7 +64,8 @@ function tab(title, url,closable) {
 		$('#tabs').tabs('add',{
 			title : title,
 			closable : closable,
-			href:url
+			href:url,
+			bodyCls:'p10'
 			/*
 			content : '<iframe src="'
 					+ url
