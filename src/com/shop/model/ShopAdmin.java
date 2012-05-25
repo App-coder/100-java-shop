@@ -6,7 +6,7 @@ public class ShopAdmin {
     private Integer id;
 
     private String adminName;
-
+    
     private String password;
 
     private Integer roleId;
@@ -20,6 +20,8 @@ public class ShopAdmin {
     private Date lastTime;
 
     private Boolean isDel;
+    
+    private String roleName;
 
     public Integer getId() {
         return id;
@@ -92,4 +94,15 @@ public class ShopAdmin {
     public void setIsDel(Boolean isDel) {
         this.isDel = isDel;
     }
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+    
+    
+    
 }

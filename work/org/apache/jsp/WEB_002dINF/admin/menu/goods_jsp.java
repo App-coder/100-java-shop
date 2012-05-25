@@ -52,6 +52,7 @@ public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\" >\r\n");
+      out.write("\r\n");
       out.write("\t<li><span>商品管理</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
@@ -59,6 +60,7 @@ public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<li><a\r\n");
       out.write("\t\t\t\thref=\"admin/goods/add\">商品添加</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
+      out.write("\t\t\r\n");
       out.write("\t<li><span>商品分类</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
@@ -80,7 +82,7 @@ public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<li><a\r\n");
       out.write("\t\t\t\thref=\"admin/spec/index\">规格列表</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/specPhoto/index\">规格图库</a></li>\r\n");
+      out.write("\t\t\t\thref=\"admin/specphoto/index\">规格图库</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>热门搜索</span>\r\n");
       out.write("\t<ul>\r\n");

@@ -1,5 +1,7 @@
 package com.shop.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,5 +21,11 @@ public class AdminServiceImpl implements AdminService {
 	public ShopAdmin findByName(String adminName){
 		return this.adminMapper.findByName(adminName);
 	}
+
+
+	public List<ShopAdmin> loadByIsDel(int i) {
+		return this.adminMapper.loadByIsDel(i);
+	}
+
 
 }

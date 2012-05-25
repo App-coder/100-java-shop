@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,11 +80,8 @@ public class WebmasterController extends BaseController{
 		return "admin/console";
 	}
 	
-	@RequestMapping(value="/menu")
-	public String menu(@RequestParam("item") String item,ModelMap modelMap){
-		if(item == null){
-			item = "myhomepage";
-		}
+	@RequestMapping(value="/{item}", method=RequestMethod.GET)
+	public String menu(@PathVariable("item") String item,ModelMap modelMap){
 		return "admin/menu/"+item;
 	}
 	

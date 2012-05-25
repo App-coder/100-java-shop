@@ -28,11 +28,11 @@
 		</ul></li>
 	<li><span>权限管理</span>
 	<ul>
-			<li><a href="admin/admin/index">管理员</a></li>
+			<li><a href="javascript:tab('管理员','admin/admin/index')">管理员</a></li>
 			<li><a
-				href="admin/adminrole/index">角色</a></li>
+				href="javascript:tab('角色','admin/adminrole/index')">角色</a></li>
 			<li><a
-				href="admin/right/index">权限资源</a></li>
+				href="javascript:tab('权限资源','admin/right/index')">权限资源</a></li>
 		</ul></li>
 	<li><span>系统升级</span>
 	<ul>

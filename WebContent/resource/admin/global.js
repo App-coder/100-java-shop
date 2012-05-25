@@ -10,13 +10,16 @@ $(function() {
 		 unmask();
 	 });*/
 });
-function menuList(menuid) {
+function menuList(url) {
+	
+	var menuid = url.replace("admin/webmaster/","");
+
 	$("#nav_" + menuid).parent().parent("ul").find("li")
 			.removeClass("selected");
 
 	$("#nav_" + menuid).parent("li").addClass("selected");
 	var title;
-	var url;
+
 	if (menuid == 'goods') {
 		title = "商品";
 	} else if (menuid == 'member') {
@@ -33,11 +36,7 @@ function menuList(menuid) {
 		title = "工具";
 	}
 
-	url = "admin/webmaster/menu";
-
-	$.post(url, {
-		item : menuid
-	}, function(data) {
+	$.get(url,null, function(data) {
 		$("#lefttree").panel({
 			title:title,
 			content:data

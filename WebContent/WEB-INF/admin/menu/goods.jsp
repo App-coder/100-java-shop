@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <ul class="easyui-tree" animate="true" lines="true" >
+
 	<li><span>商品管理</span>
 	<ul>
 			<li><a
@@ -8,6 +9,7 @@
 			<li><a
 				href="admin/goods/add">商品添加</a></li>
 		</ul></li>
+		
 	<li><span>商品分类</span>
 	<ul>
 			<li><a

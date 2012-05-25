@@ -9,11 +9,14 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="last_ip" property="lastIp" jdbcType="VARCHAR" />
+    <result column="role_name" property="roleName" jdbcType="VARCHAR" />
     <result column="last_time" property="lastTime" jdbcType="TIMESTAMP" />
     <result column="is_del" property="isDel" jdbcType="BIT" />
   </resultMap>
  <select id="findByName"   parameterType="string" resultMap="ShopAdminResult" >
 	select * from shop_admin where admin_name = #{name} 
  </select>
-  
+  <select id="loadByIsDel" resultMap="ShopAdminResult" >
+  	select admin.*,IFNULL(role.`name`,'管理员') role_name from shop_admin admin left join shop_admin_role role on admin.role_id = role.id where admin.is_del = #{is_del} order by create_time asc
+  </select>
 </mapper>  

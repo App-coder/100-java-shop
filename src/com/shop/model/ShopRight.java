@@ -8,6 +8,8 @@ public class ShopRight {
     private String right;
 
     private Boolean isDel;
+    
+    private int _parentId;
 
     public Integer getId() {
         return id;
@@ -40,4 +42,15 @@ public class ShopRight {
     public void setIsDel(Boolean isDel) {
         this.isDel = isDel;
     }
+
+	public int get_parentId() {
+		return _parentId;
+	}
+
+	public void set_parentId(int _parentId) {
+		this._parentId = _parentId;
+	}
+    
+    
+    
 }

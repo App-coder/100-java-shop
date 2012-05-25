@@ -1,0 +1,40 @@
+$(function(){
+	$('#rightlist').treegrid({
+		url:'admin/right/list',
+		fit:'true',
+		nowrap: false,
+		striped: true,
+		collapsible:true,
+		idField:'id',
+        rownumbers:true,
+        frozenColumns:[[
+          {field:'id',checkbox:true}
+    	]],
+		columns:[[
+			{field:'name',title:'名称',width:200},
+			{field:'right',title:'权限URL',width:200},
+			{field:'sno',title:'排序ID',width:200}
+		]],
+		toolbar:[
+		{
+			text:'添加权限',
+			iconCls:'icon-add',
+			handler:function(){
+			}
+		},
+		{
+			text:'修改',
+			iconCls:'icon-edit',
+			handler:function(){
+				
+			}
+		},
+		{
+			text:'删除',
+			iconCls:'icon-cut',
+			handler:function(){
+			}
+		}
+		]
+	});
+});

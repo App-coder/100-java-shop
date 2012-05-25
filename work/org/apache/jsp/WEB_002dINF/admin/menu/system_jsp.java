@@ -79,11 +79,11 @@ public final class system_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>权限管理</span>\r\n");
       out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a href=\"admin/admin/index\">管理员</a></li>\r\n");
+      out.write("\t\t\t<li><a href=\"javascript:tab('管理员','admin/admin/index')\">管理员</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/adminrole/index\">角色</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('角色','admin/adminrole/index')\">角色</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/right/index\">权限资源</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('权限资源','admin/right/index')\">权限资源</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>系统升级</span>\r\n");
       out.write("\t<ul>\r\n");

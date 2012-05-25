@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.AdminRoleMapper">
+	<resultMap id="ShopAdminRoleResult" type="com.shop.model.ShopAdminRole">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="is_del" jdbcType="BIT" property="isDel" />
+	</resultMap>
+	<select id="loadByIsDel" >
+		select * from shop_admin_role where is_del = #{is_del}
+	</select>
+	
+	
+</mapper>
