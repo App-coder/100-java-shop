@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.shop.service.ConfigService;
+import com.shop.service.admin.ConfigService;
 import com.shop.util.CacheManager;
 import com.shop.util.Constant;
 import com.shop.util.cache.CacheStore;

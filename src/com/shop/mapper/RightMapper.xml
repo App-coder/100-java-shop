@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.RightMapper">
+  <resultMap id="ShoprightResult" type="com.shop.model.ShopRight">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="right" jdbcType="VARCHAR" property="right" />
+    <result column="itemid" jdbcType="INTEGER" property="itemid" />
+    <result column="sno" jdbcType="INTEGER" property="sno" />
+    <result column="_parentId" jdbcType="INTEGER" property="_parentId" />
+  </resultMap>
+  <select id="loadRights" resultMap="ShoprightResult">
+  	select id,`name`,`right`,itemid as _parentId from shop_right
+  </select>
+  <select id="loadAll" resultMap="ShoprightResult" >
+  	select * from shop_right order by itemid asc,sno asc
+  </select>
+</mapper>

@@ -5,7 +5,7 @@ import java.util.List;
 
 
 import com.shop.model.ShopConfig;
-import com.shop.service.ConfigService;
+import com.shop.service.admin.ConfigService;
 
 public class CacheStore {
 	

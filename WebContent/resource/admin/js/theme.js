@@ -1,9 +1,10 @@
 $(function(){
 	//导航设置
 	$('#theme_list').datagrid({
-		url:'admin/guide/loadAll',
+		url:'admin/theme/list',
 		fit:'true',
 		nowrap: false,
+		method:'get',
 		striped: true,
 		collapsible:false,
 		idField:'order',

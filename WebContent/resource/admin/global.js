@@ -64,7 +64,8 @@ function tab(title, url,closable) {
 			title : title,
 			closable : closable,
 			href:url,
-			bodyCls:'p10'
+			bodyCls:'p10',
+			cache:false
 			/*
 			content : '<iframe src="'
 					+ url

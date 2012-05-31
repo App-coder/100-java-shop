@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.shop.action.BaseController;
+import com.shop.action.admin.BaseController;
 import com.shop.action.tool.comparator.NameComparator;
 import com.shop.action.tool.comparator.SizeComparator;
 import com.shop.action.tool.comparator.TypeComparator;

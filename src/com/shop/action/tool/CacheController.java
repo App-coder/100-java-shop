@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 
 import com.shop.bean.Message;
-import com.shop.service.ConfigService;
+import com.shop.service.admin.ConfigService;
 import com.shop.util.CacheManager;
 import com.shop.util.Configuration;
 import com.shop.util.Constant;
