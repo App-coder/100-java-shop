@@ -36,4 +36,9 @@ public class StringUtil {
 	public static String getTimeMD5(){
 		return StringUtil.getMD5((new Date().getTime()+"").getBytes());
 	}
+	
+	public static String getBase64(byte[] source){
+		return new sun.misc.BASE64Encoder().encode(source);
+	}
+	
 }

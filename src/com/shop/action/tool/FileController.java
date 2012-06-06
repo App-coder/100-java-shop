@@ -24,7 +24,7 @@ import com.shop.action.admin.BaseController;
 import com.shop.action.tool.comparator.NameComparator;
 import com.shop.action.tool.comparator.SizeComparator;
 import com.shop.action.tool.comparator.TypeComparator;
-import com.shop.bean.Message;
+import com.shop.bean.common.Message;
 import com.shop.util.DateUtil;
 import com.shop.util.FileUtil;
 import com.shop.util.StringUtil;

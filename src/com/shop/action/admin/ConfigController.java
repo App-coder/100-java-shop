@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.shop.bean.IndexSlide;
-import com.shop.bean.Message;
+import com.shop.bean.common.Message;
+import com.shop.bean.shop.IndexSlide;
 import com.shop.service.admin.ConfigService;
 import com.shop.util.CacheManager;
 import com.shop.util.Constant;

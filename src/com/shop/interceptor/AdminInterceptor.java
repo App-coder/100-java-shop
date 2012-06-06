@@ -3,7 +3,6 @@ package com.shop.interceptor;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,6 +22,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 	// preHandle()方法在业务处理器处理请求之前被调用  
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object obj) throws Exception {
+		
 		Object systemconfig = CacheManager.getFromCache(Constant.SYSTEM_CONFIG);
 		if(systemconfig == null){
 			Object hashmap = new CacheStore().getSystemConfig(configService);
@@ -31,6 +31,8 @@ public class AdminInterceptor implements HandlerInterceptor {
 		}else{
 			request.setAttribute(Constant.SYSTEM_CONFIG, systemconfig);
 		}
+		
+		
 		return true;
 		/*
 		if(request.getSession().getAttribute(Constant.ADMIN_USER)!=null){

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.shop.bean.Message;
+import com.shop.bean.common.Message;
 import com.shop.model.ShopFreightCompany;
 import com.shop.service.admin.FreightCompanyService;
 

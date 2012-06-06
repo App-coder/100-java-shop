@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.shop.bean.ListBean;
+import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopRefer;
 import com.shop.service.admin.ReferService;
 import java.util.*;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 
-import com.shop.bean.Message;
+import com.shop.bean.common.Message;
 import com.shop.service.admin.ConfigService;
 import com.shop.util.CacheManager;
 import com.shop.util.Configuration;

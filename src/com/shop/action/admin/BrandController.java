@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.shop.bean.ListBean;
+import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopBrand;
 import com.shop.service.admin.BrandService;
 import java.util.*;

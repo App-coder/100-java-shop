@@ -6,7 +6,7 @@ public class ShopCategoryExtend {
     private Integer goodsId;
 
     private Integer categoryId;
-
+    
     public Integer getId() {
         return id;
     }
@@ -30,4 +30,5 @@ public class ShopCategoryExtend {
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
+
 }

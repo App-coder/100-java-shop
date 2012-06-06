@@ -1,5 +1,8 @@
 package com.shop.model;
 
+import java.util.List;
+
+
 public class ShopCategory {
     private Integer id;
 
@@ -18,6 +21,8 @@ public class ShopCategory {
     private String descript;
 
     private String title;
+    
+    List<ShopCategory> childs;
 
     public Integer getId() {
         return id;
@@ -90,4 +95,13 @@ public class ShopCategory {
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
     }
+    
+	public List<ShopCategory> getChilds() {
+		return childs;
+	}
+
+	public void setChilds(List<ShopCategory> childs) {
+		this.childs = childs;
+	}
+    
 }

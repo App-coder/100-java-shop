@@ -16,8 +16,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_dependants.add("/WEB-INF/c.tld");
   }
 
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fif_0026_005ftest;
-
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -26,13 +24,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   public void _jspInit() {
-    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
-    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -78,9 +74,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("</title>\n");
       out.write("<script type=\"text/javascript\" src=\"resource/easyui/jquery-1.7.2.min.js\"></script>\n");
       out.write("<link href=\"resource/admin/login/css/login.css\" rel=\"stylesheet\" type=\"text/css\" />\n");
-      out.write("<style>\n");
-      out.write(".Errormsg{padding:0 0 0 10px; line-height:25px; color:#4c4c4c; font-size:14px;}\n");
-      out.write("</style>\n");
       out.write("<script language=\"JavaScript\">\n");
       out.write("function fleshVerify(){ \n");
       out.write("\t$('#verifyImg').attr('src', '/kaptcha.jpg?' + Math.floor(Math.random()*100) ); \n");
@@ -89,55 +82,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("<div id=\"login\">\n");
-      out.write("\t<div id=\"login_header\">\n");
-      out.write("\t\t<h1 class=\"login_logo\">\n");
-      out.write("\t\t\t<a href=\"index.php/webmaster/login\"><img src=\"resource/admin/login/images/login_logo.gif\" /></a>\n");
-      out.write("\t\t</h1>\n");
-      out.write("\t\t<div class=\"login_headerContent\">\n");
-      out.write("\t\t\t<div class=\"navList\">\n");
-      out.write("\t\t\t\t<ul>\n");
-      out.write("\t\t\t\t\t<li><a href=\"#\">返回首页</a></li>\n");
-      out.write("\t\t\t\t\t<li><a href=\"#\">反馈</a></li>\n");
-      out.write("\t\t\t\t\t<li><a href=\"#\">帮助</a></li>\n");
-      out.write("\t\t\t\t</ul>\n");
-      out.write("\t\t\t</div>\n");
-      out.write("\t\t\t<h2 class=\"login_title\"><img src=\"resource/admin/login/images/login_title.png\" /></h2>\n");
-      out.write("\t\t</div>\n");
-      out.write("\t</div>\n");
-      out.write("\t<div id=\"login_content\">\n");
-      out.write("\t\t<div class=\"loginForm\">\n");
-      out.write("\t\t\t");
-      if (_jspx_meth_c_005fif_005f0(_jspx_page_context))
-        return;
-      out.write("\n");
-      out.write("\t\t\t<form method=\"post\" action=\"admin/webmaster/login\" >\n");
+      out.write("    <div id=\"login_content\">\n");
+      out.write("    <div class=\"loginForm\">\n");
+      out.write("            \t<form method=\"post\" action=\"admin/webmaster/login\" >\n");
       out.write("\t\t\t\t<p>\n");
-      out.write("\t\t\t\t\t<label>帐号：</label>\n");
-      out.write("\t\t\t\t\t<input type=\"text\" name=\"user_name\" size=\"20\" class=\"login_input\" />\n");
+      out.write("\t\t\t\t\t<input type=\"text\" name=\"user_name\" autocomplete=\"false\" size=\"20\" class=\"login_input\" />\n");
       out.write("\t\t\t\t</p>\n");
       out.write("\t\t\t\t<p>\n");
-      out.write("\t\t\t\t\t<label>密码：</label>\n");
-      out.write("\t\t\t\t\t<input type=\"password\" name=\"password\" size=\"20\" class=\"login_input\" />\n");
+      out.write("\t\t\t\t\t<input type=\"password\" name=\"password\" autocomplete=\"false\" size=\"20\" class=\"login_input\" />\n");
       out.write("\t\t\t\t</p>\n");
       out.write("\t\t\t\t<p>\n");
-      out.write("\t\t\t\t\t<label>验证码：</label>\n");
-      out.write("\t\t\t\t\t<input class=\"code\" name=\"verify\" type=\"text\" size=\"5\" />\n");
-      out.write("\t\t\t\t</p>\n");
-      out.write("\t\t\t\t<p>\n");
-      out.write("\t\t\t\t\t<img id=\"verifyImg\" src=\"kaptcha.jpg\" style=\"margin-top:10px;margin-left:10px;\" onClick=\"fleshVerify()\" border=\"0\" title=\"点击刷新验证码\" alt=\"点击刷新验证码\" style=\"cursor:pointer\" align=\"absmiddle\"/>\n");
+      out.write("\t\t\t\t\t<input type=\"text\" name=\"verify\"  autocomplete=\"false\" size=\"20\" class=\"login_input\" />\n");
       out.write("\t\t\t\t</p>\n");
       out.write("\t\t\t\t<div class=\"login_bar\" >\n");
-      out.write("\t\t\t\t\t<input class=\"sub\" type=\"submit\" name=\"form_submit\" value=\" \" />\n");
+      out.write("\t\t\t\t\t<img src=\"kaptcha.jpg\" id=\"verifyImg\" onclick=\"fleshVerify()\" title=\"看不清楚，换一张！\" width=\"70\" style=\"margin-top:-10px;float:left;cursor: pointer; \"/>\n");
+      out.write("\t\t\t\t\t<input class=\"login_btn sub\" type=\"submit\" name=\"form_submit\" style=\"margin-top:-10px;\"  value=\" \" />\n");
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t</form>\n");
       out.write("\t\t</div>\n");
-      out.write("\t\t<div class=\"login_banner\"><img src=\"resource/admin/login/images/login_banner.jpg\" /></div>\n");
-      out.write("\t\t<div class=\"login_main\">\n");
-      out.write("\t\t</div>\n");
-      out.write("\t</div>\n");
-      out.write("\t<div id=\"login_footer\">\n");
-      out.write("\t\t中国百分百商城系统\n");
-      out.write("\t</div>\n");
+      out.write("    </div>\n");
       out.write("</div>\n");
       out.write("</body>\n");
       out.write("</html>");
@@ -151,36 +114,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
-  }
-
-  private boolean _jspx_meth_c_005fif_005f0(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
-    _jspx_th_c_005fif_005f0.setParent(null);
-    // /WEB-INF/admin/index.jsp(44,3) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${message!=null }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
-    int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
-    if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      do {
-        out.write("\n");
-        out.write("\t\t\t\t<p><span class=\"Errormsg\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${message }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-        out.write("</span></p>\n");
-        out.write("\t\t\t");
-        int evalDoAfterBody = _jspx_th_c_005fif_005f0.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-    }
-    if (_jspx_th_c_005fif_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fc_005fif_0026_005ftest.reuse(_jspx_th_c_005fif_005f0);
-    return false;
   }
 }

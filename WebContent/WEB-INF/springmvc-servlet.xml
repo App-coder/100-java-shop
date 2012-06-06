@@ -27,21 +27,22 @@
 	<mvc:annotation-driven />
 
 	<mvc:interceptors>
+		<!-- 全局拦截，可用于防盗链，记住访问来源，记住刚才访问的链接  -->
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<bean class="com.shop.interceptor.BaseInterceptor" />
 		</mvc:interceptor>
+		<!-- 管理员拦截器-->
 		<mvc:interceptor>
 			<mvc:mapping path="/admin/**" />
 			<bean class="com.shop.interceptor.AdminInterceptor" />
 		</mvc:interceptor>
+		 <!-- 前台拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/portal/**" />
+			<bean class="com.shop.interceptor.PortalInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
-
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="/WEB-INF/messages/messages" />
-		<property name="cacheSeconds" value="0" />
-	</bean>
 
 	<!-- Default ViewResolver -->
 	<bean id="viewResolver"

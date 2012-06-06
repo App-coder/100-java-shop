@@ -24,5 +24,7 @@ public interface GoodsService {
 
 	int updateIsDel(int[] ids, int isdel);
 
+	
+
 
 }
