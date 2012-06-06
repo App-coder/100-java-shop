@@ -19,4 +19,6 @@ public interface OrderService {
 
 	List<ShopOrder> loadFilter(int page, int rows, int pay_status,
 			int distribution_status, int status);
+	
+	Double getGrossSales();
 }

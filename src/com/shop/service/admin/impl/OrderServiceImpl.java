@@ -55,4 +55,8 @@ public class OrderServiceImpl implements OrderService {
 		return null;
 	}
 
+	public Double getGrossSales() {
+		return this.orderMapper.getGrossSales();
+	}
+
 }

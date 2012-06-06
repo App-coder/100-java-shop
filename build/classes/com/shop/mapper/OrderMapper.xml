@@ -51,5 +51,7 @@
 		select id,order_no,accept_name,pay_status,order_amount,create_time from 
 		shop_order order by create_time desc limit 0,#{size}
 	</select>
-
+	<select id="getGrossSales" resultType="DOUBLE">
+		select sum(order_amount) as amount from shop_order where status = 5
+	</select>
 </mapper>

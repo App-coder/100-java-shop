@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.GoodsMapper">
+	<resultMap id="BaseResultMap" type="com.shop.model.ShopGoods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="goods_no" jdbcType="VARCHAR" property="goodsNo" />
+    <result column="model_id" jdbcType="INTEGER" property="modelId" />
+    <result column="sell_price" jdbcType="REAL" property="sellPrice" />
+    <result column="market_price" jdbcType="REAL" property="marketPrice" />
+    <result column="up_time" jdbcType="TIMESTAMP" property="upTime" />
+    <result column="down_time" jdbcType="TIMESTAMP" property="downTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="store_nums" jdbcType="INTEGER" property="storeNums" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="is_del" jdbcType="BIT" property="isDel" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="tag_ids" jdbcType="VARCHAR" property="tagIds" />
+    <result column="weight" jdbcType="REAL" property="weight" />
+    <result column="point" jdbcType="INTEGER" property="point" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="brand_id" jdbcType="INTEGER" property="brandId" />
+    <result column="visit" jdbcType="INTEGER" property="visit" />
+    <result column="favorite" jdbcType="INTEGER" property="favorite" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="list_img" jdbcType="VARCHAR" property="listImg" />
+    <result column="small_img" jdbcType="VARCHAR" property="smallImg" />
+    <result column="exp" jdbcType="INTEGER" property="exp" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="spec_array" jdbcType="LONGVARCHAR" property="specArray" />
+  </resultMap>
+</mapper>

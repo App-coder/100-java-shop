@@ -77,6 +77,9 @@ public class WebmasterController extends BaseController{
 	public String console(HttpSession session,ModelMap modelMap){
 		HashMap<String, String> hashconfig = (HashMap<String, String>)CacheManager.getFromCache(Constant.SYSTEM_CONFIG);
 		modelMap.addAttribute("webtitle",hashconfig.get("name"));
+		
+		
+		
 		return "admin/console";
 	}
 	
