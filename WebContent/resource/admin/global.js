@@ -57,6 +57,7 @@ function tab(title, url,closable) {
 			id:new Date().getTime(),
 			closable : closable,
 			href:url,
+			cache:false,
 //			content:"<iframe src="+url+" frameborder='0' width='100%' height='100%' />",
 			bodyCls:'p10'
 		});
