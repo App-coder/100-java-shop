@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.AreasMapper">
+  <resultMap id="ShopAreasResult" type="com.shop.model.ShopAreas">
+    <id column="area_id" jdbcType="INTEGER" property="areaId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+  <select id="getAreaByParent" resultMap="ShopAreasResult">
+	select areas.*,if((select count(shop_areas.area_id) from shop_areas where shop_areas.parent_id = areas.area_id)>0,'closed','open') state  from shop_areas areas where parent_id = #{parentid} ORDER BY sort asc  
+  </select>
+</mapper>

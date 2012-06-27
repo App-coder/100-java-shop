@@ -8,6 +8,7 @@ import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.bean.common.Message;
 import com.shop.model.ShopOauth;
@@ -23,9 +24,15 @@ public class OauthController extends BaseController {
 		this.oauthService = oauthService;
 	}
 
-
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(){
+		return "admin/oauth";
+	}
+	
+
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	@ResponseBody
+	public String list(){
 		List<ShopOauth> oauths = this.oauthService.loadAll();
 		return JSONArray.fromObject(oauths).toString();
 	}

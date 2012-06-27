@@ -27,11 +27,10 @@ public class DeliveryController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(){
-		
 		return "admin/delivery";
 	}
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	@ResponseBody
 	public String list(){
 		List<ShopDelivery> deliverys  = this.deliveryService.loadAll();

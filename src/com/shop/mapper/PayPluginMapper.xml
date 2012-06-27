@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.PayPluginMapper">
+	<resultMap id="ShopPayPluginResult" type="com.shop.model.ShopPayPlugin">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="logo" jdbcType="VARCHAR" property="logo" />
+		<result column="file_path" jdbcType="VARCHAR" property="filePath" />
+		<result column="version" jdbcType="VARCHAR" property="version" />
+		<result column="visibility" jdbcType="BIT" property="visibility" />
+		<result column="description" jdbcType="LONGVARCHAR" property="description" />
+	</resultMap>
+	<select id="loadPayPluginsByVisibility" resultMap="ShopPayPluginResult">
+		select * from shop_pay_plugin where visibility = #{visibility}
+	</select>
+	<select id="loadPayment" resultMap="ShopPayPluginResult">
+		select plug.* from shop_pay_plugin plug right join shop_payment payment on payment.`name` = plug.`name`
+	</select>
+</mapper>

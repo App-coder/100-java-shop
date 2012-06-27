@@ -13,18 +13,18 @@
 		</ul></li>
 	<li><span>支付管理</span>
 		<ul>
-			<li><a href="admin/payment/index">支付方式</a></li>
+			<li><a href="javascript:tab('支付方式','admin/payment/index')">支付方式</a></li>
 		</ul></li>
 	<li><span>多平台登入</span>
 		<ul>
-			<li><a href="javascript:tab('主题设置','admin/theme/index')">平台列表</a></li>
+			<li><a href="javascript:tab('平台列表','admin/oauth/index')">平台列表</a></li>
 		</ul></li>
 	<li><span>配送管理</span>
 		<ul>
-			<li><a href="admin/delivery/index">配送方式</a></li>
-			<li><a href="admin/areas/index">地区管理</a></li>
-			<li><a href="admin/freightcompany/index">物流公司</a></li>
-			<li><a href="admin/config/express">快递跟踪</a></li>
+			<li><a href="javascript:tab('配送方式','admin/delivery/index')">配送方式</a></li>
+			<li><a href="javascript:tab('地区管理','admin/areas/index')">地区管理</a></li>
+			<li><a href="javascript:tab('物流公司','admin/freightcompany/index')">物流公司</a></li>
+			<li><a href="javascript:tab('快递跟踪','admin/config/express')">快递跟踪</a></li>
 		</ul></li>
 	<li><span>权限管理</span>
 	<ul>

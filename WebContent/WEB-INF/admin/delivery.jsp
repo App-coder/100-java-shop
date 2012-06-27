@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ include file="header.jsp"%>
+<%@ include file="common/config.jsp" %>
 <script type="text/javascript" src="resource/admin/js/delivery.js"></script>
-</head>
-<body class="body_panel">
-<table id="deliverylist" title="配送方式列表" fit="true"></table>		
-</body>
-</html>
+<table id="delivery_list" title="配送方式列表" fit="true"></table>

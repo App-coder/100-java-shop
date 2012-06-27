@@ -14,6 +14,8 @@ import com.shop.bean.common.Message;
 import com.shop.model.ShopTheme;
 import com.shop.service.admin.ConfigService;
 import com.shop.service.admin.ThemeService;
+import com.shop.util.CacheManager;
+import com.shop.util.Constant;
 
 import java.util.*;
 
@@ -109,6 +111,7 @@ public class ThemeController extends BaseController {
 	public String cfg_theme(String theme){
 		this.configService.updateConfig("theme", theme);
 		Message message = new Message("true","主题配置成功");
+		CacheManager.removeCache(Constant.SYSTEM_CONFIG);
 		return JSONObject.fromObject(message).toString();
 	}
 	

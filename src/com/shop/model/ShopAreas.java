@@ -8,6 +8,8 @@ public class ShopAreas {
     private String areaName;
 
     private Integer sort;
+    
+    private String state;
 
     public Integer getAreaId() {
         return areaId;
@@ -40,4 +42,14 @@ public class ShopAreas {
     public void setSort(Integer sort) {
         this.sort = sort;
     }
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+    
+    
 }

@@ -1,7 +1,12 @@
 package com.shop.model;
 
-public class ShopDelivery {
-    private Integer id;
+import java.io.Serializable;
+
+public class ShopDelivery implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String name;
 
@@ -34,6 +39,14 @@ public class ShopDelivery {
     private Boolean isDelete;
 
     private Integer freightId;
+    
+    private String area;
+
+    private String areaGroupid;
+
+    private String firstprice;
+
+    private String secondprice;
 
     public Integer getId() {
         return id;
@@ -170,4 +183,39 @@ public class ShopDelivery {
     public void setFreightId(Integer freightId) {
         this.freightId = freightId;
     }
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getAreaGroupid() {
+		return areaGroupid;
+	}
+
+	public void setAreaGroupid(String areaGroupid) {
+		this.areaGroupid = areaGroupid;
+	}
+
+	public String getFirstprice() {
+		return firstprice;
+	}
+
+	public void setFirstprice(String firstprice) {
+		this.firstprice = firstprice;
+	}
+
+	public String getSecondprice() {
+		return secondprice;
+	}
+
+	public void setSecondprice(String secondprice) {
+		this.secondprice = secondprice;
+	}
+    
+    
+    
 }

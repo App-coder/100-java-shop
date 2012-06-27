@@ -3,6 +3,7 @@
 /*easyui*/
 body{font-size:12px;}
 body, input, button, select, textarea{font:12px/1.5 Tahoma,'Microsoft Yahei','Simsun'}
+textarea{ resize: none;}
 
 a{cursor: pointer;text-decoration: none;color:#000;}
 

@@ -2,17 +2,14 @@ var msg_ex = "系统出现异常，请联系管理员！";
 
 $(function() {
 	/*
-	 $("body").ajaxStart(function(){
-		 mask();
-	 });
-	
-	 $("body").ajaxStop(function(){
-		 unmask();
-	 });*/
+	 * $("body").ajaxStart(function(){ mask(); });
+	 * 
+	 * $("body").ajaxStop(function(){ unmask(); });
+	 */
 });
 function menuList(url) {
-	
-	var menuid = url.replace("admin/webmaster/","");
+
+	var menuid = url.replace("admin/webmaster/", "");
 
 	$("#nav_" + menuid).parent().parent("ul").find("li")
 			.removeClass("selected");
@@ -36,36 +33,36 @@ function menuList(url) {
 		title = "工具";
 	}
 
-	$.get(url,null, function(data) {
+	$.get(url, null, function(data) {
 		$("#lefttree").panel({
-			title:title,
-			content:data
+			title : title,
+			content : data
 		});
 	}, 'html');
 
 }
-function tab(title, url,closable) {
-	if(closable == undefined){
+function tab(title, url, closable) {
+	if (closable == undefined) {
 		closable = true;
 	}
 	var exists = $('#tabs').tabs('exists', title);
 
 	if (!exists) {
 
-		$('#tabs').tabs('add',{
+		$('#tabs').tabs('add', {
 			title : title,
-			id:new Date().getTime(),
+			id : new Date().getTime(),
 			closable : closable,
-			href:url,
-			cache:false,
-//			content:"<iframe src="+url+" frameborder='0' width='100%' height='100%' />",
-			bodyCls:'p10'
+			href : url,
+			cache : false,
+//			content:"<iframe src="+url+" frameborder='0' width='100%'  height='100%' />",
+			bodyCls : 'p10'
 		});
-		
+
 	} else {
-		$('#tabs').tabs("select",title)
+		$('#tabs').tabs("select", title)
 	}
-	
+
 }
 function g_select(domid, json, param, defopt) {
 	var str = "";
@@ -91,7 +88,7 @@ function exception() {
 function rdnum() {
 	return Math.floor(Math.random() * 100000);
 }
-function rdbytime(){
+function rdbytime() {
 	return new Date().getTime();
 }
 function mask(msg) {
@@ -108,7 +105,7 @@ function confirm(message, fun) {
 	$.messager.confirm('提示信息', message, fun);
 }
 
-//kindeditor拓展
+// kindeditor拓展
 var editoritem_all = [ 'source', '|', 'undo', 'redo', '|', 'preview', 'print',
 		'template', 'cut', 'copy', 'paste', 'plainpaste', 'wordpaste', '|',
 		'justifyleft', 'justifycenter', 'justifyright', 'justifyfull',
@@ -119,29 +116,52 @@ var editoritem_all = [ 'source', '|', 'undo', 'redo', '|', 'preview', 'print',
 		'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'flash',
 		'media', 'insertfile', 'table', 'hr', 'emoticons', 'map', 'code',
 		'pagebreak', 'anchor', 'link', 'unlink' ];
-var editoritem_default = [ 'source', '|', 'undo', 'redo', '|',
+var editoritem_default = [ 'source', '|', 'undo', 'redo', '|', 'justifyleft',
+		'justifycenter', 'justifyright', 'justifyfull', 'insertorderedlist',
+		'insertunorderedlist', 'indent', 'outdent', 'subscript', 'superscript',
+		'clearhtml', 'selectall', '/', 'formatblock', 'fontname', 'fontsize',
+		'|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+		'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'flash',
+		'media', 'insertfile', 'table', 'emoticons', 'code', 'link', 'unlink' ];
+var editoritem_more = [ 'source', '|', 'undo', 'redo', '|', 'preview', 'print',
+		'template', 'cut', 'copy', 'paste', 'plainpaste', 'wordpaste', '|',
 		'justifyleft', 'justifycenter', 'justifyright', 'justifyfull',
 		'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent',
-		'subscript', 'superscript', 'clearhtml', 'selectall',
-		'/', 'formatblock', 'fontname', 'fontsize', '|',
-		'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-		'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'flash',
-		'media', 'insertfile', 'table', 'emoticons', 'code',
-		'link', 'unlink' ];
-var editoritem_more = [
-		'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'cut', 'copy', 'paste',
-		'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
-		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-		'superscript', 'clearhtml', 'quickformat', 'selectall',  '/',
-		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
-		'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'code', 'pagebreak', 'anchor', 'link', 'unlink'
-];
-function closeWin(wind){
-	$('#'+wind).window('close');
+		'subscript', 'superscript', 'clearhtml', 'quickformat', 'selectall',
+		'/', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor',
+		'hilitecolor', 'bold', 'italic', 'underline', 'strikethrough',
+		'lineheight', 'removeformat', '|', 'image', 'flash', 'media',
+		'insertfile', 'table', 'hr', 'emoticons', 'code', 'pagebreak',
+		'anchor', 'link', 'unlink' ];
+function closeWin(wind) {
+	$('#' + wind).window('close');
 }
-function formsubmit(fid){
-	$('#'+fid).submit();
+function formsubmit(fid) {
+	$('#' + fid).submit();
 }
 
-
+function obj2str(o) {
+	var r = [];
+	if (typeof o == "string")
+		return "\""
+				+ o.replace(/([\'\"\\])/g, "\\$1").replace(/(\n)/g, "\\n")
+						.replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "\"";
+	if (typeof o == "object") {
+		if (!o.sort) {
+			for ( var i in o)
+				r.push(i + ":" + obj2str(o[i]));
+			if (!!document.all
+					&& !/^\n?function\s*toString\(\)\s*\{\n?\s*\[native code\]\n?\s*\}\n?\s*$/
+							.test(o.toString)) {
+				r.push("toString:" + o.toString.toString());
+			}
+			r = "{" + r.join() + "}"
+		} else {
+			for ( var i = 0; i < o.length; i++)
+				r.push(obj2str(o[i]))
+			r = "[" + r.join() + "]"
+		}
+		return r;
+	}
+	return o.toString();
+}

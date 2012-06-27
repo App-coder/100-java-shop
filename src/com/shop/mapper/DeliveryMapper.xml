@@ -23,6 +23,10 @@
     <result column="area_groupid" jdbcType="LONGVARCHAR" property="areaGroupid" />
     <result column="firstprice" jdbcType="LONGVARCHAR" property="firstprice" />
     <result column="secondprice" jdbcType="LONGVARCHAR" property="secondprice" />
+    <result column="area" jdbcType="LONGVARCHAR" property="area" />
+    <result column="area_groupid" jdbcType="LONGVARCHAR" property="areaGroupid" />
+    <result column="firstprice" jdbcType="LONGVARCHAR" property="firstprice" />
+    <result column="secondprice" jdbcType="LONGVARCHAR" property="secondprice" />
   </resultMap>
   <select id="loadAll" resultMap="ShopDeliveryResult">
   	select * from shop_delivery 

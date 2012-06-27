@@ -45,7 +45,11 @@ $(function(){
 			{field:'description',title:'描述',width:250},
 			{field:'currentTheme',title:'当前主题',width:200,
 				formatter:function(val,rowdata,rowindex){
-					return "<a>test</a>";
+					if(rowdata.catalog == current_theme){
+						return "<input type=\"checkbox\" checked=\"checked\" onclick=\"return false;\" readonly=\"readonly\" />";
+					}else{
+						return "<input type=\"checkbox\"  readonly=\"readonly\" onclick=\"return false;\"  />";
+					}
 				}
 			}
 		]],

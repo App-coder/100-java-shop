@@ -19,12 +19,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="resource/easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="resource/easyui/locale/easyui-lang-zh_CN.js"></script>
 <link href="resource/plugin/loadmask/jquery.loadmask.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="resource/plugin/loadmask/jquery.loadmask.min.js"></script>
+<script type="text/javascript" src="resource/plugins_js/loadmask/jquery.loadmask.min.js"></script>
 
 <!-- 图片插件 -->
-<link rel="stylesheet" href="resource/plugin/fancybox/jquery.fancybox-1.3.4.css">
-<script type="text/javascript" src="resource/plugin/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="resource/plugin/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" href="resource/plugins_js/fancybox/jquery.fancybox-1.3.4.css">
+<script type="text/javascript" src="resource/plugins_js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="resource/plugins_js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
 <script type="text/javascript" src="resource/admin/global.js"></script>
-<%@ include file="common_js.jsp" %>

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ include file="../header.jsp"%>
-<script charset="utf-8" src="resource/plugin/kindeditor/kindeditor.js"></script>
-<script charset="utf-8" src="resource/plugin/kindeditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="resource/plugins_js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="resource/plugins_js/kindeditor/lang/zh_CN.js"></script>
 <style>
 #msg_tr{display:none;}
 </style>

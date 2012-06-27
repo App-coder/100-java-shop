@@ -28,6 +28,9 @@
 .icon-reload{
 	background:url('icons/reload.png') no-repeat;
 }
+.icon-recycle{
+	background:url('icons/recycle.png') no-repeat;
+}
 .icon-search{
 	background:url('icons/search.png') no-repeat;
 }
@@ -39,6 +42,9 @@
 }
 .icon-undo{
 	background:url('icons/undo.png') no-repeat;
+}
+.icon-stop{
+	background:url('icons/stop.png') no-repeat;
 }
 .icon-redo{
 	background:url('icons/redo.png') no-repeat;
