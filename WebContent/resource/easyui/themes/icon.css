@@ -55,6 +55,12 @@
 .icon-sum{
 	background:url('icons/sum.png') no-repeat;
 }
+.icon-up{
+	background:url('icons/up.png') no-repeat;
+}
+.icon-down{
+	background:url('icons/down.png') no-repeat;
+}
 .icon-tip{
 	background:url('icons/tip.png') no-repeat;
 }

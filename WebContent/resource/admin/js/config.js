@@ -84,7 +84,11 @@ $(function() {
 			{field:'name',title:'名称',width:200},
 			{field:'link',title:'链接地址',width:250},
 			{field:'operation',title:'操作',width:200,formatter:function(val,rowdata,rowindex){
-				 return "<a class=\"green\" onclick=\"up("+rowindex+")\" >上移</a>&nbsp;&nbsp;<a class=\"green\" onclick=\"down("+rowindex+")\">下移</a>&nbsp;&nbsp;<a class=\"red\" onclick=\"deleteGuide("+rowdata.order+",'"+rowdata.name+"')\">删除</a>";
+				 return "<span class=\"iconsp icon-up\" title=\"上移\" onclick=\"up("
+						+ rowindex
+						+ ")\" ></span><span class=\"iconsp icon-down\" onclick=\"down("
+						+ rowindex
+						+ ")\" title=\"下移\" ></span><span class=\"iconsp icon-remove\" deleteGuide("+rowdata.order+",'"+rowdata.name+"') title=\"删除\"></span>";
 			}}
 		]]
 	});
@@ -164,7 +168,7 @@ $(function() {
 				return "<a rel=\"indexslide\" href=\""+rowdata.image+"\">预览</a>";
 			}},
 			{field:'operation',title:'操作',width:200,formatter:function(val,rowdata,rowindex){
-				 return "<a class=\"green\" onclick=\"indexslide_up("+rowindex+")\" >上移</a>&nbsp;&nbsp;<a class=\"green\" onclick=\"indexslide_down("+rowindex+")\">下移</a>&nbsp;&nbsp;<a class=\"red\" onclick=\"deleteIndexSlide("+rowindex+")\">删除</a>";
+				 return "<span class=\"iconsp icon-up\" title=\"上移\" onclick=\"indexslide_up("+rowindex+")\" ></span><span class=\"iconsp icon-down\" title=\"下移\" onclick=\"indexslide_down("+rowindex+")\" ></span><span class=\"iconsp icon-remove\" title=\"删除\" onclick=\"deleteIndexSlide("+rowindex+")\" ></span>";
 			}}
 		]],
 		onLoadSuccess:function(){
@@ -308,7 +312,7 @@ function up(rowindex){
 }
 function down(rowindex){
 	var rows = $('#guidelist').datagrid("getRows");
-	if(rowindex<=rows.length-1 && rowindex >0 ){
+	if(rowindex<=rows.length-1 ){
 		$.post('admin/guide/updateOrder',{order:rowindex,neworder:rowindex+1},function(data){
 			if(data.type == 'true'){
 				$('#guidelist').datagrid("reload");

@@ -11,12 +11,35 @@ $(function(){
 		singleSelect:true,
 		queryParams:{pid:0},
 		frozenColumns:[[
+		    {field:'ck',checkbox:true},
             {title:'地区',field:'areaName',width:200
             }
 		]],
 		columns:[[
-			{title:'排序',field:'sort',width:150}
+			{title:'排序',field:'sort',width:150},
+			{title:'操作',field:'areaId',width:250,
+				formatter:function(value,rowdata,rowindex){
+					return "<span class=\"iconsp icon-edit\" title=\"修改\" ></span><span class=\"iconsp icon-remove\" title=\"删除\" ></span>";
+				}	
+			}
 		]],
+		toolbar:[{
+			id:'add',
+			text:'添加地区',
+			iconCls:'icon-add',
+			handler:function(){
+				
+
+			}
+		},{
+			id:'update',
+			text:'提交排序',
+			iconCls:'icon-edit',
+			handler:function(){
+				
+				
+			}
+		}],
 		onBeforeLoad:function(row,param){
 			if(row==null){
 				$('#areas_list').treegrid("options").queryParams.pid = 0;
