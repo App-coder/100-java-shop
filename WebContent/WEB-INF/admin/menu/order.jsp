@@ -4,9 +4,9 @@
 	<li><span>订单管理</span>
 	<ul>
 			<li><a 
-				href="admin/order/index">订单列表</a></li>
+				href="javascript:tab('订单列表','admin/order/index');">订单列表</a></li>
 			<li><a
-				href="admin/order/add">添加订单</a></li>
+				href="javascript:tab('添加订单','admin/order/add');">添加订单</a></li>
 		</ul></li>
 	<li><span>单据管理</span>
 	<ul>

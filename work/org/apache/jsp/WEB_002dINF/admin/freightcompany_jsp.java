@@ -13,7 +13,7 @@ public final class freightcompany_jsp extends org.apache.jasper.runtime.HttpJspB
 
   static {
     _jspx_dependants = new java.util.ArrayList(1);
-    _jspx_dependants.add("/WEB-INF/admin/header.jsp");
+    _jspx_dependants.add("/WEB-INF/admin/common/config.jsp");
   }
 
   private javax.el.ExpressionFactory _el_expressionfactory;
@@ -60,43 +60,14 @@ public final class freightcompany_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("\r\n");
 
-String path = request.getContextPath();  
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/"; 
+String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  draggable=\"false\" minimizable=\"false\" maximizable=\"false\" inline=\"false\" resizable=\"false\"";
 
-      out.write("    \r\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
-      out.write("<html>\r\n");
-      out.write("<head>\r\n");
-      out.write("<base href=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${system_config['url']}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("\">\r\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("<title>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${webtitle}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</title>\r\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"resource/easyui/themes/cupertino/easyui.css\">\r\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"resource/easyui/themes/icon.css\">\r\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"resource/admin/css.css\">\r\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"resource/admin/easyui_update.css\">\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/easyui/jquery-1.7.2.min.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/easyui/jquery.easyui.min.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/easyui/locale/easyui-lang-zh_CN.js\"></script>\r\n");
-      out.write("<link href=\"resource/plugin/loadmask/jquery.loadmask.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/plugins_js/loadmask/jquery.loadmask.min.js\"></script>\r\n");
+      out.write("    ");
       out.write("\r\n");
-      out.write("<!-- 图片插件 -->\r\n");
-      out.write("<link rel=\"stylesheet\" href=\"resource/plugins_js/fancybox/jquery.fancybox-1.3.4.css\">\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/plugins_js/fancybox/jquery.mousewheel-3.0.4.pack.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/plugins_js/fancybox/jquery.fancybox-1.3.4.pack.js\"></script>\r\n");
-      out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/admin/global.js\"></script>\r\n");
-      out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/delivery.js\"></script>\r\n");
-      out.write("</head>\r\n");
-      out.write("<body class=\"body_panel\">\r\n");
-      out.write("<table id=\"freightcompanylist\" title=\"配送方式列表\" fit=\"true\"></table>\t\t\r\n");
-      out.write("</body>\r\n");
-      out.write("</html>");
+      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/freightcompany.js\"></script>\r\n");
+      out.write("<div id=\"container\" style=\"display: table;margin-bottom: 10px;width:99%;\">\r\n");
+      out.write("<table id=\"freightcompany_list\" title=\"物流公司列表\" ></table>\r\n");
+      out.write("</div>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

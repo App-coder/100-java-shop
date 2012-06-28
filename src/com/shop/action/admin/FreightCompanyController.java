@@ -31,7 +31,7 @@ public class FreightCompanyController extends BaseController {
 		return "admin/freightcompany";
 	}
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	@ResponseBody
 	public String list(@RequestParam("isdel") int isdel){
 		List<ShopFreightCompany> freightCompanys= this.freightCompanyService.loadByIsdel(isdel);

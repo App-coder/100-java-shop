@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class areas_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class adminrole_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -64,12 +64,8 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
 
       out.write("    ");
       out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/areas.js\"></script>\r\n");
-      out.write("<style>\r\n");
-      out.write("</style>\r\n");
-      out.write("<div id=\"container\" style=\"display: table;margin-bottom: 10px;width:99%;\">\r\n");
-      out.write("<table id=\"areas_list\" ></table>\r\n");
-      out.write("</div>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/adminrole.js\"></script>\r\n");
+      out.write("<table id=\"adminrole_list\"></table>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

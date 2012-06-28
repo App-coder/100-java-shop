@@ -10,7 +10,7 @@
     <result column="is_del" jdbcType="INTEGER" property="isDel" />
   </resultMap>
   <select id="loadByIsdel" resultMap="ShopFreightCompanyResult" >
-  	select * from shop_freight_company where isdel = #{isDel}
+  	select * from shop_freight_company where is_del = #{isDel}
   </select>
   <update id="updateState" >
   	update shop_freight_company set  is_del = #{isDel,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}

@@ -1,20 +1,15 @@
-package org.apache.jsp.WEB_002dINF.admin;
+package org.apache.jsp.WEB_002dINF.admin.menu;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class areas_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class market_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList(1);
-    _jspx_dependants.add("/WEB-INF/admin/common/config.jsp");
-  }
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -55,21 +50,27 @@ public final class areas_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write('\r');
-      out.write('\n');
       out.write("\r\n");
-      out.write("\r\n");
-
-String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  draggable=\"false\" minimizable=\"false\" maximizable=\"false\" inline=\"false\" resizable=\"false\"";
-
-      out.write("    ");
-      out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"resource/admin/js/areas.js\"></script>\r\n");
-      out.write("<style>\r\n");
-      out.write("</style>\r\n");
-      out.write("<div id=\"container\" style=\"display: table;margin-bottom: 10px;width:99%;\">\r\n");
-      out.write("<table id=\"areas_list\" ></table>\r\n");
-      out.write("</div>\r\n");
+      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\">\r\n");
+      out.write("\t<li><span>促销活动</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/promotion/index\">促销活动列表</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>营销活动</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/promotion/speed\">限时抢购</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/regiment/index\">团购</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>代金券管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a href=\"admin/ticket/index\">代金券列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/ticketexcel/index\">代金券文件列表</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("</ul>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

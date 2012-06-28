@@ -55,8 +55,10 @@ function tab(title, url, closable) {
 			closable : closable,
 			href : url,
 			cache : false,
+			loadingMessage:'正在努力为您加载...',
 //			content:"<iframe src="+url+" frameborder='0' width='100%'  height='100%' />",
-			bodyCls : 'p10'
+			bodyCls : 'bstyle'
+			//height : 100
 		});
 
 	} else {

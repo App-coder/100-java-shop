@@ -53,6 +53,8 @@ table .tb_list td.righttd{padding-left:10px;}
 .easyui-tree ul li a{text-decoration: none;color:#000;}
 .p20{padding: 20px;}
 .p10{padding:10px;}
+/*.bstyle{padding:10px; overflow: hidden;height: 98%;}*/
+.bstyle{padding:10px;margin-bottom: 50px;}
 .pt_10{padding-bottom:10px;}
 .bp{padding-right:15px;padding-top:10px;padding-left:10px;padding-bottom:10px;}
 

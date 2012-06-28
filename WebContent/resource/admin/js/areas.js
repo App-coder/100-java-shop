@@ -5,11 +5,12 @@ $(function(){
 		fit:'true',
 		nowrap: false,
 		striped: true,
-        rownumbers:true,
-        idField:'areaId',
+                rownumbers:true,
+                idField:'areaId',
 		treeField:'areaName',
 		singleSelect:true,
 		queryParams:{pid:0},
+		fitColumns : true,
 		frozenColumns:[[
 		    {field:'ck',checkbox:true},
             {title:'地区',field:'areaName',width:200
