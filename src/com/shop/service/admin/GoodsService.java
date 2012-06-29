@@ -17,7 +17,7 @@ public interface GoodsService {
 	int getTotalFilterGoods(int categoryid, int isdel, int storenums,
 			int commend);
 
-	List<ShopGoods> loadGoodsFilterGoods(int categoryid, int isdel,
+	List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int categoryid, int isdel,
 			int storenums, int commend);
 
 	int deleteByIds(int[] ids);

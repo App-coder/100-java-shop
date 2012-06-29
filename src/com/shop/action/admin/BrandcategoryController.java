@@ -34,7 +34,7 @@ public class BrandcategoryController extends BaseController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	@ResponseBody
 	public String list(){
 		List<ShopBrandCategory> list = this.brandCategoryService.loadAll();

@@ -1,13 +1,17 @@
 package com.shop.action.admin;
 
+import net.sf.json.JSONArray;
+
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.bean.common.Message;
 import com.shop.bean.easyui.ComboTree;
+import com.shop.model.ShopAreas;
 import com.shop.model.ShopCategory;
 import com.shop.service.admin.CategoryService;
 
@@ -57,6 +61,14 @@ public class CategoryController extends BaseController {
 		}
 		return objToJson(msg);
 	}
+	
+	@RequestMapping(value = "/getCategoryByParent", method = RequestMethod.POST)
+	@ResponseBody
+	public String getCategoryByParent(@RequestParam("pid") int pid){
+		List<ShopCategory> cates = this.categoryService.getCategoryByParent(pid);
+		return JSONArray.fromObject(cates).toString();
+	}
+	
 	
 	/**
 	 * @return 返回商品分类的TreeGrid

@@ -1,13 +1,14 @@
 $(function(){
     $('#goods_list').datagrid({
-	url : '',
+	url : 'admin/goods/filter',
 	fit : 'true',
 	nowrap : false,
 	striped : true,
 	collapsible : true,
 	idField : 'id',
 	rownumbers : true,
-	queryParams:{is_del:0},
+	queryParams:{categoryid:-1,isdel:0,storenums:-1,commend:-1},
+	pagination:true,
 	frozenColumns : [ [ {
 	    field : 'ck',
 	    checkbox : true
@@ -18,28 +19,36 @@ $(function(){
 	    width : 200
 	}, {
 	    title : '分类',
-	    field : 'name',
-	    width : 200
+	    field : '',
+	    width : 100
 	}, {
 	    title : '销售价',
-	    field : 'name',
-	    width : 200
+	    field : 'selltPrice',
+	    width : 80
 	}, {
 	    title : '库存',
-	    field : 'name',
-	    width : 200
+	    field : 'storeNums',
+	    width : 80
 	}, {
 	    title : '上架',
-	    field : 'name',
-	    width : 200
+	    field : '',
+	    width : 80
 	}, {
 	    title : '市场价',
-	    field : 'name',
-	    width : 200
+	    field : 'marketPrice',
+	    width : 80
 	}, {
 	    title : '品牌',
-	    field : 'name',
+	    field : '',
 	    width : 200
+	}, {
+	    title : '重量',
+	    field : 'weight',
+	    width : 80
+	}, {
+	    title : '排序',
+	    field : 'sort',
+	    width : 50
 	}, {
 	    title : '操作',
 	    field: 'id',

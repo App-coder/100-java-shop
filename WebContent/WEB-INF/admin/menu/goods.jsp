@@ -14,8 +14,6 @@
 	<ul>
 			<li><a
 				href="javascript:tab('分类列表','admin/category/index');">分类列表</a></li>
-			<li><a
-				href="javascript:tab('添加分类','admin/category/add');">添加分类</a></li>
 		</ul></li>
 	<li><span>品牌</span>
 	<ul>

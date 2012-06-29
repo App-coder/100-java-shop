@@ -1,6 +1,6 @@
 $(function(){
 	$('#oauth_list').datagrid({
-		url:'admin/oauth/list',
+	    url:'admin/oauth/list',
 		fit:'true',
 		nowrap: false,
 		striped: true,

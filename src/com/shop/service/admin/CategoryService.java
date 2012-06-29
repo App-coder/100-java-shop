@@ -14,4 +14,6 @@ public interface CategoryService {
 
 	int deleteById(int id);
 
+	List<ShopCategory> getCategoryByParent(int pid);
+
 }

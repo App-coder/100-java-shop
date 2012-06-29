@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class member_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,45 +51,40 @@ public final class goods_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\" >\r\n");
+      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\">\r\n");
+      out.write("\t<li><span>会员管理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a \r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('会员列表','admin/member/index');\">会员列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('会员组列表','admin/usergroup/index');\">会员组列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('会员提现管理','admin/withdraw/index');\">会员提现管理</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>信息处理</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('建议管理','admin/suggestion/index');\">建议管理</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('咨询管理','admin/refer/index');\">咨询管理</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('讨论管理','admin/discussion/index');\">讨论管理</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('评价管理','admin/comment/index');\">评价管理</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('站内消息','admin/message/index');\">站内消息</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('到货通知','admin/notifyregistry/index');\">到货通知</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("\t<li><span>邮件短信设置</span>\r\n");
+      out.write("\t<ul>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('模板管理','admin/msgtemplate/index');\">模板管理</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('邮件订阅','admin/emailregistry/index');\">邮件订阅</a></li>\r\n");
+      out.write("\t\t</ul></li>\r\n");
+      out.write("</ul>\r\n");
       out.write("\r\n");
-      out.write("\t<li><span>商品管理</span>\r\n");
-      out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('商品列表','admin/goods/index');\">商品列表</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('商品添加','admin/goods/add');\">商品添加</a></li>\r\n");
-      out.write("\t\t</ul></li>\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t<li><span>商品分类</span>\r\n");
-      out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('分类列表','admin/category/index');\">分类列表</a></li>\r\n");
-      out.write("\t\t</ul></li>\r\n");
-      out.write("\t<li><span>品牌</span>\r\n");
-      out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('品牌分类','admin/brandcategory/index');\">品牌分类</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('品牌列表','admin/brand/index');\">品牌列表</a></li>\r\n");
-      out.write("\t\t</ul></li>\r\n");
-      out.write("\t<li><span>模型</span>\r\n");
-      out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('模型列表','admin/model/index');\">模型列表</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('规格列表','admin/spec/index');\">规格列表</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('规格图库','admin/specphoto/index');\">规格图库</a></li>\r\n");
-      out.write("\t\t</ul></li>\r\n");
-      out.write("\t<li><span>热门搜索</span>\r\n");
-      out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('关键词列表','admin/keyword/index');\">关键词列表</a></li>\r\n");
-      out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('搜索统计','admin/search/index');\">搜索统计</a></li>\r\n");
-      out.write("\t\t</ul></li>\r\n");
-      out.write("</ul>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
