@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopBrand;
@@ -36,6 +37,8 @@ public class BrandController extends BaseController {
 	 * @param rows 每页显示行数
 	 * @return
 	 */
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@ResponseBody
 	public String list(int page,int rows){
 		int total = this.brandService.getTotal();
 		List<ShopBrand> brands = this.brandService.loadBrand(page,rows);

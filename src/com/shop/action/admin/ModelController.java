@@ -48,7 +48,7 @@ public class ModelController extends BaseController {
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	@ResponseBody
-	public String delete(int ids){
+	public String delete(int[] ids){
 		int affectrows = this.modelService.deleteById(ids);
 		
 		Message msg = new Message();

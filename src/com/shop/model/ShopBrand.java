@@ -14,6 +14,8 @@ public class ShopBrand {
     private Integer sort;
 
     private String categoryIds;
+    
+    private String categoryname;
 
     public Integer getId() {
         return id;
@@ -70,4 +72,15 @@ public class ShopBrand {
     public void setCategoryIds(String categoryIds) {
         this.categoryIds = categoryIds == null ? null : categoryIds.trim();
     }
+
+	public String getCategoryname() {
+		return categoryname;
+	}
+
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
+	}
+    
+    
+    
 }

@@ -10,6 +10,6 @@ public interface ModelService {
 
 	List<ShopModel> loadModel(int page, int rows);
 
-	int deleteById(int ids);
+	int deleteById(int[] ids);
 
 }

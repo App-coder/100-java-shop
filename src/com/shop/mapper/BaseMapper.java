@@ -6,4 +6,5 @@ public interface BaseMapper<T> {
 	List<T> loadAll();
 	int insert(T record);
 	int update(T record);
+	int getTotal();
 }

@@ -1,8 +1,12 @@
 package com.shop.main;
 
+import com.shop.util.JsonUtil;
+
 public class Run {
 	public static void main(String[] args) {
-		//System.out.println(DateUtil.getCurrentDateStr(DateUtil.C_DATA_PATTON_YYYYMM));\
-		
+		String v = "10,14";
+		Integer[] i = JsonUtil.getIntegerArray4Json("["+v+"]");
+		String t = "";
+		t="ss";
 	}
 }
