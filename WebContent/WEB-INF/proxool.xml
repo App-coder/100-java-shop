@@ -2,7 +2,7 @@
 <something-else-entirely>
 	<proxool>
 		<alias>shop</alias>
-		<driver-url>jdbc:mysql://localhost:3306/iwebshop</driver-url>
+		<driver-url>jdbc:mysql://localhost:3306/javashop</driver-url>
 		<driver-class>com.mysql.jdbc.Driver</driver-class>
 		<driver-properties>
 			<property name="user" value="root" />
