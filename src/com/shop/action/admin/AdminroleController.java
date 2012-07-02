@@ -5,8 +5,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopAdminRole;
 import com.shop.service.admin.AdminRoleService;
 
@@ -25,9 +27,10 @@ public class AdminroleController extends BaseController {
 
 	@RequestMapping(value = "/getAdminRole", method = RequestMethod.POST)
 	@ResponseBody
-	public String getAdminRoleIsDel(int is_del){
+	public String getAdminRoleIsDel(@RequestParam("is_del") int is_del){
 		List<ShopAdminRole> adminRoleList = this.adminRoleService.loadByIsDel(is_del);
-		return this.objToJson(adminRoleList,null);
+		ListBean bean = new ListBean(adminRoleList);
+		return this.objToJson(bean);
 	}
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)

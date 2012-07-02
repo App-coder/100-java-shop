@@ -6,9 +6,8 @@
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="is_del" jdbcType="BIT" property="isDel" />
 	</resultMap>
-	<select id="loadByIsDel" >
-		select * from shop_admin_role where is_del = #{is_del}
+	<select id="loadByIsDel" resultMap="ShopAdminRoleResult">
+		select
+		* from shop_admin_role where is_del = #{is_del}
 	</select>
-	
-	
 </mapper>

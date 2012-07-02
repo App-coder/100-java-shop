@@ -430,5 +430,31 @@ public class ConfigController extends BaseController implements
 		return JSONObject.fromObject(message).toString();
 	}
 	
+	@RequestMapping(value = "/express", method = RequestMethod.GET)
+	public String express(ModelMap model){
+		HashMap<String, String> hashconfig = (HashMap<String, String>) CacheManager
+				.getFromCache(Constant.SYSTEM_CONFIG);
+		
+		model.addAttribute("express_key",hashconfig.get("express_key"));
+		model.addAttribute("express_open",hashconfig.get("express_open"));
+		
+		return "admin/config/express";
+	}
+
+	
+	@RequestMapping(value = "/config_express_do", method = RequestMethod.GET)
+	@ResponseBody
+	public String config_express_do(@RequestParam("express_key") String express_key,@RequestParam("express_open") String express_open){
+		this.configService.updateConfig("express_key", express_key);
+		this.configService.updateConfig("express_open", express_open);
+
+		CacheManager.removeCache(Constant.SYSTEM_CONFIG);
+
+		Message message = new Message();
+		message.setMessage("快递跟踪修改成功！");
+		message.setType("true");
+
+		return JSONObject.fromObject(message).toString();
+	}
 	
 }

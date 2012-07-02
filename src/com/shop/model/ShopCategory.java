@@ -23,6 +23,10 @@ public class ShopCategory {
     private String title;
     
     List<ShopCategory> childs;
+    
+    private String modelname;
+    
+    private String state;
 
     public Integer getId() {
         return id;
@@ -102,6 +106,22 @@ public class ShopCategory {
 
 	public void setChilds(List<ShopCategory> childs) {
 		this.childs = childs;
+	}
+
+	public String getModelname() {
+		return modelname;
+	}
+
+	public void setModelname(String modelname) {
+		this.modelname = modelname;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
     
 }

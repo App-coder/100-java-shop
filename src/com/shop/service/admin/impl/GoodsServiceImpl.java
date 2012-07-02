@@ -11,7 +11,7 @@ import com.shop.model.ShopGoods;
 import com.shop.service.admin.GoodsService;
 @Service("goodsService")
 public class GoodsServiceImpl implements GoodsService {
-
+	
 	GoodsMapper goodsMapper;
 	@Resource(name="goodsMapper")
 	public void setGoodsMapper(GoodsMapper goodsMapper) {
@@ -19,49 +19,43 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	public int getTotalByName(String search) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.goodsMapper.getTotalByName(search);
 	}
 
 	public List<ShopGoods> loadGoodsByName(int page, int rows, String keywords) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.goodsMapper.loadGoodsByName(page,rows,keywords);
 	}
 
 	public List<ShopGoods> loadCatelog(int page, int rows, String keywords) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.goodsMapper.loadCatelog(page,rows,keywords);
 	}
 
 	public int getTotalByCatelog(String search) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.goodsMapper.getTotalByCatelog(search);
 	}
 
 	public int getTotalFilterGoods(int categoryid, int isdel, int storenums,
 			int commend) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.goodsMapper.getTotalFilterGoods(categoryid,isdel,storenums,commend);
 	}
 
-	public List<ShopGoods> loadGoodsFilterGoods(int categoryid, int isdel,
+	public List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int categoryid, int isdel,
 			int storenums, int commend) {
-		// TODO Auto-generated method stub
-		return null;
+		int start = (page-1)*rows;
+		return this.goodsMapper.loadGoodsFilterGoods(start,rows,categoryid,isdel,storenums,commend);
 	}
 
 	public int deleteByIds(int[] ids) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public int updateIsDel(int[] ids, int isdel) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	public int getCount() {
 		return this.goodsMapper.getCount();
 	}
+
 
 }

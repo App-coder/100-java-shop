@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CategoryMapper">
+	<resultMap id="ShopCategoryResult" type="com.shop.model.ShopCategory">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="parent_id" jdbcType="INTEGER" property="parentId" />
+		<result column="sort" jdbcType="INTEGER" property="sort" />
+		<result column="visibility" jdbcType="BIT" property="visibility" />
+		<result column="model_id" jdbcType="INTEGER" property="modelId" />
+		<result column="keywords" jdbcType="VARCHAR" property="keywords" />
+		<result column="descript" jdbcType="VARCHAR" property="descript" />
+		<result column="title" jdbcType="VARCHAR" property="title" />
+		<result column="modelname" jdbcType="VARCHAR" property="modelname" />
+		<result column="state" jdbcType="VARCHAR" property="state" />
+	</resultMap>
+	<select id="getCategoryByParent" resultMap="ShopCategoryResult">
+		SELECT
+			category.*,model.`name` modelname,
+		IF(
+			(
+				SELECT
+					count(shop_category.id)
+				FROM
+					shop_category
+				WHERE
+					shop_category.parent_id = category.id
+			)> 0,
+			'closed',
+			'open'
+		)state
+		FROM
+			shop_category category
+		LEFT JOIN shop_model model ON category.model_id = model.id 
+		WHERE
+			parent_id = #{pid} 
+		ORDER BY
+			sort ASC
+	</select>
+
+</mapper>

@@ -33,4 +33,10 @@
   <select id="getCount" resultType="INTEGER">
   	select count(id) as coun from shop_goods where is_del = 0
   </select>
+  <select id="getTotalFilterGoods" resultType="INTEGER">
+  	select count(id) as coun from shop_goods
+  </select>
+  <select id="loadGoodsFilterGoods" resultMap="ShopGoodsResult" >
+  	select `name`,sell_price,market_price,store_nums,weight,sort from shop_goods limit #{start},#{rows}
+  </select>
 </mapper>

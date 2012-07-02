@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.BrandMapper">
+	<resultMap id="ShopBrandResult" type="com.shop.model.ShopBrand">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="logo" jdbcType="VARCHAR" property="logo" />
+		<result column="url" jdbcType="VARCHAR" property="url" />
+		<result column="description" jdbcType="VARCHAR" property="description" />
+		<result column="sort" jdbcType="INTEGER" property="sort" />
+		<result column="category_ids" jdbcType="VARCHAR" property="categoryIds" />
+	</resultMap>
+	<select id="getTotal" resultType="INTEGER">
+		select count(id) coun from shop_brand
+	</select>
+	<select id="loadBrand" resultMap="ShopBrandResult" >
+		select brand.* from shop_brand brand limit #{start},#{rows}
+	</select>
+	<select id="getCategoryName"  resultType="String" >
+		SELECT
+			GROUP_CONCAT(`name`) 
+		FROM
+			shop_brand_category
+		WHERE
+			id IN 
+		<foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+	</select>
+</mapper>
