@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.KeywordMapper">
+  <resultMap id="ShopKeywordResult" type="com.shop.model.ShopKeyword">
+    <id column="word" jdbcType="VARCHAR" property="word" />
+    <result column="goods_nums" jdbcType="INTEGER" property="goodsNums" />
+    <result column="hot" jdbcType="BIT" property="hot" />
+    <result column="order" jdbcType="INTEGER" property="order" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER">
+  	select count(*) coun from shop_keyword
+  </select>
+  <select id="loadModel" resultMap="ShopKeywordResult">
+  	select * from shop_keyword order by `order` asc limit #{start},#{rows} 
+  </select>
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.MemberMapper">
+	<resultMap id="ShopMemberResult" type="com.shop.model.ShopMember">
+		<id column="user_id" jdbcType="INTEGER" property="userId" />
+		<result column="true_name" jdbcType="VARCHAR" property="trueName" />
+		<result column="telephone" jdbcType="VARCHAR" property="telephone" />
+		<result column="mobile" jdbcType="VARCHAR" property="mobile" />
+		<result column="area" jdbcType="VARCHAR" property="area" />
+		<result column="contact_addr" jdbcType="VARCHAR" property="contactAddr" />
+		<result column="qq" jdbcType="VARCHAR" property="qq" />
+		<result column="msn" jdbcType="VARCHAR" property="msn" />
+		<result column="sex" jdbcType="BIT" property="sex" />
+		<result column="birthday" jdbcType="DATE" property="birthday" />
+		<result column="group_id" jdbcType="INTEGER" property="groupId" />
+		<result column="exp" jdbcType="INTEGER" property="exp" />
+		<result column="point" jdbcType="INTEGER" property="point" />
+		<result column="time" jdbcType="TIMESTAMP" property="time" />
+		<result column="zip" jdbcType="VARCHAR" property="zip" />
+		<result column="status" jdbcType="BIT" property="status" />
+		<result column="balance" jdbcType="REAL" property="balance" />
+		<result column="last_login" jdbcType="TIMESTAMP" property="lastLogin" />
+		<result column="custom" jdbcType="VARCHAR" property="custom" />
+		<result column="message_ids" jdbcType="LONGVARCHAR" property="messageIds" />
+		<result column="prop" jdbcType="LONGVARCHAR" property="prop" />
+	</resultMap>
+	<resultMap extends="ShopMemberResult" id="ShopMemberSearchResult"
+		type="com.shop.model.expand.ShopMemberSearchResult">
+		<result column="username" jdbcType="VARCHAR" property="username" />
+		<result column="regtime" jdbcType="TIMESTAMP" property="regtime" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="group_name" jdbcType="VARCHAR" property="group_name" />
+	</resultMap>
+	<select id="getTotalByState" resultType="INTEGER">
+		select
+		count(user_id) coun from shop_member where `status` = #{status}
+	</select>
+	<select id="loadModelByState" resultMap="ShopMemberSearchResult">
+		select
+		m.*,u.username,DATE_FORMAT(m.time, '%Y-%m-%d') as
+		regtime,u.email,gp.group_name from shop_member as m left join shop_user
+		as u on m.user_id = u.id left join shop_user_group as gp on m.group_id
+		= gp.id where m.`status` = #{status} order by m.user_id desc limit
+		#{start},#{rows}
+	</select>
+</mapper>
+
