@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class market_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class order_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,22 +51,31 @@ public final class market_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("<ul class=\"easyui-tree\" animate=\"true\" lines=\"true\">\r\n");
-      out.write("\t<li><span>促销活动</span>\r\n");
+      out.write("<ul class=\"easyui-tree\" lines=\"true\">\r\n");
+      out.write("\t<li><span>订单管理</span>\r\n");
       out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a href=\"javascript:tab('促销活动列表','admin/promotion/index');\">促销活动列表</a></li>\r\n");
+      out.write("\t\t\t<li><a \r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('订单列表','admin/order/index');\">订单列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('添加订单','admin/order/add');\">添加订单</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
-      out.write("\t<li><span>营销活动</span>\r\n");
+      out.write("\t<li><span>单据管理</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('限时抢购','admin/promotion/speed');\">限时抢购</a></li>\r\n");
+      out.write("\t\t\t\thref=\"admin/collectiondoc/index\">收款单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('团购','admin/regiment/index');\">团购</a></li>\r\n");
+      out.write("\t\t\t\thref=\"admin/refundmentdoc/index\">退款单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/deliverydoc/index\">配货单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/returnsdoc/index\">退货单</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/refundmentdoc/list\">退款申请列表</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
-      out.write("\t<li><span>代金券管理</span>\r\n");
+      out.write("\t<li><span>快递单管理</span>\r\n");
       out.write("\t<ul>\r\n");
-      out.write("\t\t\t<li><a href=\"javascript:tab('代金券列表','admin/ticket/index');\">代金券列表</a></li>\r\n");
-      out.write("\t\t\t<li><a href=\"javascript:tab('代金券文件列表','admin/ticketexcel/index');\">代金券文件列表</a></li>\r\n");
+      out.write("\t\t\t<li><a\r\n");
+      out.write("\t\t\t\thref=\"admin/merchshipinfo/index\">发货信息管理</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("</ul>");
     } catch (Throwable t) {
