@@ -7,7 +7,7 @@
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
-  <select id="loadAll">
+  <select id="loadAll" resultMap="ShopAnnouncementResult">
   	select * from shop_announcement 
   </select>
 </mapper>

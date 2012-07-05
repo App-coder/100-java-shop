@@ -32,7 +32,7 @@
 	<li><span>公告管理</span>
 	<ul>
 			<li><a
-				href="javascript:tab('公告列表','admin/announcement/list')">公告列表</a></li>
+				href="javascript:tab('公告列表','admin/announcement/index')">公告列表</a></li>
 			<li><a
 				href="javascript:tab('公告发布','admin/announcement/add')">公告发布</a></li>
 		</ul></li>

@@ -83,7 +83,7 @@ public final class tool_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<li><span>公告管理</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('公告列表','admin/announcement/list')\">公告列表</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('公告列表','admin/announcement/index')\">公告列表</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
       out.write("\t\t\t\thref=\"javascript:tab('公告发布','admin/announcement/add')\">公告发布</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
