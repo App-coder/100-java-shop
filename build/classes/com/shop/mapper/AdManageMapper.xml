@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.AdManageMapper">
+  <resultMap id="ShopAdManageResult" type="com.shop.model.ShopAdManage">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="position_id" jdbcType="INTEGER" property="positionId" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="order" jdbcType="INTEGER" property="order" />
+    <result column="width" jdbcType="INTEGER" property="width" />
+    <result column="height" jdbcType="INTEGER" property="height" />
+    <result column="start_time" jdbcType="DATE" property="startTime" />
+    <result column="end_time" jdbcType="DATE" property="endTime" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+  </resultMap>
+  <select id="loadAll" resultMap="ShopAdManageResult">
+	select * from shop_ad_manage order by id desc
+  </select>
+</mapper>

@@ -8,4 +8,5 @@ public interface AnnouncementService {
 	List<ShopAnnouncement> loadAnnouncement(int number);
 
 
+
 }

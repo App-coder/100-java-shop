@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/admin/config.jsp=UTF-8
+encoding//WebContent/WEB-INF/admin/usergroup.jsp=UTF-8
 encoding//WebContent/WEB-INF/portal/default/header.jsp=UTF-8
 encoding//WebContent/WEB-INF/portal/default/index.jsp=UTF-8
 encoding//WebContent/WEB-INF/proxool.xml=UTF-8

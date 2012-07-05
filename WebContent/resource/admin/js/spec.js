@@ -12,7 +12,9 @@ $(function() {
 			rownumbers : true,
 			idField : 'id',
 			pagination : true,
-			queryParams:{isdel:0},
+			queryParams : {
+			    isdel : 0
+			},
 			frozenColumns : [ [ {
 			    field : 'ck',
 			    checkbox : true

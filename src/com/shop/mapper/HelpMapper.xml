@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.HelpMapper">
+	<resultMap id="ShopHelpResult" type="com.shop.model.ShopHelp">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="cat_id" jdbcType="SMALLINT" property="catId" />
+		<result column="sort" jdbcType="INTEGER" property="sort" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="dateline" jdbcType="INTEGER" property="dateline" />
+		<result column="content" jdbcType="LONGVARCHAR" property="content" />
+		<result column="categoryname" jdbcType="VARCHAR" property="categoryname" />
+	</resultMap>
+	<select id="getTotal" resultType="INTEGER">
+	select count(*) coun from shop_help
+	</select>
+	<select id="loadModel" resultMap="ShopHelpResult">
+	select h.*,hc.`name` categoryname from shop_help h left join shop_help_category hc on  h.cat_id = hc.id order by id desc limit #{start},#{rows}
+	</select>
+</mapper>

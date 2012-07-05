@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.UserGroupMapper">
+  <resultMap id="ShopUserGroupResult" type="com.shop.model.ShopUserGroup">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="discount" jdbcType="REAL" property="discount" />
+    <result column="minexp" jdbcType="INTEGER" property="minexp" />
+    <result column="maxexp" jdbcType="INTEGER" property="maxexp" />
+    <result column="message_ids" jdbcType="VARCHAR" property="messageIds" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER">
+  	select count(*) coun from shop_user_group
+  </select>
+  <select id="loadModel" resultMap="ShopUserGroupResult">
+  	select * from shop_user_group limit #{start},#{rows}
+  </select>  
+</mapper>

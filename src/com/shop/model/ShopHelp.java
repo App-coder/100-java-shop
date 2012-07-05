@@ -12,6 +12,8 @@ public class ShopHelp {
     private Integer dateline;
 
     private String content;
+    
+    private String categoryname;
 
     public Integer getId() {
         return id;
@@ -60,4 +62,15 @@ public class ShopHelp {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+	public String getCategoryname() {
+		return categoryname;
+	}
+
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
+	}
+    
+    
+    
 }

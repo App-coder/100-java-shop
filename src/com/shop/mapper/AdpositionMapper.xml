@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.AdpositionMapper">
+	<resultMap id="ShopAdPositionResult" type="com.shop.model.ShopAdPosition">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="width" jdbcType="INTEGER" property="width" />
+		<result column="height" jdbcType="INTEGER" property="height" />
+		<result column="type" jdbcType="BIT" property="type" />
+		<result column="fashion" jdbcType="TINYINT" property="fashion" />
+		<result column="status" jdbcType="BIT" property="status" />
+		<result column="ad_nums" jdbcType="INTEGER" property="adNums" />
+	</resultMap>
+	<select id="loadAll" resultMap="ShopAdPositionResult">
+		select * from shop_ad_position
+	</select>
+</mapper>

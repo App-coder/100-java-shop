@@ -4,41 +4,41 @@
 	<li><span>数据库管理</span>
 	<ul>
 			<li><a
-				href="admin/tools/db_bak">数据库备份</a></li>
+				href="javascript:tab('数据库备份','admin/tools/db_bak')">数据库备份</a></li>
 			<li><a
-				href="admin/tools/db_res">数据库还原</a></li>
+				href="javascript:tab('数据库还原','admin/tools/db_res')">数据库还原</a></li>
 		</ul></li>
 	<li><span>文章管理</span>
 	<ul>
 			<li><a
-				href="admin/articlecategory/index">文章分类</a></li>
+				href="javascript:tab('文章分类','admin/articlecategory/index')">文章分类</a></li>
 			<li><a
-				href="admin/article/index">文章列表</a></li>
+				href="javascript:tab('文章列表','admin/article/index')">文章列表</a></li>
 		</ul></li>
 	<li><span>帮助管理</span>
 	<ul>
 			<li><a
-				href="admin/helpcategory/index">帮助分类</a></li>
+				href="javascript:tab('帮助分类','admin/helpcategory/index')">帮助分类</a></li>
 			<li><a
-				href="admin/help/index">帮助列表</a></li>
+				href="javascript:tab('帮助列表','admin/help/index')">帮助列表</a></li>
 		</ul></li>
 	<li><span>广告管理</span>
 	<ul>
 			<li><a
-				href="admin/adposition/index">广告位列表</a></li>
+				href="javascript:tab('广告位列表','admin/adposition/index')">广告位列表</a></li>
 			<li><a
-				href="admin/admanage/index">广告列表</a></li>
+				href="javascript:tab('广告列表','admin/admanage/index')">广告列表</a></li>
 		</ul></li>
 	<li><span>公告管理</span>
 	<ul>
 			<li><a
-				href="admin/announcement/list">公告列表</a></li>
+				href="javascript:tab('公告列表','admin/announcement/list')">公告列表</a></li>
 			<li><a
-				href="admin/announcement/add">公告发布</a></li>
+				href="javascript:tab('公告发布','admin/announcement/add')">公告发布</a></li>
 		</ul></li>
 	<li><span>网站地图</span>
 	<ul>
 			<li><a
-				href="admin/tools/seositemaps">网站搜索地图</a></li>
+				href="javascript:tab('网站搜索地图','admin/tools/seositemaps')">网站搜索地图</a></li>
 		</ul></li>
 </ul>

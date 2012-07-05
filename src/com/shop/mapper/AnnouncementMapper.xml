@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.AnnouncementMapper">
+  <resultMap id="ShopAnnouncementResult" type="com.shop.model.ShopAnnouncement">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <select id="loadAll">
+  	select * from shop_announcement 
+  </select>
+</mapper>

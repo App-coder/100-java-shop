@@ -62,20 +62,20 @@ public final class order_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<li><span>单据管理</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/collectiondoc/index\">收款单</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('收款单','admin/collectiondoc/index');\">收款单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/refundmentdoc/index\">退款单</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('退款单','admin/refundmentdoc/index');\">退款单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/deliverydoc/index\">配货单</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('配货单','admin/deliverydoc/index');\">配货单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/returnsdoc/index\">退货单</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('退货单','admin/returnsdoc/index');\">退货单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/refundmentdoc/list\">退款申请列表</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('退款申请列表','admin/refundmentdoc/list');\">退款申请列表</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>快递单管理</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/merchshipinfo/index\">发货信息管理</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('发货信息管理','admin/merchshipinfo/index');\">发货信息管理</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("</ul>");
     } catch (Throwable t) {

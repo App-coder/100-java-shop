@@ -11,19 +11,19 @@
 	<li><span>单据管理</span>
 	<ul>
 			<li><a
-				href="admin/collectiondoc/index">收款单</a></li>
+				href="javascript:tab('收款单','admin/collectiondoc/index');">收款单</a></li>
 			<li><a
-				href="admin/refundmentdoc/index">退款单</a></li>
+				href="javascript:tab('退款单','admin/refundmentdoc/index');">退款单</a></li>
 			<li><a
-				href="admin/deliverydoc/index">配货单</a></li>
+				href="javascript:tab('配货单','admin/deliverydoc/index');">配货单</a></li>
 			<li><a
-				href="admin/returnsdoc/index">退货单</a></li>
+				href="javascript:tab('退货单','admin/returnsdoc/index');">退货单</a></li>
 			<li><a
-				href="admin/refundmentdoc/list">退款申请列表</a></li>
+				href="javascript:tab('退款申请列表','admin/refundmentdoc/list');">退款申请列表</a></li>
 		</ul></li>
 	<li><span>快递单管理</span>
 	<ul>
 			<li><a
-				href="admin/merchshipinfo/index">发货信息管理</a></li>
+				href="javascript:tab('发货信息管理','admin/merchshipinfo/index');">发货信息管理</a></li>
 		</ul></li>
 </ul>
