@@ -55,18 +55,18 @@ public final class stat_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<li><span>基础数据统计</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/stat/userreg\">用户注册统计</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('用户注册统计','admin/stat/userreg')\">用户注册统计</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/stat/spandingavg\">人均消费统计</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('人均消费统计','admin/stat/spandingavg')\">人均消费统计</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/stat/amount\">销售金额统计</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('销售金额统计','admin/stat/amount')\">销售金额统计</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>日志操作记录</span>\r\n");
       out.write("\t<ul>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/accountlog/index\">资金操作记录</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('资金操作记录','admin/accountlog/index')\">资金操作记录</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"admin/logoperation/index\">后台操作记录</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('后台操作记录','admin/logoperation/index')\">后台操作记录</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("</ul>");
     } catch (Throwable t) {

@@ -30,7 +30,6 @@ public class BrandServiceImpl implements BrandService {
 		List<ShopBrand> brands = this.brandMapper.loadBrand(start,rows);
 		for(ShopBrand brand : brands){
 			if(brand.getCategoryIds()!=null){
-				JsonUtil.getIntegerArray4Json("["+brand.getCategoryIds()+"]");
 				brand.setCategoryname(this.brandMapper.getCategoryName(JsonUtil.getIntegerArray4Json("["+brand.getCategoryIds()+"]")));
 			}
 		}

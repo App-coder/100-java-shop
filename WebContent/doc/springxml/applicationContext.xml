@@ -13,60 +13,12 @@
           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 
-	<bean id="placeholderConfig"
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location">
-			<value>classpath:init.properties</value>
-		</property>
+	<!-- 数据池配置，上线后操作 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver" />
+		<property name="url" value="proxool.shop" />
 	</bean>
-	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
-		destroy-method="close">
-		<property name="driverClass">
-			<value>${datasource.driverClassName}</value>
-		</property>
-		<property name="jdbcUrl">
-			<value>${datasource.url}</value>
-		</property>
-		<property name="username">
-			<value>${datasource.username}</value>
-		</property>
-		<property name="password">
-			<value>${datasource.password}</value>
-		</property>
-
-		<property name="idleConnectionTestPeriod">
-			<value>${boneCP.idleConnectionTestPeriod}</value>
-		</property>
-
-		<property name="idleMaxAge">
-			<value>${boneCP.idleMaxAge}</value>
-		</property>
-		<property name="maxConnectionsPerPartition">
-			<value>${boneCP.maxConnectionsPerPartition}</value>
-		</property>
-		<property name="minConnectionsPerPartition">
-			<value>${boneCP.minConnectionsPerPartition}</value>
-		</property>
-		<property name="partitionCount">
-			<value>${boneCP.partitionCount}</value>
-		</property>
-		<property name="acquireIncrement">
-			<value>${boneCP.acquireIncrement}</value>
-		</property>
-		<property name="statementsCacheSize">
-			<value>${boneCP.statementsCacheSize}</value>
-		</property>
-		<property name="statementsCachedPerConnection">
-			<value>${boneCP.statementsCachedPerConnection}</value>
-		</property>
-		<property name="releaseHelperThreads">
-			<value>${boneCP.releaseHelperThreads}</value>
-		</property>
-	</bean>
-
-	<!-- 数据池配置，上线后操作 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value="org.logicalcobwebs.proxool.ProxoolDriver" 
-		/> <property name="url" value="proxool.shop" /> </bean> -->
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

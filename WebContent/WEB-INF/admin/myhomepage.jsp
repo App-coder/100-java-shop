@@ -31,11 +31,11 @@
 					</tr>
 					<tr>
 						<td class="lefttd">咨询</td>
-						<td class="righttd" >总共：${countOfRefer}个&nbsp;&nbsp;未处理：${countOfNotDealRefer}</td>
+						<td class="righttd" >总共：<a class="a" href="javascript:tab('咨询管理','admin/refer/index');">${countOfRefer}</a>个&nbsp;&nbsp;未处理：<a class="a" href="javascript:tab('咨询管理','admin/refer/index');">${countOfNotDealRefer}</a></td>
 					</tr>
 					<tr>
 						<td class="lefttd">评论</td>
-						<td class="righttd" >总共：${countOfCommentAll}个&nbsp;&nbsp;未处理：${countOfNotDealComment}</td>
+						<td class="righttd" >总共：<a class="a" href="javascript:tab('评价管理','admin/comment/index');">${countOfCommentAll}</a>个&nbsp;&nbsp;未处理：<a class="a" href="javascript:tab('评价管理','admin/comment/index');">${countOfNotDealComment}</a></td>
 					</tr>
 					</tbody>
 				</table>

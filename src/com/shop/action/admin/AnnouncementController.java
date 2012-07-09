@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 
 import org.springframework.stereotype.Controller;

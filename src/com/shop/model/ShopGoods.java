@@ -52,6 +52,8 @@ public class ShopGoods {
     private String smallImg;
 
     private Integer exp;
+    
+    private String categorynames;
 
     public Integer getId() {
         return id;
@@ -252,4 +254,15 @@ public class ShopGoods {
     public void setExp(Integer exp) {
         this.exp = exp;
     }
+
+	public String getCategorynames() {
+		return categorynames;
+	}
+
+	public void setCategorynames(String categorynames) {
+		this.categorynames = categorynames;
+	}
+    
+    
+    
 }

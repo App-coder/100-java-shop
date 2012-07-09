@@ -34,15 +34,15 @@ public class GoodsServiceImpl implements GoodsService {
 		return this.goodsMapper.getTotalByCatelog(search);
 	}
 
-	public int getTotalFilterGoods(int categoryid, int isdel, int storenums,
+	public int getTotalFilterGoods(int[] categoryids, int isdel, int storenums,
 			int commend) {
-		return this.goodsMapper.getTotalFilterGoods(categoryid,isdel,storenums,commend);
+		return this.goodsMapper.getTotalFilterGoods(categoryids,isdel,storenums,commend);
 	}
 
-	public List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int categoryid, int isdel,
+	public List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int[] categoryids, int isdel,
 			int storenums, int commend) {
 		int start = (page-1)*rows;
-		return this.goodsMapper.loadGoodsFilterGoods(start,rows,categoryid,isdel,storenums,commend);
+		return this.goodsMapper.loadGoodsFilterGoods(start,rows,categoryids,isdel,storenums,commend);
 	}
 
 	public int deleteByIds(int[] ids) {

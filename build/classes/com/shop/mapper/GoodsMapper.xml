@@ -29,6 +29,7 @@
     <result column="exp" jdbcType="INTEGER" property="exp" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
     <result column="spec_array" jdbcType="LONGVARCHAR" property="specArray" />
+    <result column="categorynames" jdbcType="VARCHAR" property="categorynames" />
   </resultMap>
   <select id="getCount" resultType="INTEGER">
   	select count(id) as coun from shop_goods where is_del = 0
@@ -37,6 +38,57 @@
   	select count(id) as coun from shop_goods
   </select>
   <select id="loadGoodsFilterGoods" resultMap="ShopGoodsResult" >
-  	select `name`,sell_price,market_price,store_nums,weight,sort from shop_goods limit #{start},#{rows}
+	  	SELECT DISTINCT
+		goods.id,
+		goods.`name`,
+		goods.sell_price,
+		goods.market_price,
+		goods.store_nums,
+		goods.weight,
+		goods.sort,
+		goods.is_del,
+		brand.category_ids,
+		brand.`name` AS brand_name ,
+		(select GROUP_CONCAT(cd.`name`) from shop_category_extend as ce left join shop_category as cd on cd.id = ce.category_id where goods_id = goods.id ) categoryname 
+	FROM
+		shop_goods goods
+	LEFT JOIN shop_brand AS brand ON goods.brand_id = brand.id 
+	<if test="commend!=0">
+	left join shop_commend_goods as cg on cg.goods_id = goods.id 
+	</if>
+	WHERE 1  
+	 <choose>
+	 	<when test="is_del!=0">
+	 		and is_del = #{isdel}
+	 	</when>
+	 	<otherwise>
+	 		and is_del = 0
+	 	</otherwise>
+	 </choose>
+	 <choose>
+	 	<when test="store_nums==1">
+	 		goods.store_nums <![CDATA["<="]]> 0 
+	 	</when>
+	 	<when test="store_nums==10">
+	 		goods.store_nums <![CDATA["<"]]> 10 
+	 	</when>
+	 	<when test="store_nums==100">
+	 		goods.store_nums <![CDATA[">"]]> 10 and goods.store_nums <![CDATA["<"]]> 100 
+	 	</when>
+	 	<when test="store_nums==101">
+	 		goods.store_nums <![CDATA[">"]]> 100 
+	 	</when>
+	 </choose>
+	 <if test="commend!=0">
+	 	and cg.commend_id = #{commend}
+	 </if>
+	 <if test="categoryid!=0">
+	 	and (FIND_IN_SET(#{categoryids},brand.category_ids)) != 0  
+	 	and (FIND_IN_SET(#{categoryid},brand.category_ids)) is not null 
+	 </if>
+	ORDER BY
+		sort ASC,
+		id DESC 
+		limit #{start},#{rows}
   </select>
 </mapper>

@@ -9,6 +9,7 @@ import net.sf.json.JsonConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -99,8 +100,16 @@ public class OrderController extends BaseController {
      * @return 订单详细页面
      */
     @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public String info(int id){
+    public String info(@RequestParam("id") int id){
         return "admin/order/info";
     }
+    
+    @RequestMapping(value = "/info_goods", method = RequestMethod.GET)
+    @ResponseBody
+    public String info_goods(@RequestParam("order_id") int order_id){
+    	
+    	return "";
+    }
+    
 	
 }

@@ -53,15 +53,15 @@ public class GoodsController extends BaseController {
 	@ResponseBody
 	public String filter(@RequestParam("page") int page,
 			@RequestParam("rows") int rows,
-			@RequestParam("categoryid") int categoryid,
+			@RequestParam("categoryid") int[] categoryids,
 			@RequestParam("isdel") int isdel,
 			@RequestParam("storenums") int storenums,
 			@RequestParam("commend") int commend) {
 
-		int total = this.goodsService.getTotalFilterGoods(categoryid, isdel,
+		int total = this.goodsService.getTotalFilterGoods(categoryids, isdel,
 				storenums, commend);
 		List<ShopGoods> goods = this.goodsService.loadGoodsFilterGoods(page,rows,
-				categoryid, isdel, storenums, commend);
+				categoryids, isdel, storenums, commend);
 
 		ListBean list = new ListBean();
 		list.setRows(goods);

@@ -5,9 +5,13 @@
 <div id="layout_order_info" class="easyui-layout" fit="true" >  
 <div region="center"  border="false" class="pt_10">
 <div class="easyui-tabs" fit="true">
-	<div title="基本信息" class="p10"></div>
-	<div title="商品" class="p10"></div>
-	<div title="收退款记录" class="p10"></div>
+	<div title="基本信息" class="p10">
+		<table id="order_info_goods"></table>
+	</div>
+	<div title="商品" class="p10">
+		<table id="order_info_goods_1"></table>
+	</div>
+	<div title="收退款记录" class="p10">dsds</div>
 	<div title="收发货记录" class="p10"></div>
 	<div title="优惠方案" class="p10"></div>
 	<div title="订单备注" class="p10"></div>

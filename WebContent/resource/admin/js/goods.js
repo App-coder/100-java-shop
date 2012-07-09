@@ -7,7 +7,7 @@ $(function(){
 	collapsible : true,
 	idField : 'id',
 	rownumbers : true,
-	queryParams:{categoryid:-1,isdel:0,storenums:-1,commend:-1},
+	queryParams:{categoryid:0,isdel:0,storenums:0,commend:0},
 	pagination:true,
 	frozenColumns : [ [ {
 	    field : 'ck',

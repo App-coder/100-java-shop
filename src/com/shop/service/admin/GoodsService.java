@@ -14,10 +14,10 @@ public interface GoodsService {
 
 	int getTotalByCatelog(String search);
 
-	int getTotalFilterGoods(int categoryid, int isdel, int storenums,
+	int getTotalFilterGoods(int[] categoryids, int isdel, int storenums,
 			int commend);
 
-	List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int categoryid, int isdel,
+	List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int[] categoryids, int isdel,
 			int storenums, int commend);
 
 	int deleteByIds(int[] ids);
