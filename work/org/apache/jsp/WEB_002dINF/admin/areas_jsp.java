@@ -67,7 +67,7 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/areas.js\"></script>\r\n");
       out.write("<style>\r\n");
       out.write("</style>\r\n");
-      out.write("<div id=\"container\" style=\"display: table;margin-bottom: 10px;width:99%;\">\r\n");
+      out.write("<div id=\"container\" >\r\n");
       out.write("<table id=\"areas_list\" ></table>\r\n");
       out.write("</div>\r\n");
     } catch (Throwable t) {

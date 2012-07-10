@@ -18,7 +18,11 @@ public class BrandServiceTest {
 	@Test
 	public void testLoadBrand() {
 		this.brandService.loadBrand(1, 10);
-		
+	}
+	
+	@Test
+	public void testGetCategoryName(){
+		this.brandService.getCategoryName(new Integer[]{3,10});
 	}
 	
 }

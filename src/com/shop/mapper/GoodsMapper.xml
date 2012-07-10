@@ -30,12 +30,41 @@
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
     <result column="spec_array" jdbcType="LONGVARCHAR" property="specArray" />
     <result column="categorynames" jdbcType="VARCHAR" property="categorynames" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandname" />
   </resultMap>
   <select id="getCount" resultType="INTEGER">
   	select count(id) as coun from shop_goods where is_del = 0
   </select>
   <select id="getTotalFilterGoods" resultType="INTEGER">
-  	select count(id) as coun from shop_goods
+  	select count(id) as coun from shop_goods WHERE 1  
+  	<choose>
+	 	<when test="is_del!=0">
+	 		and is_del = #{isdel}
+	 	</when>
+	 	<otherwise>
+	 		and is_del = 0
+	 	</otherwise>
+	 </choose>
+	 <choose>
+	 	<when test="store_nums==1">
+	 		goods.store_nums <![CDATA["<="]]> 0 
+	 	</when>
+	 	<when test="store_nums==10">
+	 		goods.store_nums <![CDATA["<"]]> 10 
+	 	</when>
+	 	<when test="store_nums==100">
+	 		goods.store_nums <![CDATA[">"]]> 10 and goods.store_nums <![CDATA["<"]]> 100 
+	 	</when>
+	 	<when test="store_nums==101">
+	 		goods.store_nums <![CDATA[">"]]> 100 
+	 	</when>
+	 </choose>
+	 <if test="commend!=0">
+	 	and cg.commend_id = #{commend}
+	 </if>
+	 <if test="categoryids!=null">
+	 	and #{categoryids}
+	 </if>
   </select>
   <select id="loadGoodsFilterGoods" resultMap="ShopGoodsResult" >
 	  	SELECT DISTINCT
@@ -49,7 +78,7 @@
 		goods.is_del,
 		brand.category_ids,
 		brand.`name` AS brand_name ,
-		(select GROUP_CONCAT(cd.`name`) from shop_category_extend as ce left join shop_category as cd on cd.id = ce.category_id where goods_id = goods.id ) categoryname 
+		(select GROUP_CONCAT(cd.`name`) from shop_category_extend as ce left join shop_category as cd on cd.id = ce.category_id where goods_id = goods.id ) categorynames 
 	FROM
 		shop_goods goods
 	LEFT JOIN shop_brand AS brand ON goods.brand_id = brand.id 
@@ -82,9 +111,8 @@
 	 <if test="commend!=0">
 	 	and cg.commend_id = #{commend}
 	 </if>
-	 <if test="categoryid!=0">
-	 	and (FIND_IN_SET(#{categoryids},brand.category_ids)) != 0  
-	 	and (FIND_IN_SET(#{categoryid},brand.category_ids)) is not null 
+	 <if test="categoryids!=null">
+	 	and #{categoryids}
 	 </if>
 	ORDER BY
 		sort ASC,

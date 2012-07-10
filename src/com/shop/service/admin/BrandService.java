@@ -9,5 +9,7 @@ public interface BrandService {
 	int getTotal();
 
 	List<ShopBrand> loadBrand(int page, int rows);
+	
+	String getCategoryName(Integer[] ids);
 
 }

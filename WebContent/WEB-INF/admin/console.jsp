@@ -32,7 +32,7 @@
 			</div>
 		</div>
 		<div region="center" style="overflow:hidden;"  >
-			<div id="tabs"  fit="true" border="false" >
+			<div id="tabs"  fit="true" border="false"   >
 			</div>
 		</div>
 </body>

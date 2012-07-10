@@ -18,10 +18,10 @@ public interface GoodsMapper {
 
 	public int getTotalByCatelog(String search);
 
-	public int getTotalFilterGoods(@Param("categoryid") int[] categoryids,@Param("isdel")  int isdel,@Param("storenums")  int storenums,@Param("commend") 
+	public int getTotalFilterGoods(@Param("categorystr") String categorystr,@Param("isdel")  int isdel,@Param("storenums")  int storenums,@Param("commend") 
 			int commend);
 
 	public List<ShopGoods> loadGoodsFilterGoods(@Param("start") int start,@Param("rows")  int rows,
-			@Param("categoryids")  int[] categoryids,@Param("isdel")  int isdel,@Param("storenums")  int storenums,@Param("commend")  int commend);
+			@Param("categoryids")  String categoryids,@Param("isdel")  int isdel,@Param("storenums")  int storenums,@Param("commend")  int commend);
 
 }

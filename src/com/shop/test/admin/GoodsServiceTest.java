@@ -44,7 +44,8 @@ public class GoodsServiceTest {
 
 	@Test
 	public void testLoadGoodsFilterGoods() {
-		List<ShopGoods> goods = this.goodsService.loadGoodsFilterGoods(1, 10, 10, 0, 101, 0);
+		String[] categoryids = new String[]{"11","10"};
+		List<ShopGoods> goods = this.goodsService.loadGoodsFilterGoods(1, 10, categoryids, 0, 101, 0);
 		
 	}
 

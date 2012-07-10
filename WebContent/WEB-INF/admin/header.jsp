@@ -11,6 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="${system_config['url']}">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${webtitle}</title>
+
 <link rel="stylesheet" type="text/css" href="resource/easyui/themes/cupertino/easyui.css">
 <link rel="stylesheet" type="text/css" href="resource/easyui/themes/icon.css">
 <link rel="stylesheet" type="text/css" href="resource/admin/css.css">

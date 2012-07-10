@@ -2,13 +2,14 @@ $(function(){
     $('#goods_list').datagrid({
 	url : 'admin/goods/filter',
 	fit : 'true',
-	nowrap : false,
+	nowrap : true,
 	striped : true,
 	collapsible : true,
 	idField : 'id',
 	rownumbers : true,
 	queryParams:{categoryid:0,isdel:0,storenums:0,commend:0},
 	pagination:true,
+	frozenColumns:true,
 	frozenColumns : [ [ {
 	    field : 'ck',
 	    checkbox : true
@@ -19,11 +20,11 @@ $(function(){
 	    width : 200
 	}, {
 	    title : '分类',
-	    field : '',
+	    field : 'categorynames',
 	    width : 100
 	}, {
 	    title : '销售价',
-	    field : 'selltPrice',
+	    field : 'sellPrice',
 	    width : 80
 	}, {
 	    title : '库存',
@@ -31,15 +32,23 @@ $(function(){
 	    width : 80
 	}, {
 	    title : '上架',
-	    field : '',
-	    width : 80
+	    field : 'isDel',
+	    width : 80,
+	    formatter:function(value,rowdata,rowindex){
+		debugger;
+		if(value==0){
+		    return "<span class=\"iconsp icon-ok\" ></span>";
+		}else{
+		    return "<span class=\"iconsp icon-stop\" ></span>";
+		}
+	    }
 	}, {
 	    title : '市场价',
 	    field : 'marketPrice',
 	    width : 80
 	}, {
 	    title : '品牌',
-	    field : '',
+	    field : 'brandname',
 	    width : 200
 	}, {
 	    title : '重量',
@@ -52,13 +61,13 @@ $(function(){
 	}, {
 	    title : '操作',
 	    field: 'id',
-	    width : 250,
+	    width : 80,
 	    formatter:function(value,rowdata,rowindex){
 		return "<span class=\"iconsp icon-edit\" title=\"修改\" ></span><span class=\"iconsp icon-remove\" title=\"删除\" ></span>";
 	    }	
 	}] ],
 	toolbar : [ {
-	    text : '添加角色',
+	    text : '添加商品',
 	    iconCls : 'icon-add',
 	    handler : function() {
 		
@@ -72,7 +81,9 @@ $(function(){
 	    text : '回收站',
 	    iconCls : 'icon-recycle',
 	    handler : function() {
-
+		$('#goods_list').datagrid("options").queryParams.isdel = 1;
+		$('#goods_list').datagrid("options").pageNumber = 1;
+		$('#goods_list').datagrid("load");
 	    }
 	} ]
     });

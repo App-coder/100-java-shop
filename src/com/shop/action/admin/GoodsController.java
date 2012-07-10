@@ -53,7 +53,7 @@ public class GoodsController extends BaseController {
 	@ResponseBody
 	public String filter(@RequestParam("page") int page,
 			@RequestParam("rows") int rows,
-			@RequestParam("categoryid") int[] categoryids,
+			@RequestParam("categoryid") String[] categoryids,
 			@RequestParam("isdel") int isdel,
 			@RequestParam("storenums") int storenums,
 			@RequestParam("commend") int commend) {

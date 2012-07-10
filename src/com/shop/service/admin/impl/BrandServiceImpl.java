@@ -36,6 +36,11 @@ public class BrandServiceImpl implements BrandService {
 		return brands;
 	}
 
+	@Override
+	public String getCategoryName(Integer[] ids) {
+		return this.brandMapper.getCategoryName(ids);
+	}
+
 
 
 }

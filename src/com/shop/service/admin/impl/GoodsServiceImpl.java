@@ -34,15 +34,35 @@ public class GoodsServiceImpl implements GoodsService {
 		return this.goodsMapper.getTotalByCatelog(search);
 	}
 
-	public int getTotalFilterGoods(int[] categoryids, int isdel, int storenums,
+	public int getTotalFilterGoods(String[] categoryids, int isdel, int storenums,
 			int commend) {
-		return this.goodsMapper.getTotalFilterGoods(categoryids,isdel,storenums,commend);
+		String categorystr = null;
+		if(categoryids.length>=1&&!categoryids[0].equals("0")){
+			for(int i=0;i<categoryids.length;i++){
+				if(i!=categoryids.length-1){
+					categorystr +=" FIND_IN_SET('"+categoryids[i]+"', brand.category_ids))!= 0 or";
+				}else{
+					categorystr +=" FIND_IN_SET('"+categoryids[i]+"', brand.category_ids))!= 0";
+				}
+			}
+		}
+		return this.goodsMapper.getTotalFilterGoods(categorystr,isdel,storenums,commend);
 	}
 
-	public List<ShopGoods> loadGoodsFilterGoods(int page, int rows,int[] categoryids, int isdel,
+	public List<ShopGoods> loadGoodsFilterGoods(int page, int rows,String[] categoryids, int isdel,
 			int storenums, int commend) {
 		int start = (page-1)*rows;
-		return this.goodsMapper.loadGoodsFilterGoods(start,rows,categoryids,isdel,storenums,commend);
+		String categorystr = null;
+		if(categoryids.length>=1&&!categoryids[0].equals("0")){
+			for(int i=0;i<categoryids.length;i++){
+				if(i!=categoryids.length-1){
+					categorystr +=" FIND_IN_SET('"+categoryids[i]+"', brand.category_ids))!= 0 or";
+				}else{
+					categorystr +=" FIND_IN_SET('"+categoryids[i]+"', brand.category_ids))!= 0";
+				}
+			}
+		}
+		return this.goodsMapper.loadGoodsFilterGoods(start,rows,categorystr,isdel,storenums,commend);
 	}
 
 	public int deleteByIds(int[] ids) {

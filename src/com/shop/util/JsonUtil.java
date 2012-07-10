@@ -155,6 +155,23 @@ public class JsonUtil {
     }  
   
     /** 
+     * 从json数组中解析出java Integer型对象数组 
+     *  
+     * @param jsonString 
+     * @return 
+     */  
+    public static int[] getIntArray4Json(String jsonString) {  
+  
+        JSONArray jsonArray = JSONArray.fromObject(jsonString);  
+        int[] integerArray = new int[jsonArray.size()];  
+        for (int i = 0; i < jsonArray.size(); i++) {  
+            integerArray[i] = jsonArray.getInt(i);  
+  
+        }  
+        return integerArray;  
+    }  
+    
+    /** 
      * 从json数组中解析出java Date 型对象数组，使用本方法必须保证 
      *  
      * @param jsonString 
