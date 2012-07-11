@@ -10,6 +10,7 @@ $(function(){
 	queryParams:{categoryid:0,isdel:0,storenums:0,commend:0},
 	pagination:true,
 	frozenColumns:true,
+//	height:380,
 	frozenColumns : [ [ {
 	    field : 'ck',
 	    checkbox : true
@@ -35,7 +36,6 @@ $(function(){
 	    field : 'isDel',
 	    width : 80,
 	    formatter:function(value,rowdata,rowindex){
-		debugger;
 		if(value==0){
 		    return "<span class=\"iconsp icon-ok\" ></span>";
 		}else{

@@ -65,7 +65,9 @@ String win_topbar = "closed=\"true\" modal=\"true\" collapsible=\"false\"  dragg
       out.write("    ");
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"resource/admin/js/goods.js\"></script>\r\n");
+      out.write("<div id=\"container\">\r\n");
       out.write("<table id=\"goods_list\" ></table>\r\n");
+      out.write("</div>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

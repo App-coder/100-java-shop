@@ -5,7 +5,13 @@ $(function() {
 	 * $("body").ajaxStart(function(){ mask(); });
 	 * 
 	 * $("body").ajaxStop(function(){ unmask(); });
+	 * 
+	 *     $(window).resize(function () {
+            	 $('#tabs').tabs('resize');
+               }); 
+	 * 
 	 */
+
 });
 function menuList(url) {
 
