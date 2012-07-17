@@ -9,6 +9,6 @@ $(function() {
 	    $("#fancybox-wrap").nextAll("div").remove();
 	}
     });
-    tab('我的主页', 'admin/webmaster/myhomepage',false);
+    tab('我的主页', 'admin/webmaster/myhomepage');
     menuList('admin/webmaster/system');
 });

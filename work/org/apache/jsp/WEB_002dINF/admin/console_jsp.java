@@ -130,6 +130,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<div id=\"tab-tools\">\r\n");
       out.write("\t\t\t<a class=\"easyui-linkbutton\" plain=\"true\" title=\"页面重载\" iconCls=\"icon-reload\" onclick=\"javascript:reloadTab()\"></a>\r\n");
       out.write("\t\t</div>\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t<div id=\"mm\" class=\"easyui-menu\" style=\"width:150px;\">\r\n");
+      out.write("\t\t\t<div id=\"mm-tabclose\">关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseall\">全部关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseother\">除此之外全部关闭</div>\r\n");
+      out.write("\t\t\t<div class=\"menu-sep\"></div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseright\">当前页右侧全部关闭</div>\r\n");
+      out.write("\t\t\t<div id=\"mm-tabcloseleft\">当前页左侧全部关闭</div>\r\n");
+      out.write("\t\t\t<div class=\"menu-sep\"></div>\r\n");
+      out.write("\t\t\t<div id=\"mm-exit\">退出</div>\r\n");
+      out.write("\t\t</div>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
