@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "admin/message")
 public class MessageController extends BaseController {
+	
+	
 	public String index(){
-		return "";
+		return "admin/message";
 	}
 }

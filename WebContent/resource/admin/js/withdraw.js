@@ -15,16 +15,20 @@ $('#withdraw_list').datagrid({
 		checkbox : true
 	}]],
 	columns : [[{
-		field : 'word',
-		title : '关键词',
+		field : 'name',
+		title : '收款人姓名',
 		width : 200
 	}, {
-		field : 'goodsNums',
-		title : '关联商品数量',
+		field : 'amount',
+		title : '金额',
 		width : 200
-	}, {
-		field : 'hot',
-		title : '是否热门',
+	},  {
+		field : 'time',
+		title : '申请时间',
+		width : 200
+	},{
+		field : 'status',
+		title : '状态',
 		width : 100,
 		formatter : function(val, rowdata, rowindex) {
 		    if(val == 'true'){
@@ -34,17 +38,6 @@ $('#withdraw_list').datagrid({
 		    }
 		}
 		
-	}, {
-		field : 'order',
-		title : '排序',
-		width : 80
-	}, {
-		field : 'currentTheme',
-		title : '操作',
-		width : 200,
-		formatter : function(val, rowdata, rowindex) {
-		    return "<span class=\"iconsp icon-reload\" title=\"同步\" ></span><span class=\"iconsp icon-remove\" title=\"删除\" ></span>";
-		}
 	}]],
 	toolbar : [{
 		id : 'add',

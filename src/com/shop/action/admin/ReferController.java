@@ -2,6 +2,8 @@ package com.shop.action.admin;
 
 import javax.annotation.Resource;
 
+import net.sf.json.JsonConfig;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopRefer;
 import com.shop.service.admin.ReferService;
+import com.shop.util.JsonDateValueProcessor;
+
 import java.util.*;
 
 @Controller
@@ -35,7 +39,9 @@ public class ReferController extends BaseController {
 		ListBean bean = new ListBean();
 		bean.setTotal(total);
 		bean.setRows(refers);
-		return objToJson(bean);
+		JsonConfig jsonConfig = new JsonConfig();
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd"));
+		return objToJson(bean,jsonConfig);
 	}
 	
 	

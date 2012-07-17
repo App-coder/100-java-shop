@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/ticketexcel")
 public class TicketexcelController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/ticketexcel";
 	}
 }

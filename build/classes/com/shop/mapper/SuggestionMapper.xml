@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.SuggestionMapper">
+  <resultMap id="ShopSuggestionResult" type="com.shop.model.ShopSuggestion">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="re_time" jdbcType="TIMESTAMP" property="reTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="re_content" jdbcType="LONGVARCHAR" property="reContent" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER" >
+  	select count(a.id) from shop_suggestion AS a left join shop_user AS b ON a.user_id = b.id where 1
+  	 <if test="username!=null">
+  	  and b.username like <![CDATA["'%"]]>#{username}<![CDATA["%'"]]> 
+  	 </if>
+  	 <if test="startTime!=null">
+  	  and a.time <![CDATA[>]]> #{startTime} 
+  	 </if>
+  	 <if test="endTime!=null">
+  	  and a.time <![CDATA[<]]> #{endTime} order by a.id DESC
+  	 </if>
+  </select>
+  <select id="loadSuggestion" resultMap="ShopSuggestionResult">
+  	  	select a.*,b.username from shop_suggestion AS a left join shop_user AS b ON a.user_id = b.id where 1
+  	 <if test="username!=null">
+  	  and b.username like <![CDATA["'%"]]>#{username}<![CDATA["%'"]]> 
+  	 </if>
+  	 <if test="startTime!=null">
+  	  and a.time <![CDATA[>]]> #{startTime} 
+  	 </if>
+  	 <if test="endTime!=null">
+  	  and a.time <![CDATA[<]]> #{endTime} order by a.id DESC 
+  	  limit #{start},#{rows}
+  	 </if>
+  </select>
+</mapper>

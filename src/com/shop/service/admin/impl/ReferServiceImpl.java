@@ -19,14 +19,13 @@ public class ReferServiceImpl implements ReferService {
 
 	public int getTotal(String username, String goodsname, String starttime,
 			String endtime) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.referMapper.getTotal(username,goodsname,starttime,endtime);
 	}
 
 	public List<ShopRefer> loadRefer(int page, int rows, String username,
 			String goodsname, String starttime, String endtime) {
-		// TODO Auto-generated method stub
-		return null;
+		int start = (page-1)*rows;
+		return this.referMapper.loadRefer(start,rows,username,goodsname,starttime,endtime);
 	}
 
 	public int getCount() {

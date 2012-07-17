@@ -10,7 +10,7 @@ public interface SuggestionService {
 	List<ShopSuggestion> loadSuggestion(int page, int rows, String username,
 			String startTime, String endTime);
 
-	int deleteByIds(int ids);
+	int deleteByIds(int[] ids);
 
 
 }

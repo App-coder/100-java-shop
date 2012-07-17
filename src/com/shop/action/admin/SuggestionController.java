@@ -3,6 +3,8 @@ package com.shop.action.admin;
 import javax.annotation.Resource;
 import java.util.*;
 
+import net.sf.json.JsonConfig;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +14,7 @@ import com.shop.bean.common.Message;
 import com.shop.bean.easyui.ListBean;
 import com.shop.model.ShopSuggestion;
 import com.shop.service.admin.SuggestionService;
+import com.shop.util.JsonDateValueProcessor;
 
 @Controller
 @RequestMapping(value = "admin/suggestion")
@@ -43,12 +46,14 @@ public class SuggestionController extends BaseController {
 		ListBean bean = new ListBean();
 		bean.setTotal(total);
 		bean.setRows(suggestions);
-		return objToJson(bean);
+		JsonConfig jsonConfig = new JsonConfig();
+		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
+		return objToJson(bean,jsonConfig);
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	@ResponseBody
-	public String delete(int ids){
+	public String delete(int[] ids){
 		int affectrows = this.suggestionService.deleteByIds(ids);
 		
 		Message msg = new Message();

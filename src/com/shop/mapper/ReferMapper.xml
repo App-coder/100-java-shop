@@ -11,11 +11,69 @@
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="reply_time" jdbcType="TIMESTAMP" property="replyTime" />
     <result column="type" jdbcType="BIT" property="type" />
+    <result column="goods_name" property="goodsname" jdbcType="VARCHAR"  />
+    <result column="username" property="username" jdbcType="VARCHAR"  />
+    <result column="question" jdbcType="LONGVARCHAR" property="question" />
+    <result column="answer" jdbcType="LONGVARCHAR" property="answer" />
+    <result column="admin_name" jdbcType="VARCHAR" property="adminname" />
   </resultMap>
   <select id="getCount" resultType="INTEGER">
   	select count(id) as coun from shop_refer
   </select>
    <select id="getCountByStatus" resultType="INTEGER" >
      select count(id) as coun from shop_refer where   status = #{status}
+   </select>
+   <select id="getTotal" resultType="INTEGER"  >
+   	 SELECT
+		count(r.id) 
+	FROM
+		shop_refer AS r
+	LEFT JOIN shop_goods AS goods ON r.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON r.user_id = u.id
+	LEFT JOIN shop_order AS o ON o.id = r.order_id
+	LEFT JOIN shop_admin AS admin ON r.admin_id = admin.id
+	WHERE
+		1 
+	<if test="username!=null">
+	AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+	</if>
+	<if test="goodsname!=null">
+	AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+	</if>
+	<if test="starttime!=null">
+	AND r.time <![CDATA[>]]> "#{starttime}"
+	</if>
+	<if test="endtime!=null">
+	AND r.time <![CDATA[<]]> "#{endtime}"
+	</if>	
+   </select>
+   <select id="loadRefer" resultMap="ShopReferResult">
+   SELECT
+		r.*, u.username,
+		goods. NAME AS goods_name,
+		goods.id AS goods_id,
+		admin.admin_name
+	FROM
+		shop_refer AS r
+	LEFT JOIN shop_goods AS goods ON r.goods_id = goods.id
+	LEFT JOIN shop_user AS u ON r.user_id = u.id
+	LEFT JOIN shop_order AS o ON o.id = r.order_id
+	LEFT JOIN shop_admin AS admin ON r.admin_id = admin.id
+	WHERE
+		1 
+	<if test="username!=null">
+	AND u.username LIKE "<![CDATA[%]]>#{username}<![CDATA[%]]>"
+	</if>
+	<if test="goodsname!=null">
+	AND goods. NAME LIKE "<![CDATA[%]]>#{goodsname}<![CDATA[%]]>"
+	</if>
+	<if test="starttime!=null">
+	AND r.time <![CDATA[>]]> "#{starttime}"
+	</if>
+	<if test="endtime!=null">
+	AND r.time <![CDATA[<]]> "#{endtime}"
+	</if>		
+	ORDER BY
+		r.id DESC
    </select>
 </mapper>

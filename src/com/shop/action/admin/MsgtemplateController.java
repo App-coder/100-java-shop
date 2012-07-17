@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/msgtemplate")
 public class MsgtemplateController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/msgtemplate";
 	}
 }

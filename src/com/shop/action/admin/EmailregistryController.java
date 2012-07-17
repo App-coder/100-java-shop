@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/emailregistry")
 public class EmailregistryController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/emailregistry";
 	}
 }

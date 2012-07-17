@@ -8,7 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StatController extends BaseController {
 
 	public String userreg(){
-		return "";
+		return "admin/stat/userreg";
+	}
+	
+	public String spandingavg(){
+		return "admin/stat/spandingavg";
+	}
+	
+	public String amount(){
+		return "admin/stat/amount";
 	}
 	
 }

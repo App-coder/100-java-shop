@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/merchshipinfo")
 public class MerchshipinfoController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/merchshipinfo";
 	}
 }

@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/notifyregistry")
 public class Notifyregistry extends BaseController {
 	public String index(){
-		return "";
+		return "admin/notifyregistry";
 	}
 }

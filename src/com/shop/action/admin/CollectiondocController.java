@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/collectiondoc")
 public class CollectiondocController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/collectiondoc";
 	}
 }

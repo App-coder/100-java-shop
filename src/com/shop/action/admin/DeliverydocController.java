@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/deliverydoc")
 public class DeliverydocController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/deliverydoc";
 	}
 }

@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "admin/refundmentdoc")
 public class RefundmentdocController extends BaseController {
 	public String index(){
-		return "";
+		return "admin/refundmentdoc";
 	}
 }

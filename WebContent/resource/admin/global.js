@@ -177,6 +177,5 @@ function obj2str(o) {
 function reloadTab(){
     var currentTab = $('#tabs').tabs('getSelected');
     currentTab.panel('refresh');
-    
 }
 
