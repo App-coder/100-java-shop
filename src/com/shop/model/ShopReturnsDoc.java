@@ -44,6 +44,12 @@ public class ShopReturnsDoc {
     private Byte state;
 
     private String note;
+    
+    private String pname;
+    
+    private String username;
+    
+    private String orderno;
 
     public Integer getId() {
         return id;
@@ -212,4 +218,31 @@ public class ShopReturnsDoc {
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
     }
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getOrderno() {
+		return orderno;
+	}
+
+	public void setOrderno(String orderno) {
+		this.orderno = orderno;
+	}
+    
+    
+    
 }

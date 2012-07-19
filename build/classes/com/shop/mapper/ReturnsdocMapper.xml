@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.ReturnsdocMapper">
+  <resultMap id="ShopReturnsDocResult" type="com.shop.model.ShopReturnsDoc">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="postcode" jdbcType="INTEGER" property="postcode" />
+    <result column="telphone" jdbcType="VARCHAR" property="telphone" />
+    <result column="country" jdbcType="INTEGER" property="country" />
+    <result column="province" jdbcType="INTEGER" property="province" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="area" jdbcType="INTEGER" property="area" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="freight" jdbcType="REAL" property="freight" />
+    <result column="delivery_code" jdbcType="VARCHAR" property="deliveryCode" />
+    <result column="delivery_type" jdbcType="VARCHAR" property="deliveryType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="if_del" jdbcType="TINYINT" property="ifDel" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="note" jdbcType="LONGVARCHAR" property="note" />
+    <result column="pname" jdbcType="VARCHAR" property="pname" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderno" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER">
+  	  SELECT
+		count(o.order_no) 
+	FROM
+		shop_returns_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_user AS m ON m.id = c.user_id
+	LEFT JOIN shop_delivery AS p ON c.delivery_type = p.id
+  </select>
+  <select id="loadList" resultMap="ShopReturnsDocResult">
+  SELECT
+		o.order_no,
+		c. NAME,
+		c.delivery_code,
+		p. NAME AS pname,
+		c.id,
+		c.time,
+		c.freight,
+		m.username,
+		c.reason
+	FROM
+		shop_returns_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_user AS m ON m.id = c.user_id
+	LEFT JOIN shop_delivery AS p ON c.delivery_type = p.id
+	WHERE
+		c.if_del = #{if_del}
+	limit #{start},#{rows}
+  </select>
+</mapper>

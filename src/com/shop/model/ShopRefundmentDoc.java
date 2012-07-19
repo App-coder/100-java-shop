@@ -38,6 +38,16 @@ public class ShopRefundmentDoc {
     private String bankAccount;
 
     private Date bankTime;
+    
+    private String content;
+
+    private String disposeIdea;
+    
+    private String truename;
+    
+    private String pname;
+    
+    private String orderno;
 
     public Integer getId() {
         return id;
@@ -182,4 +192,47 @@ public class ShopRefundmentDoc {
     public void setBankTime(Date bankTime) {
         this.bankTime = bankTime;
     }
+    
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    public String getDisposeIdea() {
+        return disposeIdea;
+    }
+
+    public void setDisposeIdea(String disposeIdea) {
+        this.disposeIdea = disposeIdea == null ? null : disposeIdea.trim();
+    }
+
+	public String getTruename() {
+		return truename;
+	}
+
+	public void setTruename(String truename) {
+		this.truename = truename;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getOrderno() {
+		return orderno;
+	}
+
+	public void setOrderno(String orderno) {
+		this.orderno = orderno;
+	}
+    
+    
+    
 }

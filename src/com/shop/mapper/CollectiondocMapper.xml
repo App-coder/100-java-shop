@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.shop.mapper.CollectionDocMapper">
+<mapper namespace="com.shop.mapper.CollectiondocMapper">
   <resultMap id="ShopCollectionDocResult" type="com.shop.model.ShopCollectionDoc">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
@@ -16,13 +16,14 @@
     <result column="note" jdbcType="LONGVARCHAR" property="note" />
     <result column="true_name" jdbcType="VARCHAR" property="truename" />
     <result column="pname" jdbcType="VARCHAR" property="pname" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderno" />
   </resultMap>
   <select id="loadList" resultMap="ShopCollectionDocResult">
   	  SELECT
 		o.order_no,
 		c.amount,
 		m.true_name,
-		p. NAME,
+		p. NAME pname,
 		c.id,
 		c.collection_account,
 		c.pay_status,

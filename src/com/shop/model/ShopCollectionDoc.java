@@ -26,6 +26,12 @@ public class ShopCollectionDoc {
     private Byte ifDel;
 
     private String note;
+    
+    private String truename;
+    
+    private String pname;
+    
+    private String orderno;
 
     public Integer getId() {
         return id;
@@ -122,4 +128,30 @@ public class ShopCollectionDoc {
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
     }
+
+	public String getTruename() {
+		return truename;
+	}
+
+	public void setTruename(String truename) {
+		this.truename = truename;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getOrderno() {
+		return orderno;
+	}
+
+	public void setOrderno(String orderno) {
+		this.orderno = orderno;
+	}
+    
+    
 }

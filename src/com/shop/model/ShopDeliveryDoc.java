@@ -40,6 +40,12 @@ public class ShopDeliveryDoc {
     private Byte ifDel;
 
     private String note;
+    
+    private String orderno;
+    
+    private String pname;
+    
+    private String username;
 
     public Integer getId() {
         return id;
@@ -192,4 +198,31 @@ public class ShopDeliveryDoc {
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
     }
+
+	public String getOrderno() {
+		return orderno;
+	}
+
+	public void setOrderno(String orderno) {
+		this.orderno = orderno;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+    
+    
+    
 }

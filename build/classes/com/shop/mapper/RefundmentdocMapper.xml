@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.RefundmentdocMapper">
+  <resultMap id="ShopRefundmentDocResult" type="com.shop.model.ShopRefundmentDoc">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="amount" jdbcType="REAL" property="amount" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="refundment_type" jdbcType="BIT" property="refundmentType" />
+    <result column="refundment_username" jdbcType="VARCHAR" property="refundmentUsername" />
+    <result column="refundment_name" jdbcType="VARCHAR" property="refundmentName" />
+    <result column="refundment_account" jdbcType="VARCHAR" property="refundmentAccount" />
+    <result column="refundment_bank" jdbcType="INTEGER" property="refundmentBank" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="pay_status" jdbcType="TINYINT" property="payStatus" />
+    <result column="dispose_time" jdbcType="TIMESTAMP" property="disposeTime" />
+    <result column="if_del" jdbcType="TINYINT" property="ifDel" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_account" jdbcType="VARCHAR" property="bankAccount" />
+    <result column="bank_time" jdbcType="TIMESTAMP" property="bankTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="dispose_idea" jdbcType="LONGVARCHAR" property="disposeIdea" />
+    <result column="true_name" jdbcType="VARCHAR" property="truename" />
+    <result column="pname" jdbcType="VARCHAR" property="pname" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderno" />
+  </resultMap>
+  <select id="getTotal" resultType="INTEGER" >
+  	SELECT 
+		count(o.order_no)  
+	FROM
+		shop_refundment_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
+	LEFT JOIN shop_payment AS p ON c.bank_name = p.id
+	WHERE
+		c.if_del = #{if_del}
+	AND c.pay_status != 0 
+  </select>
+  <select id="loadList" resultMap="ShopRefundmentDocResult">
+  	SELECT
+		o.order_no,
+		c.amount,
+		m.true_name,
+		p. NAME pname,
+		c.id,
+		c.bank_account,
+		c.pay_status,
+		c.bank_time
+	FROM
+		shop_refundment_doc AS c
+	LEFT JOIN shop_order AS o ON c.order_id = o.id
+	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
+	LEFT JOIN shop_payment AS p ON c.bank_name = p.id
+	WHERE
+		c.if_del = #{if_del}
+	AND c.pay_status != 0
+	limit #{start},#{rows} 
+  </select>
+</mapper>
