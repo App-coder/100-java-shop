@@ -1,6 +1,6 @@
 $(function() {
-    $('#returndoc_list').datagrid({
-	url : 'admin/returndoc/list',
+    $('#returnsdoc_list').datagrid({
+	url : 'admin/returnsdoc/list',
 	fit : 'true',
 	nowrap : true,
 	striped : true,
@@ -10,6 +10,7 @@ $(function() {
 	rownumbers : true,
 	pagination:true,
 	fitColumns:true,
+	queryParams:{if_del:0},
 	toolbar : [ {
 	    text : '预览',
 	    iconCls:'icon-view',
@@ -22,9 +23,42 @@ $(function() {
 		checkbox : true
 	}]],
 	columns : [ [ {
-	    field : 'name',
-	    title : '姓名',
+	    field : 'orderno',
+	    title : '订单号',
 	    width : 200
+	}, {
+	    field : 'name',
+	    title : '退货人',
+	    width : 120
+	},
+	 {
+	    field : 'deliveryCode',
+	    title : '物流单号',
+	    width : 200
+	},
+	 {
+	    field : 'pname',
+	    title : '物流公司',
+	    width : 120
+	},
+	 {
+	    field : 'freight',
+	    title : '运费',
+	    width : 100
+	},
+	 {
+	    field : 'username',
+	    title : '会员名',
+	    width : 120
+	},
+	 {
+	    field : 'reason',
+	    title : '退货原因',
+	    width : 100
+	},{
+	    field : 'time',
+	    title : '完成时间',
+	    width : 100
 	},
 	{
 	    field : 'id',

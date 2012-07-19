@@ -19,7 +19,7 @@
 			<li><a
 				href="javascript:tab('退货单','admin/returnsdoc/index');">退货单</a></li>
 			<li><a
-				href="javascript:tab('退款申请列表','admin/refundmentdoc/list');">退款申请列表</a></li>
+				href="javascript:tab('退款申请列表','admin/refundmentdoc/index');">退款申请列表</a></li>
 		</ul></li>
 	<li><span>快递单管理</span>
 	<ul>

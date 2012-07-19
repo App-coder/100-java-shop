@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.bean.easyui.ListBean;
-import com.shop.model.ShopCollectionDoc;
 import com.shop.model.ShopRefundmentDoc;
-import com.shop.service.admin.CollectiondocService;
 import com.shop.service.admin.RefundmentdocService;
 import com.shop.util.JsonDateValueProcessor;
 
@@ -34,9 +32,6 @@ public class RefundmentdocController extends BaseController {
 		return "admin/refundmentdoc";
 	}
 	
-	
-
-
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	@ResponseBody

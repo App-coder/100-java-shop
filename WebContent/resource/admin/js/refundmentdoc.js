@@ -28,28 +28,21 @@ $(function() {
 	    width : 200
 	},{
 	    field : 'amount',
-	    title : '收款金额',
+	    title : '退款原因',
+	    width : 200
+	},{
+	    field : 'amount',
+	    title : '退款类型',
 	    width : 200
 	},
 	{
-	    field : 'truename',
-	    title : '付款人',
+	    field : 'amount',
+	    title : '退款状态',
 	    width : 200
-	},{
-	    field : 'pname',
-	    title : '支付方式',
-	    width : 200
-	},{
-	    field : 'collectionAccount',
-	    title : '收款帐号',
-	    width : 200
-	},{
-	    field : 'payStatus',
-	    title : '支付状态',
-	    width : 200
-	},{
-	    field : 'time',
-	    title : '完成时间',
+	},
+	{
+	    field : 'amount',
+	    title : '申请时间',
 	    width : 200
 	},
 	{

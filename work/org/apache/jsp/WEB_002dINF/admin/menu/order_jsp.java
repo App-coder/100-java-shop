@@ -70,7 +70,7 @@ public final class order_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<li><a\r\n");
       out.write("\t\t\t\thref=\"javascript:tab('退货单','admin/returnsdoc/index');\">退货单</a></li>\r\n");
       out.write("\t\t\t<li><a\r\n");
-      out.write("\t\t\t\thref=\"javascript:tab('退款申请列表','admin/refundmentdoc/list');\">退款申请列表</a></li>\r\n");
+      out.write("\t\t\t\thref=\"javascript:tab('退款申请列表','admin/refundmentdoc/index');\">退款申请列表</a></li>\r\n");
       out.write("\t\t</ul></li>\r\n");
       out.write("\t<li><span>快递单管理</span>\r\n");
       out.write("\t<ul>\r\n");
