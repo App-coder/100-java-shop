@@ -33,7 +33,7 @@ public class PromotionController extends BaseController {
 	 * @param type 0:购物车促销规则 1:商品限时抢购
 	 * @return
 	 */
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	@ResponseBody
 	public String list(int page,int rows,int type){
 		int total = this.promotionService.getTotalByType(type);

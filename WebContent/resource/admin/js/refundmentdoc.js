@@ -27,23 +27,23 @@ $(function() {
 	    title : '订单号',
 	    width : 200
 	},{
-	    field : 'amount',
-	    title : '退款原因',
+	    field : 'content',
+	    title : '退货原因',
 	    width : 200
 	},{
-	    field : 'amount',
+	    field : 'refundmentType',
 	    title : '退款类型',
 	    width : 200
 	},
 	{
-	    field : 'amount',
+	    field : 'payStatus',
 	    title : '退款状态',
-	    width : 200
+	    width : 100
 	},
 	{
-	    field : 'amount',
+	    field : 'time',
 	    title : '申请时间',
-	    width : 200
+	    width : 100
 	},
 	{
 	    field : 'id',

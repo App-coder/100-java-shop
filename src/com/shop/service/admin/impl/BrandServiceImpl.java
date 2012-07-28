@@ -24,7 +24,7 @@ public class BrandServiceImpl implements BrandService {
 	public int getTotal() {
 		return this.brandMapper.getTotal();
 	}
-
+  
 	public List<ShopBrand> loadBrand(int page, int rows) {
 		int start = (page-1)*rows;
 		List<ShopBrand> brands = this.brandMapper.loadBrand(start,rows);

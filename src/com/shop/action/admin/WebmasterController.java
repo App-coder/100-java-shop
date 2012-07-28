@@ -1,11 +1,11 @@
 package com.shop.action.admin;
 
 
-import com.shop.model.ShopAdmin;
-import com.shop.service.admin.*;
-import com.shop.util.CacheManager;
-import com.shop.util.Constant;
-import com.shop.util.StringUtil;
+import java.util.HashMap;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,9 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+import com.shop.model.ShopAdmin;
+import com.shop.service.admin.AdminService;
+import com.shop.service.admin.CommentService;
+import com.shop.service.admin.GoodsService;
+import com.shop.service.admin.OrderService;
+import com.shop.service.admin.ReferService;
+import com.shop.service.admin.UserService;
+import com.shop.util.CacheManager;
+import com.shop.util.Constant;
+import com.shop.util.StringUtil;
 
 @Controller
 @RequestMapping(value="admin/webmaster")

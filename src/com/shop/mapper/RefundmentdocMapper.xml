@@ -27,35 +27,27 @@
     <result column="order_no" jdbcType="VARCHAR" property="orderno" />
   </resultMap>
   <select id="getTotal" resultType="INTEGER" >
-  	SELECT 
-		count(o.order_no)  
+	SELECT
+		count(c.id) 
 	FROM
 		shop_refundment_doc AS c
-	LEFT JOIN shop_order AS o ON c.order_id = o.id
-	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
-	LEFT JOIN shop_payment AS p ON c.bank_name = p.id
 	WHERE
 		c.if_del = #{if_del}
-	AND c.pay_status != 0 
   </select>
   <select id="loadList" resultMap="ShopRefundmentDocResult">
-  	SELECT
-		o.order_no,
-		c.amount,
-		m.true_name,
-		p. NAME pname,
+	SELECT
 		c.id,
-		c.bank_account,
-		c.pay_status,
-		c.bank_time
+		c.order_no,
+		c.content,
+		c.refundment_type,
+		c.time,
+		c.pay_status
 	FROM
 		shop_refundment_doc AS c
-	LEFT JOIN shop_order AS o ON c.order_id = o.id
-	LEFT JOIN shop_member AS m ON m.user_id = c.user_id
-	LEFT JOIN shop_payment AS p ON c.bank_name = p.id
 	WHERE
 		c.if_del = #{if_del}
-	AND c.pay_status != 0
+	ORDER BY
+		c.id DESC 
 	limit #{start},#{rows} 
   </select>
 </mapper>
