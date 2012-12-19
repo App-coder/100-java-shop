@@ -152,3 +152,5 @@ function closeWin(wind){
 function formsubmit(fid){
 	$('#'+fid).submit();
 }
+
+

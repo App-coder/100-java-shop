@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.UserMapper">
+  <resultMap id="ShopUserResult" type="com.shop.model.ShopUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="head_ico" jdbcType="VARCHAR" property="headIco" />
+  </resultMap>
+  <select id="getCount" resultType="INTEGER">
+  	select count(id) as coun from shop_user
+  </select>
+  
+  
+</mapper>

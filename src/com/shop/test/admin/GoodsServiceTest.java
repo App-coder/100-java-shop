@@ -1,23 +1,17 @@
 package com.shop.test.admin;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
 import com.shop.service.admin.GoodsService;
+import com.shop.test.BeanGenerater;
 
-import junit.framework.TestCase;
+public class GoodsServiceTest {
 
-public class GoodsServiceTest extends TestCase {
-
-	GoodsService goodsService;
-
-	public void init() {
-		ApplicationContext aCtx = new FileSystemXmlApplicationContext(
-				"classpath:spring.xml");
-		GoodsService service = (GoodsService) aCtx.getBean("goodsService");
-		assertNotNull(service);
-		this.goodsService = service;
+	static GoodsService goodsService;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		goodsService = (GoodsService)BeanGenerater.getBeanByName("goodsService");
 	}
 
 	@Test
@@ -52,6 +46,11 @@ public class GoodsServiceTest extends TestCase {
 
 	@Test
 	public void testUpdateIsDel() {
+	}
+	
+	@Test
+	public void getCount(){
+		int count = this.goodsService.getCount();
 	}
 
 }

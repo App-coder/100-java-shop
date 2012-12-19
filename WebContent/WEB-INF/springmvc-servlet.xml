@@ -5,8 +5,59 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<mvc:resources mapping="/resource/**" location="/resource/" />
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
 	<!-- 自动搜索@Controller标注的类 -->
 	<context:component-scan base-package="com.shop" />
 	<mvc:annotation-driven />
+
+	<mvc:interceptors>
+		<!-- 全局拦截，可用于防盗链，记住访问来源，记住刚才访问的链接  -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.shop.interceptor.BaseInterceptor" />
+		</mvc:interceptor>
+		<!-- 管理员拦截器-->
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**" />
+			<bean class="com.shop.interceptor.AdminInterceptor" />
+		</mvc:interceptor>
+		 <!-- 前台拦截器 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/portal/**" />
+			<bean class="com.shop.interceptor.PortalInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<!-- Default ViewResolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 以字节为单位的最大上传文件的大小 ，最大上传的文件大小为4M-->
+		<property name="maxUploadSize" value="4194304" />
+	</bean>
+
 
 </beans>

@@ -1,15 +1,22 @@
 package com.shop.service.admin.impl;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
+import com.shop.mapper.CommentMapper;
 import com.shop.model.ShopComment;
 import com.shop.service.admin.CommentService;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
+import java.util.List;
 @Service("commentService")
 public class CommentServiceImpl implements CommentService {
 
-	public int getTotalFilter(String username, String goodsname,
+    private CommentMapper commentMapper;
+    @Resource(name="commentMapper")
+    public void setCommentMapper(CommentMapper commentMapper) {
+        this.commentMapper = commentMapper;
+    }
+
+    public int getTotalFilter(String username, String goodsname,
 			String starttime, String endtime) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -45,5 +52,9 @@ public class CommentServiceImpl implements CommentService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+    public int getCount(int status) {
+        return this.commentMapper.getCount(status);
+    }
 
 }

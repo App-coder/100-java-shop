@@ -14,7 +14,6 @@
             </ul>
             <div id="navMenu">
 				<ul>
-				
 					<li><a id="nav_goods" href="javascript:menuList('admin/webmaster/goods')"><span>商品</span></a></li>
 					<li><a id="nav_member" href="javascript:menuList('admin/webmaster/member')"><span>会员</span></a></li>
 					<li><a id="nav_order" href="javascript:menuList('admin/webmaster/order')"><span>订单</span></a></li>
@@ -22,7 +21,6 @@
 					<li><a id="nav_stat" href="javascript:menuList('admin/webmaster/stat')"><span>统计</span></a></li>
 					<li><a id="nav_system" href="javascript:menuList('admin/webmaster/system')"  class="selected" ><span>系统</span></a></li>
                     <li><a id="nav_tool" href="javascript:menuList('admin/webmaster/tool')"><span>工具</span></a></li>
-                    
 				</ul>
 			</div>
 		</div>

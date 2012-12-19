@@ -1,5 +1,7 @@
 package com.shop.mapper;
 
-public class GoodsMapper {
+public interface GoodsMapper {
+
+	public int getCount();
 
 }

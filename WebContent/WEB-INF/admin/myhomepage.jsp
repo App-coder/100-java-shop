@@ -15,27 +15,27 @@
 					<tbody>
 					<tr>
 						<td class="lefttd">销售总额</td>
-						<td class="righttd" >sfs</td>
+						<td class="righttd" >${grossSales}元</td>
 					</tr>
 					<tr>
 						<td class="lefttd">今年销售总额</td>
-						<td class="righttd" ></td>
+						<td class="righttd" >${yearGrossSales}元</td>
 					</tr>
 					<tr>
 						<td class="lefttd">客户</td>
-						<td class="righttd" ></td>
+						<td class="righttd" >${countOfCustomer}个</td>
 					</tr>
 					<tr>
 						<td class="lefttd">产品</td>
-						<td class="righttd" ></td>
+						<td class="righttd" >${countOfProduct}个</td>
 					</tr>
 					<tr>
 						<td class="lefttd">咨询</td>
-						<td class="righttd" ></td>
+						<td class="righttd" >总共：${countOfRefer}个&nbsp;&nbsp;未处理：${countOfNotDealRefer}</td>
 					</tr>
 					<tr>
 						<td class="lefttd">评论</td>
-						<td class="righttd" ></td>
+						<td class="righttd" >总共：${countOfCommentAll}个&nbsp;&nbsp;未处理：${countOfNotDealComment}</td>
 					</tr>
 					</tbody>
 				</table>
@@ -51,27 +51,27 @@
 			</thead>
 			<tbody>
 			<tr><td class="lefttd">总订单</td>
-							<td class="righttd" >sf</td>
+							<td class="righttd" >${orderAll}个</td>
 						</tr>
 						<tr>
 							<td class="lefttd">新订单</td>
-							<td class="righttd" ></td>
+							<td class="righttd" >${newOrder}个</td>
 						</tr>
 						<tr>
 							<td class="lefttd">未付款订单</td>
-							<td class="righttd" ></td>
+							<td class="righttd" >${orderNotPay}个</td>
 						</tr>
 						<tr>
 							<td class="lefttd">未发货订单</td>
-							<td class="righttd" ></td>
+							<td class="righttd" >${orderHasDistr}个</td>
 						</tr>
 						<tr>
 							<td class="lefttd">七天未确认订单</td>
-							<td class="righttd" >sdfsdf</td>
+							<td class="righttd" >${orderHasConfirm}个</td>
 						</tr>
 						<tr>
 							<td class="lefttd">完成订单</td>
-							<td class="righttd" ></td>
+							<td class="righttd" >${orderHasFinish}个</td>
 						</tr>
 			</tbody>				
 		</table>

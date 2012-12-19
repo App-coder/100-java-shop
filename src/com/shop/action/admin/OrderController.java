@@ -1,23 +1,20 @@
 package com.shop.action.admin;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
-
+import com.shop.bean.easyui.ListBean;
+import com.shop.model.ShopOrder;
+import com.shop.service.admin.OrderService;
+import com.shop.util.JsonDateValueProcessor;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.shop.bean.easyui.ListBean;
-import com.shop.model.ShopOrder;
-import com.shop.service.admin.OrderService;
-import com.shop.util.JsonDateValueProcessor;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 @Controller
 @RequestMapping(value="admin/order")
 public class OrderController extends BaseController {
@@ -35,7 +32,7 @@ public class OrderController extends BaseController {
 	@RequestMapping(value="/getByCreateTime", method=RequestMethod.POST)
 	@ResponseBody
 	public String getByCreateTime(HttpServletResponse response){
-		List<ShopOrder> list = this.orderService.getByCreateTime();
+		List<ShopOrder> list = this.orderService.getLastNew();
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.registerJsonValueProcessor(java.util.Date.class, new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
 		
@@ -60,10 +57,10 @@ public class OrderController extends BaseController {
 		List<ShopOrder> orders = new ArrayList<ShopOrder>();
 		
 		if(searchType.equals("username")){
-			total = this.orderService.getByUsername(keywords);
+			total = this.orderService.getTotalByUsername(keywords);
 			orders = this.orderService.loadByUsername(page,rows,keywords);
 		}else if(searchType.equals("orderno")){
-			total = this.orderService.getByOrderno(keywords);
+			total = this.orderService.getTotalByOrderno(keywords);
 			orders = this.orderService.loadByOrderno(page,rows,keywords);
 		}
 		
@@ -96,7 +93,14 @@ public class OrderController extends BaseController {
 		
 		return objToJson(list);
 	}
-	
-	
+
+    /**
+     * @param id 订单ID
+     * @return 订单详细页面
+     */
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    public String info(int id){
+        return "admin/order/info";
+    }
 	
 }

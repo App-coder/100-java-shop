@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.CommentMapper">
+    <resultMap id="ShopCommentResult" type="com.shop.model.ShopComment">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+        <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="time" jdbcType="TIMESTAMP" property="time" />
+        <result column="comment_time" jdbcType="DATE" property="commentTime" />
+        <result column="point" jdbcType="BIT" property="point" />
+        <result column="status" jdbcType="BIT" property="status" />
+        <result column="contents" jdbcType="LONGVARCHAR" property="contents" />
+    </resultMap>
+    <select id="getCount" resultType="INTEGER" >
+        select count(id) as coun from shop_comment
+        <if test="status != -1">
+          where status = #{status}
+        </if>
+    </select>
+
+</mapper>

@@ -1,7 +1,11 @@
 package com.shop.model;
 
-public class ShopGuide {
-    private Integer order;
+import java.io.Serializable;
+
+public class ShopGuide implements Serializable{
+	private static final long serialVersionUID = 4554269404086482980L;
+
+	private Integer order;
 
     private String name;
 

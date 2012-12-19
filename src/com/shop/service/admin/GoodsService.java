@@ -23,6 +23,8 @@ public interface GoodsService {
 	int deleteByIds(int[] ids);
 
 	int updateIsDel(int[] ids, int isdel);
+	
+	int getCount();
 
 	
 

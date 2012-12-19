@@ -1,29 +1,18 @@
 package com.shop.action.portal;
 
-import java.util.HashMap;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import com.shop.service.portal.*;
+import com.shop.util.CacheManager;
+import com.shop.util.Constant;
+import com.shop.util.JsonUtil;
+import com.shop.util.TimeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.shop.service.portal.AnnouncementService;
-import com.shop.service.portal.ArticleService;
-import com.shop.service.portal.BrandService;
-import com.shop.service.portal.CategoryService;
-import com.shop.service.portal.CommentService;
-import com.shop.service.portal.GoodsKeywordsService;
-import com.shop.service.portal.GoodsService;
-import com.shop.service.portal.PromotionService;
-import com.shop.service.portal.RegimentService;
-import com.shop.util.CacheManager;
-import com.shop.util.Constant;
-import com.shop.util.JsonUtil;
-import com.shop.util.StringUtil;
-import com.shop.util.TimeUtil;
-import java.util.*;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping(value="portal/welcome")
@@ -159,7 +148,8 @@ public class WelcomeController extends BaseController{
 			CacheManager.putKeyCache("newGoods", newGoods);
 		}
 		modelMap.addAttribute("newGoods",newGoods);
-		
+
+
 		//商品类列表
 		Object topCategoryGoods = CacheManager.getKeyCache("topCategoryGoods",TimeUtil.MINUTE_HOUR);
 		if(topCategoryGoods == null){

@@ -33,4 +33,7 @@
       link = #{link,jdbcType=VARCHAR} 
      where `order` =  #{order,jdbcType=INTEGER}
   </update>
+  <select id="loadGuides" resultMap="ShopGuideResult" >
+      select `name`,link from shop_guide order by `order` asc
+  </select>
 </mapper>

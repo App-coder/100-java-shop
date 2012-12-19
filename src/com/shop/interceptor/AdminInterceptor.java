@@ -13,26 +13,9 @@ import com.shop.util.cache.CacheStore;
 
 public class AdminInterceptor implements HandlerInterceptor {
 	
-	public ConfigService configService;
-	@Resource(name="configService")
-	public void setConfigService(ConfigService configService) {
-		this.configService = configService;
-	}
-	
 	// preHandle()方法在业务处理器处理请求之前被调用  
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object obj) throws Exception {
-		
-		Object systemconfig = CacheManager.getFromCache(Constant.SYSTEM_CONFIG);
-		if(systemconfig == null){
-			Object hashmap = new CacheStore().getSystemConfig(configService);
-			CacheManager.putInCache(Constant.SYSTEM_CONFIG, hashmap);
-			request.setAttribute(Constant.SYSTEM_CONFIG, hashmap);
-		}else{
-			request.setAttribute(Constant.SYSTEM_CONFIG, systemconfig);
-		}
-		
-		
 		return true;
 		/*
 		if(request.getSession().getAttribute(Constant.ADMIN_USER)!=null){

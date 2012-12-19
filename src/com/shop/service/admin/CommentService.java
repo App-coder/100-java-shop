@@ -1,8 +1,8 @@
 package com.shop.service.admin;
 
-import java.util.List;
-
 import com.shop.model.ShopComment;
+
+import java.util.List;
 
 public interface CommentService {
 
@@ -22,4 +22,6 @@ public interface CommentService {
 
 	int deleteById(int ids);
 
+    /*根据状态得到评论*/
+    int getCount(int status);
 }

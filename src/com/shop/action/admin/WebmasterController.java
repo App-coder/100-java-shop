@@ -1,11 +1,11 @@
 package com.shop.action.admin;
 
 
-import java.util.HashMap;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
-
+import com.shop.model.ShopAdmin;
+import com.shop.service.admin.*;
+import com.shop.util.CacheManager;
+import com.shop.util.Constant;
+import com.shop.util.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,11 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.shop.model.ShopAdmin;
-import com.shop.service.admin.AdminService;
-import com.shop.util.CacheManager;
-import com.shop.util.Constant;
-import com.shop.util.StringUtil;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping(value="admin/webmaster")
@@ -28,9 +26,38 @@ public class WebmasterController extends BaseController{
 	public void setAdminService(AdminService adminService) {
 		this.adminService = adminService;
 	}
-	
 
-	@RequestMapping(value="/index", method=RequestMethod.GET)
+    private OrderService orderService;
+    @Resource(name="orderService")
+    public void setOrderService(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    private UserService userService;
+    @Resource(name="userService")
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    private GoodsService goodsService;
+    @Resource(name="goodsService")
+    public void setGoodsService(GoodsService goodsService) {
+        this.goodsService = goodsService;
+    }
+
+    private ReferService referService;
+    @Resource(name="referService")
+    public void setReferService(ReferService referService) {
+        this.referService = referService;
+    }
+
+    private CommentService commentService;
+    @Resource(name="commentService")
+    public void setCommentService(CommentService commentService) {
+        this.commentService = commentService;
+    }
+
+    @RequestMapping(value="/index", method=RequestMethod.GET)
 	public String index(HttpSession session,ModelMap modelMap) {
 		if(session.getAttribute(Constant.ADMIN_USER)!=null){
 			return "redirect:/admin/webmaster/console";
@@ -77,9 +104,6 @@ public class WebmasterController extends BaseController{
 	public String console(HttpSession session,ModelMap modelMap){
 		HashMap<String, String> hashconfig = (HashMap<String, String>)CacheManager.getFromCache(Constant.SYSTEM_CONFIG);
 		modelMap.addAttribute("webtitle",hashconfig.get("name"));
-		
-		
-		
 		return "admin/console";
 	}
 	
@@ -89,7 +113,59 @@ public class WebmasterController extends BaseController{
 	}
 	
 	@RequestMapping(value="/myhomepage")
-	public String myhomepage(){
+	public String myhomepage(ModelMap modelMap){
+
+        //销售总额
+        Double grossSales = this.orderService.getGrossSales();
+        modelMap.addAttribute("grossSales",grossSales);
+
+        //年销售额
+        Double yearGrossSales = this.orderService.getYearGrossSales();
+        modelMap.addAttribute("yearGrossSales",yearGrossSales);
+
+        //客户数量
+        int countOfCustomer = this.userService.getCount();
+        modelMap.addAttribute("countOfCustomer",countOfCustomer);
+
+        //产品
+        int countOfProduct = this.goodsService.getCount();
+        modelMap.addAttribute("countOfProduct",countOfProduct);
+
+        //咨询
+        int countOfRefer = this.referService.getCount();
+        modelMap.addAttribute("countOfRefer",countOfRefer);
+
+        int countOfNotDealRefer = this.referService.getCountByStatus(0);
+        modelMap.addAttribute("countOfNotDealRefer",countOfNotDealRefer);
+
+        //评论
+        int countOfCommentAll = this.commentService.getCount(-1);
+        modelMap.addAttribute("countOfCommentAll",countOfCommentAll);
+
+        int countOfNotDealComment = this.commentService.getCount(0);
+        modelMap.addAttribute("countOfNotDealComment",countOfNotDealComment);
+
+        //总订单
+        int orderAll = this.orderService.getCountIsDel(0);
+        modelMap.addAttribute("orderAll",orderAll);
+
+        //新订单
+        int newOrder = this.orderService.getCountByStatus(1);
+        modelMap.addAttribute("newOrder",newOrder);
+
+        int orderNotPay = this.orderService.getCountByPayStatus(0);
+        modelMap.addAttribute("orderNotPay",orderNotPay);
+
+        //未发货
+        int orderHasDistr = this.orderService.getCountByDistr(0);
+        modelMap.addAttribute("orderHasDistr",orderHasDistr);
+
+        int orderHasConfirm = this.orderService.getHasnotAffirmDayThen7();
+        modelMap.addAttribute("orderHasConfirm",orderHasConfirm);
+
+        int orderHasFinish = this.orderService.getFinishedOrder();
+        modelMap.addAttribute("orderHasFinish",orderHasFinish);
+
 		return "admin/myhomepage";
 	}
 	

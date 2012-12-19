@@ -11,11 +11,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List _jspx_dependants;
 
-  static {
-    _jspx_dependants = new java.util.ArrayList(1);
-    _jspx_dependants.add("/WEB-INF/c.tld");
-  }
-
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 

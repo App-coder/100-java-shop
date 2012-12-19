@@ -54,4 +54,47 @@
 	<select id="getGrossSales" resultType="DOUBLE">
 		select sum(order_amount) as amount from shop_order where status = 5
 	</select>
+	<select id="getYearGrossSales" resultType="DOUBLE">
+		select sum(order_amount) as amount from shop_order where status = 5 and YEAR(create_time) = YEAR(now())
+	</select>
+	<select id="getTotalByUsername"  resultType="INTEGER" >
+		select count(*) amount from shop_order od left join shop_user us on od.user_id = us.id where us.username like #{keywords} 
+	</select>
+	<select id="getCount" resultType="INTEGER" >
+		select count(id) as coun from shop_order where if_del = 0
+	</select>
+	<select id="getNewCount" resultType="INTEGER">
+		select count(id) as coun from shop_order where status = 1
+	</select>
+	<select id="getHasnotPayCount" resultType="INTEGER">
+		select count(id) as coun from shop_order where pay_status = 0
+	</select>
+	<select id="getHasnotDistributionCount" resultType="INTEGER">
+		select count(id) as coun from shop_order where distribution_status = 0
+	</select>
+	<select id="getHasnotAffirmDayThen7" resultType="INTEGER">
+		select count(id) as coun from shop_order where distribution_status = 1 and pay_status = 1 and status = 2 and to_days(now())-to_days(send_time)>7
+	</select>
+	<select id="getFinishedOrder" resultType="INTEGER">
+		select count(id) as coun from shop_order where `status` = 5
+	</select>
+	<select id="getById" resultMap="ShopOrderResult">
+		select * from shop_order where id = #{id}
+	</select>
+    <select id="getLastNew" resultMap="ShopOrderResult">
+        select id,order_no,accept_name,pay_status,order_amount,create_time from
+		shop_order  where pay_status = 0  order by create_time desc limit 0,#{size}
+    </select>
+    <select id="getCountIsDel" resultType="INTEGER" >
+      select count(id) as coun from shop_order where if_del = #{if_del}
+    </select>
+    <select id="getCountByStatus" resultType="INTEGER" >
+       select count(id) as coun from shop_order where status = #{status}
+    </select>
+    <select id="getCountByDistr" resultType="INTEGER" >
+      select count(id) as coun from shop_order where distribution_status = #{distr}
+    </select>
+    <select id="getCountByPayStatus" resultType="INTEGER">
+      select count(id) as coun from shop_order where pay_status = #{paystatus}
+    </select>
 </mapper>

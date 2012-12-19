@@ -1,16 +1,17 @@
 package com.shop.test.admin;
 
-import java.util.List;
-
+import static org.junit.Assert.*;
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.mybatis.spring.mapper.MapperScannerConfigurer;
+
+import com.shop.model.ShopOrder;
 import com.shop.service.admin.OrderService;
+import com.shop.test.BeanGenerater;
+import java.util.*;
 
 public class OrderServiceTest{
 
@@ -18,60 +19,84 @@ public class OrderServiceTest{
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.out.println("sfsdf");
-		// Spring启动所需要的配置参数文件,其中test/JunitTestConf.xml文件中保存了数据库连接等参数,可根据具体情况做修改
-		String[] paths = new String[] { "classpath:applicationContext.xml",
-				"file:WebContent/WEB-INF/springmvc-servlet.xml"};
-		// 启动Spring，得到Spring环境上下文
-		ApplicationContext ctx = new ClassPathXmlApplicationContext(paths);
-		orderService = (OrderService) ctx.getBean("orderService");
+		orderService = (OrderService)BeanGenerater.getBeanByName("orderService");
 	}
-
-	//
-	// @Test
-	// public void testSetOrderMapper() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testGetByCreateTime() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testGetByUsername() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testGetByOrderno() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testLoadByUsername() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testLoadByOrderno() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testGetTotalFilter() {
-	// fail("Not yet implemented");
-	// }
-	//
-	// @Test
-	// public void testLoadFilter() {
-	// fail("Not yet implemented");
-	// }
+	
+	 @Test
+	 public void testGetByCreateTime() {
+		List<ShopOrder> orders= orderService.getByCreateTime();
+	 }
+	
+	 @Test
+	 public void testGetByUsername() {
+		 int amount = orderService.getTotalByUsername("zhang");
+	 }
+	
+	 @Test
+	 public void testGetByOrderno() {
+	 fail("Not yet implemented");
+	 }
+	
+	 @Test
+	 public void testLoadByUsername() {
+	 fail("Not yet implemented");
+	 }
+	
+	 @Test
+	 public void testLoadByOrderno() {
+	 fail("Not yet implemented");
+	 }
+	
+	 @Test
+	 public void testGetTotalFilter() {
+	 fail("Not yet implemented");
+	 }
+	
+	 @Test
+	 public void testLoadFilter() {
+	 fail("Not yet implemented");
+	 MapperScannerConfigurer map;
+	 }
 
 	@Test
 	public void testGetGrossSales() {
 		Double sales = orderService.getGrossSales();
-		System.out.println(sales);
+		Assert.assertTrue(sales+"", sales>=0);
+	}
+	
+	@Test
+	public void getCount(){
+		int count = orderService.getCount();
 	}
 
+	@Test
+	public void getNewCount(){
+		int count = orderService.getNewCount();
+	}
+	
+	@Test
+	public void getHasnotPayCount(){
+		int count = orderService.getHasnotPayCount();
+	}
+	
+	@Test
+	public void getHasnotDistributionCount(){
+		int count = orderService.getHasnotDistributionCount();
+	}
+	
+	@Test
+	public void getHasnotAffirmDayThen7(){
+		int count = orderService.getHasnotAffirmDayThen7();
+	}
+	
+	@Test
+	public void getFinishedOrder(){
+		int count = orderService.getFinishedOrder();
+	}
+	
+	@Test
+	public void getById(){
+		ShopOrder order = orderService.getById(5);
+	}
+	
 }

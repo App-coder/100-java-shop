@@ -1,14 +1,13 @@
 package com.shop.service.admin.impl;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
-
 import com.shop.mapper.OrderMapper;
 import com.shop.model.ShopOrder;
 import com.shop.service.admin.OrderService;
+import org.apache.commons.lang.StringEscapeUtils;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 @Service("orderService")
 public class OrderServiceImpl implements OrderService {
 
@@ -23,15 +22,6 @@ public class OrderServiceImpl implements OrderService {
 		return list;
 	}
 
-	public int getByUsername(String keywords) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int getByOrderno(String keywords) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	public List<ShopOrder> loadByUsername(int page, int rows, String keywords) {
 		// TODO Auto-generated method stub
@@ -58,5 +48,67 @@ public class OrderServiceImpl implements OrderService {
 	public Double getGrossSales() {
 		return this.orderMapper.getGrossSales();
 	}
+
+	public Double getYearGrossSales() {
+		return this.orderMapper.getYearGrossSales();
+	}
+
+	public int getTotalByUsername(String keywords) {
+		return this.orderMapper.getTotalByUsername(StringEscapeUtils.escapeJava("%"+keywords+"%"));
+	}
+
+	public int getTotalByOrderno(String keywords) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getCount() {
+		return this.orderMapper.getCount();
+	}
+
+	public int getNewCount() {
+		return this.orderMapper.getNewCount();
+	}
+
+	public int getHasnotPayCount() {
+		return this.orderMapper.getHasnotPayCount();
+	}
+
+	public int getHasnotDistributionCount() {
+		return this.orderMapper.getHasnotDistributionCount();
+	}
+
+	public int getHasnotAffirmDayThen7() {
+		return this.orderMapper.getHasnotAffirmDayThen7();
+	}
+
+	public int getFinishedOrder() {
+		return this.orderMapper.getFinishedOrder();
+	}
+
+	public ShopOrder getById(int id) {
+		return this.orderMapper.getById(id);
+	}
+
+    public List<ShopOrder> getLastNew() {
+        return this.orderMapper.getLastNew(10);
+    }
+
+    public int getCountIsDel(int i) {
+        return this.orderMapper.getCountIsDel(i);
+    }
+
+    public int getCountByStatus(int i) {
+        return this.orderMapper.getCountByStatus(i);
+    }
+
+    public int getCountByDistr(int i) {
+        return this.orderMapper.getCountByDistr(i);
+    }
+
+    public int getCountByPayStatus(int i) {
+        return this.orderMapper.getCountByPayStatus(i);
+    }
+
 
 }
